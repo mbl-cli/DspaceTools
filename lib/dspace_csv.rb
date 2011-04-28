@@ -1,6 +1,7 @@
 require "CSV"
 require "bundler/setup"
 require "nokogiri"
+require "zip/zip"
 
 class DSpaceCSV
     VALID_HEADERS = %w[Filename Contributor\ Advisor Contributor\ Author
@@ -29,7 +30,8 @@ class DSpaceCSV
         @string = string.gsub(/\r\n?/, "\n")
         @options = {:col_sep => ",", :row_sep => "\n", :headers => true}
         @csv = CSV.parse(@string, @options)
-        @filename = filename
+        filename = "#{File.basename(filename, '.csv')}.zip"
+        @zip = Zip::ZipFile.new(filename, true)
     end
 
     # assume Filename exists in each row
@@ -53,6 +55,8 @@ class DSpaceCSV
             end
             file.puts builder.to_xml
             file.close
+            @zip.add(file)
         end
+        @zip.close
     end
 end
