@@ -1,0 +1,30 @@
+html {
+    background-image: url('grass.png');
+    background-repeat: repeat;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-family: Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    background-image: url('cheesy.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+div.container {
+}
+h1#title {
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+ol {
+    margin: 0;   
+}
+ol li{
+    margin: .5em 0;
+}
+p {
+    margin: .25em 0;
+}

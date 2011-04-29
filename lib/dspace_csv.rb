@@ -30,20 +30,21 @@ class DSpaceCSV
         @string = string.gsub(/\r\n?/, "\n")
         @options = {:col_sep => ",", :row_sep => "\n", :headers => true}
         @csv = CSV.parse(@string, @options)
-        filename = "#{File.basename(filename, '.csv')}.zip"
-        @zip = Zip::ZipFile.new(filename, true)
+        @zip_filename = "/tmp/#{File.basename(filename, '.csv')}.zip"
+        @zip = Zip::ZipFile.new(@zip_filename, true)
     end
 
     # assume Filename exists in each row
     # Filename cannot have a '.' except for the extension
     def transform_rows
+        files = []
         @csv.each do |row|
-            filename = "#{File.basename(row['Filename'], ".*")}.xml"
+            filename = "/tmp/#{File.basename(row['Filename'], ".*")}.xml"
             file = File.new(filename, 'w')
+            files << file
             builder = Nokogiri::XML::Builder.new do |xml|
                 xml.dublin_core {
                     row.each do |header, value|
-                        puts "value! #{value}"
                         next if header == "Filename"
                         element, qualifier = header.strip.downcase.split
                         qualifier = "none" if qualifier.nil?
@@ -55,8 +56,10 @@ class DSpaceCSV
             end
             file.puts builder.to_xml
             file.close
-            @zip.add(file)
+            @zip.add(file, file.path)
         end
         @zip.close
+        files.each {|file| File.unlink(file.path)}
+        @zip_filename
     end
 end

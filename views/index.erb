@@ -1,6 +1,6 @@
-<section>
+<section class="grid_8">
     <h1>Instructions</h1>
-    <ol>
+    <ol id="instructions">
         <li>Format your CSV as per instructed</li>
         <li>Upload CSV</li>
         <li>Move resulting XML files into your contents directory</li>
@@ -8,18 +8,42 @@
         <li>Batch import into DSpace</li>
     </ol>
 </section>
+<div class="grid_4">
+    <img src="ru.png" alt="" />
+</div>
+<div class='clear'>&nbsp;</div>
 
-<section>
+<section class="grid_12">
     <h1> Formatting Instructions</h1>
     <p>Format your CSV file like this. If you need multiple of the same column,
-        then duplicate the column
+        then duplicate the column.
     </p>
 </section>
+<div class='clear'>&nbsp;</div>
 
-<section>
+<section class="grid_12">
     <h1> Upload </h1>
     <form action="/upload" method="post" enctype="multipart/form-data" >
         <input type="file" name="file" />
         <input type="submit" value="Upload" />
     </form>
 </section>
+<div class='clear'>&nbsp;</div>
+
+<section class="grid_12">
+    <h1> Move XML Files</h1>
+    <ol>
+        <li>Unzip resulting file</li>
+        <li>Move all of the unzipped files into your contents folder like <a href="">this</a></li>
+    </ol>
+</section>
+<div class='clear'>&nbsp;</div>
+
+<section class="grid_12">
+    <h1> Run the Provided Script </h1>
+    <p>Now run the script that came with your zip file, dspace_hierarchy.rb</p>
+    <pre>
+        <code>ruby dspace_directory_structure.rb</code>
+    </pre>
+</section>
+<div class='clear'>&nbsp;</div>

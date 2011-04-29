@@ -1,3 +1,4 @@
+require "./lib/dspace_csv"
 require "fileutils"
 require "bundler/setup"
 
@@ -10,8 +11,12 @@ end
 
 post '/upload' do
     puts params.inspect
-    params["file"][:tempfile].read
-    erb :index
+    string = params["file"][:tempfile].read
+    filename = params["file"][:filename]
+    csv = DSpaceCSV.new(string, filename)
+    zip = csv.transform_rows
+    send_file zip, :type => :zip
+    File.unlink(zip)
 end
 
 # load the csv into this csv
