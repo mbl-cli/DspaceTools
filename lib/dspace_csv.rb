@@ -31,6 +31,7 @@ class DSpaceCSV
         @options = {:col_sep => ",", :row_sep => "\n", :headers => true}
         @csv = CSV.parse(@string, @options)
         @zip_filename = "/tmp/#{File.basename(filename, '.csv')}.zip"
+        File.unlink(@zip_filename) if File.exists?(@zip_filename)
         @zip = Zip::ZipFile.new(@zip_filename, true)
     end
 
@@ -41,11 +42,12 @@ class DSpaceCSV
         @csv.each do |row|
             filename = "/tmp/#{File.basename(row['Filename'], ".*")}.xml"
             file = File.new(filename, 'w')
-            files << file
             builder = Nokogiri::XML::Builder.new do |xml|
                 xml.dublin_core {
                     row.each do |header, value|
                         next if header == "Filename"
+                        next if value.nil?
+                        next if value.empty?
                         element, qualifier = header.strip.downcase.split
                         qualifier = "none" if qualifier.nil?
                         xml.dcvalue(:element => element, :qualifier => qualifier){
@@ -54,12 +56,14 @@ class DSpaceCSV
                     end
                 }
             end
+            files << file.path
             file.puts builder.to_xml
+            @zip.add(File.basename(filename), file.path)
             file.close
-            @zip.add(file, file.path)
         end
         @zip.close
-        files.each {|file| File.unlink(file.path)}
+        files.each {|file| File.unlink(file)}
+        puts files.inspect
         @zip_filename
     end
 end

@@ -1,8 +1,21 @@
+h1#title a:link {
+    color:#000;
+}
+h1#title a:visited {
+    color:#000;
+}
+h1#title a:hover {
+    color:#000;
+}
+h1#title a:active {
+    color:#000;
+}
 html {
     background-image: url('grass.png');
     background-repeat: repeat;
 }
 body {
+    min-height: 800px;
     margin: 0;
     padding: 0;
     font-size: 1.5em;
@@ -28,3 +41,4 @@ ol li{
 p {
     margin: .25em 0;
 }
+
