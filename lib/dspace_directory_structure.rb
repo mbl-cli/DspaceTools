@@ -22,13 +22,3 @@ Dir.glob("*.xml").each do |xml_file|
     end
     count += 1
 end
-
-
-
-# get all .xml files
-# for each file
-#   create a directory
-#   move file into directory
-#   grab all other files that match this file's name
-#   move them into this directory
-#   make contents file
