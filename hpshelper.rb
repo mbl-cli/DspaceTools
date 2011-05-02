@@ -7,6 +7,8 @@ require "bundler/setup"
 require "sinatra"
 require "erb"
 
+mime_type :csv, 'application/csv'
+
 get '/' do
     erb :index
 end
@@ -16,7 +18,8 @@ get '/formatting_rules' do
 end
 
 get 'template.csv' do
-    send_file 'template.csv', :type => :csv
+    content_type :csv
+    send_file 'template.csv'
 end
 
 post '/upload' do
