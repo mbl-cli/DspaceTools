@@ -1,114 +1,126 @@
-<section class="grid_12">
-    <section>
-    <h1>Rules</h1>
-    <ul>
-        <li>The first row of your CSV must be headers.</li>
-        <li>The headers must be from the following list.</li>
-        <li>The first column's header must be 'Filename'.</li>
-        <li>The first column must be populated for each row.</li>
-        <li>You can have as many header duplicates as you want so long as they are valid.</li>
-    </ul>
-    </section>
-    <section>
-        <h1>Notes</h1>
-        <p>We have created a CSV template containing one of each possible header: <a href="template.csv">template.csv</a>. Feel free to use or ignore this completely. Your CSV will work given you've follwed the rules.</p>
-        <p>As you may or may not have noticed, the headers have been generated from a list of valid DublinCore (DC) elements and qualifiers. For instance, Contributor is a DC element and Advisor, Author, Editor, etc. are all valid qualifiers.</p>
-    </section>
-
-    <table>
-        <tr>
-            <td>Filename</td>
-            <td>Contributor Advisor</td>
-            <td>Contributor Author   </td>
-            <td>Contributor Editor   </td>
-            <td>Contributor Illustrator  </td>
-            <td>Contributor Other    </td>
-        </tr>
-        <tr>
-            <td>Contributor</td>
-            <td>Coverage Spatial</td>
-            <td>Coverage Temporal</td>
-            <td>Creator</td>
-            <td>Date Accessioned</td>
-            <td>Date Available</td>
-        </tr>
-        <tr>
-            <td>Date Copyright</td>
-            <td>Date Created</td>
-            <td>Date Issued</td>
-            <td>Date Submitted</td>
-            <td>Date Updated</td>
-            <td>Date</td>
-            <td>Description Abstract</td>
-        </tr>
-        <tr>
-            <td>Description Provenance</td>
-            <td>Description Sponsorship</td>
-            <td>Description Statementofresponsibility</td>
-            <td>Description Tableofcontents</td>
-            <td>Description Uri</td>
-            <td>Description Version</td>
-            <td>Description</td>
-        </tr>
-        <tr>
-            <td>Format Extent</td>
-            <td>Format Medium</td>
-            <td>Format Mimetype</td>
-            <td>Format</td>
-            <td>Identifier Citation</td>
-            <td>Identifier Govdoc</td>
-            <td>Identifier Isbn</td>
-        </tr>
-        <tr>
-            <td>Identifier Ismn</td>
-            <td>Identifier Issn</td>
-            <td>Identifier Other</td>
-            <td>Identifier Sici</td>
-            <td>Identifier Slug</td>
-            <td>Identifier Uri</td>
-            <td>Identifier</td>
-        </tr>
-        <tr>
-            <td>Language Iso</td>
-            <td>Language rfc3066</td>
-            <td>Language</td>
-            <td>Publisher</td>
-            <td>Relation Haspart</td>
-            <td>Relation Hasversion</td>
-            <td>Relation Isbasedon</td>
-        </tr>
-        <tr>
-            <td>Relation Isformatof</td>
-            <td>Relation Ispartof</td>
-            <td>Relation Ispartofseries</td>
-            <td>Relation Isreferencedby</td>
-            <td>Relation Isreplacedby</td>
-            <td>Relation Isversionof</td>
-            <td>Relation Replaces</td>
-        </tr>
-        <tr>
-            <td>Relation Requires</td>
-            <td>Relation Uri</td>
-            <td>Relation</td>
-            <td>Rights Holder</td>
-            <td>Rights Uri</td>
-            <td>Rights</td>
-            <td>Source Uri</td>
-        </tr>
-        <tr>
-            <td>Source</td>
-            <td>Subject Classification</td>
-            <td>Subject Ddc</td>
-            <td>Subject Lcc</td>
-            <td>Subject Lcsh</td>
-            <td>Subject Mesh</td>
-            <td>Subject Other</td>
-        </tr>
-        <tr>
-            <td>Subject</td>
-            <td>Title Alternative</td>
-            <td>Title</td>
-            <td>Type</td>
-        </tr>
-    </table>
+<section class="grid_8">
+<h1>Rules</h1>
+<ul>
+    <li>The first row of your CSV must be headers.</li>
+    <li>The headers must be from the following list.</li>
+    <li>The first column's header must be 'Filename'.</li>
+    <li>The first column must be populated for each row.</li>
+    <li>You can have as many header duplicates as you want so long as they are valid.</li>
+</ul>
 </section>
+<div class="grid_4">
+    <img src="ru_reverse.png" alt="" />
+</div>
+<div class="clear">&nbsp;</div>
+<section class="grid_12">
+    <h1>Notes</h1>
+    <ul>
+        <li>A CSV template with one of each possible header: <a href="template.csv">template.csv</a></li>
+        <li>The headers are simply a DC Element, a space and the DC Qualifier</li>
+        <li>The DublinCore spec can be found <a href="http://dublincore.org/documents/dcmi-terms/">here</a></li>
+    </ul>
+</section>
+<div class="clear">&nbsp;</div>
+
+<section class="grid_12">
+<h1>Valid CSV Headers</h1>
+<table>
+    <tr>
+        <td>Filename</td>
+        <td>Contributor Advisor</td>
+        <td>Contributor Author   </td>
+        <td>Contributor Editor   </td>
+        <td>Contributor Illustrator  </td>
+        <td>Contributor Other    </td>
+    </tr>
+    <tr>
+        <td>Contributor</td>
+        <td>Coverage Spatial</td>
+        <td>Coverage Temporal</td>
+        <td>Creator</td>
+        <td>Date Accessioned</td>
+        <td>Date Available</td>
+    </tr>
+    <tr>
+        <td>Date Copyright</td>
+        <td>Date Created</td>
+        <td>Date Issued</td>
+        <td>Date Submitted</td>
+        <td>Date Updated</td>
+        <td>Date</td>
+    </tr>
+    <tr>
+        <td>Description Abstract</td>
+        <td>Description Provenance</td>
+        <td>Description Sponsorship</td>
+        <td>Description Statementofresponsibility</td>
+        <td>Description Tableofcontents</td>
+        <td>Description Uri</td>
+    </tr>
+    <tr>
+        <td>Description Version</td>
+        <td>Description</td>
+        <td>Format Extent</td>
+        <td>Format Medium</td>
+        <td>Format Mimetype</td>
+        <td>Format</td>
+    </tr>
+    <tr>
+        <td>Identifier Citation</td>
+        <td>Identifier Govdoc</td>
+        <td>Identifier Isbn</td>
+        <td>Identifier Ismn</td>
+        <td>Identifier Issn</td>
+        <td>Identifier Other</td>
+    </tr>
+    <tr>
+        <td>Identifier Sici</td>
+        <td>Identifier Slug</td>
+        <td>Identifier Uri</td>
+        <td>Identifier</td>
+        <td>Language Iso</td>
+        <td>Language rfc3066</td>
+    </tr>
+    <tr>
+        <td>Language</td>
+        <td>Publisher</td>
+        <td>Relation Haspart</td>
+        <td>Relation Hasversion</td>
+        <td>Relation Isbasedon</td>
+        <td>Relation Isformatof</td>
+    </tr>
+    <tr>
+        <td>Relation Ispartof</td>
+        <td>Relation Ispartofseries</td>
+        <td>Relation Isreferencedby</td>
+        <td>Relation Isreplacedby</td>
+        <td>Relation Isversionof</td>
+        <td>Relation Replaces</td>
+    </tr>
+    <tr>
+        <td>Relation Requires</td>
+        <td>Relation Uri</td>
+        <td>Relation</td>
+        <td>Rights Holder</td>
+        <td>Rights Uri</td>
+        <td>Rights</td>
+    </tr>
+    <tr>
+        <td>Source Uri</td>
+        <td>Source</td>
+        <td>Subject Classification</td>
+        <td>Subject Ddc</td>
+        <td>Subject Lcc</td>
+        <td>Subject Lcsh</td>
+    </tr>
+    <tr>
+        <td>Subject Mesh</td>
+        <td>Subject Other</td>
+        <td>Subject</td>
+        <td>Title Alternative</td>
+        <td>Title</td>
+        <td>Type</td>
+    </tr>
+</table>
+</section>
+<div class="clear">&nbsp;</div>

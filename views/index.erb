@@ -1,55 +1,35 @@
+
 <section class="grid_8">
-    <h1>Instructions</h1>
-    <ol id="instructions">
-        <li>Format your CSV following these <a href="formatting_rules">rules</a>.</li>
-        <li>Upload CSV</li>
-        <li>Unzip received zip file</li>
-        <li>Move all of the unzipped files into your contents directory</li>
-        <li>Run the provided script</li>
-        <li>Batch import into DSpace</li>
-    </ol>
-</section>
-<div class="grid_4">
-    <img src="ru.png" alt="" />
-</div>
-<div class='clear'>&nbsp;</div>
-
-<section class="grid_12">
-    <h1>1. Format</h1>
-</section>
-<div class='clear'>&nbsp;</div>
-
-<section class="grid_12">
-    <h1>2. Upload</h1>
+<ol>
+    <li>Format</li>
+    <p>Format your CSV following these <a href="formatting_rules">rules</a>.</p>
+    <li>Upload</li>
+    <p>Upload your properly formatted CSV file.</p>
     <form action="/upload" method="post" enctype="multipart/form-data" >
         <input type="file" name="file" />
         <input type="submit" value="Upload" />
     </form>
-</section>
-<div class='clear'>&nbsp;</div>
-
-<section class="grid_12">
-    <h1>3. Unzip</h1>
-</section>
-<div class='clear'>&nbsp;</div>
-
-<section class="grid_12">
-    <h1>4. Move the new files</h1>
-    <p>You need to move the contents of the zip file to the folder that has the files you will be adding to DSpace.</p>
-</section>
-<div class='clear'>&nbsp;</div>
-
-<section class="grid_12">
-    <h1>5. Run the Provided Script</h1>
-    <p>Now run the script that came with your zip file, dspace_hierarchy.rb</p>
+    <li>Unzip</li>
+    <p>Unzip xml_files.zip.</p>
+    <li>Move the Files</li>
+    <p class="text">Move the contents of the zip file to the folder that has the files you will be adding to DSpace.</p>
+    <li>Run the Script</li>
+    <p class="text">Now run the script that came with your zip file.</p>
     <pre>
-        <code>ruby dspace_directory_structure.rb</code>
-    </pre>
+    $ cd <span class="change">/path/to/contents/directory</span>
+    $ ruby dspace_directory_structure.rb</pre>
+    <li>Upload to the Server</li>
+    <p class="text">You're going to need to put the resulting folder on your DSpace server. I use SCP and save it to /tmp using this command: </p>
+    <pre>
+    $ scp -r <span class="change">my_import</span> <span class="change">user@server</span>:/tmp </pre>
+    <li>Run the Batch Import Command</li>
+    <p class="text">Once you find the DSpace bin directory, change the values and run this command: </p>
+    <pre>
+    $ ./dspace import ItemImport -a -e <span class="change">your\@email.edu</span> -c <span class="change">collection_id</span> -s /tmp/<span class="change">my_import</span>/ -m <span class="change">my_import_mapfile</span></pre>
+</ol>
 </section>
-<div class='clear'>&nbsp;</div>
+<div class="grid_4">
+    <img src="ru.png" alt="" />
+</div>
 
-<section class="grid_12">
-    <h1>6. Batch import to DSpace</h1>
-    <p>You need to get your files onto your DSpace server and then run the import command.</p>
-</section>
 <div class='clear'>&nbsp;</div>
