@@ -1,4 +1,6 @@
-require "./lib/dspace_csv"
+require "lib/dspace_csv"
+
+require 'rubygems'
 require "fileutils"
 require "bundler/setup"
 
