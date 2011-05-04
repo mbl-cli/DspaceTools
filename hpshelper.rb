@@ -13,8 +13,16 @@ get '/' do
     erb :index
 end
 
-get '/formatting_rules' do
+get '/formatting-rules' do
     erb :rules
+end
+
+get '/stsrepository-instructions' do
+    erb :sts
+end
+
+get '/extra-help' do
+    erb :help
 end
 
 get 'template.csv' do
