@@ -3,6 +3,7 @@ require "fileutils"
 
 count = 0
 
+# grab all the .xml files
 Dir.glob("*.xml").each do |xml_file|
     count_string = sprintf("%04d", count)
     FileUtils.rm_r(count_string) if File.directory? count_string
@@ -20,5 +21,6 @@ Dir.glob("*.xml").each do |xml_file|
        next if file_name =~ /.xml$/
        contents.puts("#{file_name}\t bundle:ORIGINAL") 
     end
+    FileUtils.mv("#{count_string}/#{xml_file}", "#{count_string}/dublin_core.xml")
     count += 1
 end

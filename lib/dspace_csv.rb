@@ -47,6 +47,7 @@ class DSpaceCSV
         next if file_name =~ /.xml$/
         contents.puts("#{file_name}\t bundle:ORIGINAL") 
         end
+        FileUtils.mv("#{count_string}/#{xml_file}", "#{count_string}/dublin_core.xml")
         count += 1
     end'
 
