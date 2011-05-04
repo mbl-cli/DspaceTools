@@ -10,11 +10,12 @@ html {
 }
 div#background {
     margin: 0;
-    padding: 2em;
+    padding-top: 2em;
     font-size: 1.5em;
     font-family: Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif;
     background-image: url('cheesy.png');
     background-repeat: no-repeat;
+    min-height: 1024px;
 }
 div.container {
     background-color: rgba(255,255,255,0.7);
@@ -25,6 +26,12 @@ body {
 }
 h1, ol {
     margin: 0;
+}
+section {
+    margin: 0;
+}
+ol {
+    margin-left: 10px;
 }
 ol li{
     margin: 0;
@@ -66,4 +73,13 @@ pre {
 }
 span.change {
     color: red;
+}
+ol#collection-id li {
+    font-weight: normal;
+    font-size: 1em;
+}
+small {
+    padding: 0;
+    margin: 0;
+    font-size: .55em;
 }
