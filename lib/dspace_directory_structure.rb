@@ -1,26 +1,24 @@
 #!/bin/ruby
 require "fileutils"
 
-count = 0
 
 # grab all the .xml files
 Dir.glob("*.xml").each do |xml_file|
-    count_string = sprintf("%04d", count)
-    FileUtils.rm_r(count_string) if File.directory? count_string
-    Dir.mkdir(count_string)
-    FileUtils.mv(xml_file, count_string)
-    file = File.basename(xml_file, ".xml")
-    Dir.glob("#{file}.*").each do |content_file|
-        FileUtils.mv(content_file, count_string)
-    end
-    contents = File.new("#{count_string}/contents", 'w')
-    Dir.entries(count_string).each do |file_name|
-       next if file_name == "."
-       next if file_name == ".."
-       next if file_name == "contents"
-       next if file_name =~ /.xml$/
-       contents.puts("#{file_name}\t bundle:ORIGINAL") 
-    end
-    FileUtils.mv("#{count_string}/#{xml_file}", "#{count_string}/dublin_core.xml")
-    count += 1
+  count_string = File.basename(xml_file, ".xml")
+  f = open(xml_file)
+  metadata_content = f.readlines
+  f.close
+  file_names = metadata_content.pop.strip.split("|") 
+  FileUtils.rm_r(count_string) if File.directory? count_string
+  Dir.mkdir(count_string)
+  w = open("./#{count_string}/darwin_core.xml", "w")
+  metadata_content.each { |l| w.write(l) }
+  w.close
+  File.unlink(xml_file)
+  w = open("./#{count_string}/contents", "w")
+  file_names.each do |content_file|
+    FileUtils.mv(content_file, count_string)
+    w.write("%s\tbundle:ORIGINAL" % content_file) 
+  end
+  w.close
 end
