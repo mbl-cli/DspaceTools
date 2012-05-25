@@ -5,15 +5,15 @@ h1#title {
     text-align: center;
 }
 html {
-    background-image: url('grass.png');
-    background-repeat: repeat;
+    /* background-image: url('grass.png'); */
+    /* background-repeat: repeat; */
 }
 div#background {
     margin: 0;
     padding-top: 2em;
     font-size: 1.5em;
     font-family: Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif;
-    background-image: url('cheesy.png');
+    /* background-image: url('cheesy.png'); */
     background-repeat: no-repeat;
     min-height: 1024px;
 }
@@ -47,21 +47,21 @@ code {
 input[type="submit"] {
     display: block;
     margin-top: 5px;
-    background: #cc99cc;
+    background: #4c4;
     padding: 6px 14px;
-    color: hsl(212, 33%, 26%);
+    /* color: hsl(212, 33%, 26%); */
     font-family: Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif;
     font-weight: bold;
     font-size: 14pt;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-box-shadow: 0 1px 1px hsla(209, 32%, 17%, 0.8),
-    inset 0 1px 1px hsla(0, 0%, 100%, 0.8);
-    -moz-box-shadow: 0 1px 1px hsla(209, 32%, 17%, 0.8),
-    inset 0 1px 1px hsla(0, 0%, 100%, 0.8);
-    box-shadow: 0 1px 1px hsla(209, 32%, 17%, 0.8),
-    inset 0 1px 1px hsla(0, 0%, 100%, 0.8);
-    text-shadow:0 1px 0 hsla(0, 0%, 100%, 0.5);
+    /* border-radius: 25px; */
+    /* -moz-border-radius: 25px; */
+    /* -webkit-box-shadow: 0 1px 1px hsla(209, 32%, 17%, 0.8), */
+    /* inset 0 1px 1px hsla(0, 0%, 100%, 0.8); */
+    /* -moz-box-shadow: 0 1px 1px hsla(209, 32%, 17%, 0.8), */
+    /* inset 0 1px 1px hsla(0, 0%, 100%, 0.8); */
+    /* box-shadow: 0 1px 1px hsla(209, 32%, 17%, 0.8), */
+    /* inset 0 1px 1px hsla(0, 0%, 100%, 0.8); */
+    /* text-shadow:0 1px 0 hsla(0, 0%, 100%, 0.5); */
     cursor: pointer;
 }
 pre {
