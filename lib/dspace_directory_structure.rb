@@ -1,4 +1,4 @@
-#!/bin/ruby
+#!/usr/bin/env ruby
 require "fileutils"
 
 
@@ -17,8 +17,8 @@ Dir.glob("*.xml").each do |xml_file|
   File.unlink(xml_file)
   w = open("./#{count_string}/contents", "w")
   file_names.each do |content_file|
-    FileUtils.mv(content_file, count_string)
-    w.write("%s\tbundle:ORIGINAL" % content_file) 
+    FileUtils.cp(content_file, count_string)
+    w.write("%s\tbundle:ORIGINAL\n" % content_file) 
   end
   w.close
 end
