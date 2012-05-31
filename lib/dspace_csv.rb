@@ -25,7 +25,7 @@ class DSpaceCSV
         Subject\ Classification Subject\ Ddc Subject\ Lcc Subject\ Lcsh 
         Subject\ Mesh Subject\ Other Subject Title\ Alternative Title Type]
 
-        CODES = '#!/bin/ruby
+        CODES = '#!/usr/bin/env ruby
 require "fileutils"
 
 
@@ -44,8 +44,8 @@ Dir.glob("*.xml").each do |xml_file|
   File.unlink(xml_file)
   w = open("./#{count_string}/contents", "w")
   file_names.each do |content_file|
-    FileUtils.mv(content_file, count_string)
-    w.write("%s\tbundle:ORIGINAL" % content_file) 
+    FileUtils.cp(content_file, count_string)
+    w.write("%s\tbundle:ORIGINAL\n" % content_file) 
   end
   w.close
 end'
@@ -72,11 +72,12 @@ end'
     # Filename cannot have a '.' except for the extension
     def transform_rows
       files = []
-      count = 0
+      count = -1
       @csv.each do |row|
+        count += 1
         next if row['Filename'].nil?
         filename = "/tmp/%04d.xml" % count
-        file = File.new(filename, 'w')
+        file = open(filename, 'w')
         builder = Nokogiri::XML::Builder.new do |xml|
           xml.dublin_core {
             row.each do |header, value|
