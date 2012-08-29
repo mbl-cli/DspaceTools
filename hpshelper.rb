@@ -1,4 +1,4 @@
-require "lib/dspace_csv"
+require_relative "./lib/dspace_csv"
 
 require 'rubygems'
 require "fileutils"

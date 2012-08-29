@@ -2,7 +2,7 @@ require 'rubygems'
 require "bundler/setup"
 require "nokogiri"
 require "zip/zip"
-require "fastercsv"
+require "csv"
 
 class DSpaceCSV
   VALID_HEADERS = %w[Filename Contributor\ Advisor Contributor\ Author
@@ -57,7 +57,7 @@ end'
     def initialize(string, filename)
       @string = string.gsub(/\r\n?/, "\n")
       @options = {:col_sep => ",", :row_sep => "\n", :headers => true}
-      @csv = FasterCSV.parse(@string, @options)
+      @csv = CSV.parse(@string, @options)
       @zip_filename = "/tmp/#{File.basename(filename, '.csv')}.zip"
       File.unlink(@zip_filename) if File.exists?(@zip_filename)
       @script = make_script
