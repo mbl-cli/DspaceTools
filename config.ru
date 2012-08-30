@@ -4,7 +4,7 @@ require 'sinatra'
 set :env, :production
 disable :run
 
-require 'hpshelper'
+require 'application'
 
 run Sinatra::Application
 
