@@ -2,6 +2,9 @@ source :rubygems
 
 gem 'rake'
 gem "sinatra"
+gem "sinatra-flash"
+gem 'sinatra-redirect-with-flash'
+gem 'sinatra-reloader'
 gem "nokogiri"
 gem "rubyzip"
 gem 'rack'
