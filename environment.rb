@@ -2,10 +2,11 @@ require "sinatra"
 require "fileutils"
 require "bundler/setup"
 require "erb"
+require "nokogiri"
 require "zip/zip"
+require "csv"
 
-puts 'hi'
-class DSpaceCSV
+module DSpaceCSV
   Conf = OpenStruct.new(
     :tmpdir => '/tmp',
   )

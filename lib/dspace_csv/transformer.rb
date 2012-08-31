@@ -1,4 +1,4 @@
-class DSpaceCSV
+module DSpaceCSV
   class Transformer
     VALID_HEADERS = %w[Filename Contributor\ Advisor Contributor\ Author
       Contributor\ Editor Contributor\ Illustrator Contributor\ Other

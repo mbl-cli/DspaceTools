@@ -1,4 +1,4 @@
-class DSpaceCSV
+module DSpaceCSV
   class Uploader
     attr_reader :params, :file, :dir, :path, :zip_file
 
@@ -6,8 +6,7 @@ class DSpaceCSV
       tmpdir = DSpaceCSV::Conf.tmpdir
       threshold = 86400 * days
       now = Time.now.to_i
-      Dir.chdir(DSpaceCSV::Conf.tmpdir)
-      Dir.entries('.').select {|e| e.match /^dspace_[\d]{10}/}.each do |dir|
+      Dir.entries(tmpdir).select {|e| e.match /^dspace_[\d]{10}/}.each do |dir|
         path = File.join(tmpdir, dir)
         FileUtils.rm_rf(path) if (now - File.ctime(path).to_i) > threshold
       end
@@ -35,7 +34,7 @@ class DSpaceCSV
 
     def copy_file
       FileUtils.mkdir(@path)
-      FileUtils.cp(@file[:tempfile].path, @path)
+      FileUtils.cp(@file[:tempfile].path, File.join(@path, @file[:filename]))
     end
   end
 end

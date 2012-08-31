@@ -8,6 +8,8 @@ require_relative "./environment"
 
 mime_type :csv, 'application/csv'
 
+enable :sessions
+
 get '/' do
     erb :index
 end
@@ -30,9 +32,14 @@ get 'template.csv' do
 end
 
 post '/upload' do
-    string = params["file"][:tempfile].read
-    filename = params["file"][:filename]
-    csv = DSpaceCSV.new(string, filename)
-    zip = csv.transform_rows
-    send_file zip, :type => :zip, :filename => "xml_files.zip"
+  DSpaceCSV::Uploader.clean(1)
+  u = DSpaceCSV::Uploader.new(params)
+  e = DSpaceCSV::Expander.new(u)
+  t = DSpaceCSV::Transformer.new(e)
+  session[:path] = t.path
+  redirect '/upload_result'
+end
+
+get '/upload_result' do
+  erb :upload_result
 end
