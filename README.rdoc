@@ -1,5 +1,5 @@
 = DSpace CSV
-{<img src="https://secure.travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME].png" />}[http://travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME]]
 
+{<img src="https://secure.travis-ci.org/dimus/CSV-To-DSpace-XML.png" />}[http://travis-ci.org/dimusCSV-To-DSpace-XML]
 
 This is a way to automate CSV -> XML -> DSpace
