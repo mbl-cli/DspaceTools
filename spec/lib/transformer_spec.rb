@@ -10,7 +10,7 @@ describe DSpaceCSV::Transformer do
     Dir.entries(t.path).include?('0000').should be_true
     Dir.entries(t.path).include?('0001').should be_true
     Dir.entries(t.path).include?('0002').should be_true
-    Dir.entries(File.join(t.path, '0000')).should == [".", "..", "contents", "dublin_core.xml", "embryo128386.xhtml"]
+    Dir.entries(File.join(t.path, '0000')).sort.should == [".", "..", "contents", "dublin_core.xml", "embryo128386.xhtml"]
   end
 end
 
