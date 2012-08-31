@@ -1,11 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative "./lib/dspace_csv"
-require 'rubygems'
-require "fileutils"
-require "bundler/setup"
-require "sinatra"
-require "erb"
+require_relative "./environment"
 
 mime_type :csv, 'application/csv'
 
