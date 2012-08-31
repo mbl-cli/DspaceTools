@@ -5,6 +5,7 @@ describe DSpaceCSV::Expander do
     u = DSpaceCSV::Uploader.new(PARAMS_1)
     e = DSpaceCSV::Expander.new(u)
     e.uploader.class.should == DSpaceCSV::Uploader
+    Dir.entries(e.path).include?('UploadTest.csv').should be_true
   end
 end
 

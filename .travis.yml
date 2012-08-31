@@ -1,0 +1,6 @@
+rvm:
+  - 1.9.3
+before_script: "sudo apt-get -y install zip unzip"
+branches:
+  only:
+      - master
