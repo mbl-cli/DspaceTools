@@ -1,5 +1,5 @@
 = DSpace CSV
 
-{<img src="https://secure.travis-ci.org/dimus/CSV-To-DSpace-XML.png" />}[http://travis-ci.org/dimusCSV-To-DSpace-XML]
+{<img src="https://secure.travis-ci.org/mbl-cli/CSV-To-DSpace-XML.png" />}[http://travis-ci.org/mbl-cli/CSV-To-DSpace-XML]
 
 This is a way to automate CSV -> XML -> DSpace
