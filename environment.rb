@@ -8,7 +8,9 @@ require "csv"
 
 module DSpaceCSV
   Conf = OpenStruct.new(
+    :root_path => File.dirname(__FILE__),
     :tmpdir => '/tmp',
+    :users => YAML.load(open(File.join(File.dirname(__FILE__), 'config', 'users.yml')).read),
   )
 
   $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))

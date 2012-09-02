@@ -1,4 +1,5 @@
 require 'rack/test'
+require 'base64'
 require_relative '../application.rb'
 
 module RSpecMixin

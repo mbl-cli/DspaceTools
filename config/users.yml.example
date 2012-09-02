@@ -1,0 +1,6 @@
+# to generate a password hash run:
+# echo my_secret_password |shasum
+# default: jdoe, secret
+jdoe: 
+  name: John Doe
+  hash: fc683cd9ed1990ca2ea10b84e5e6fba048c24929

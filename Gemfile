@@ -5,6 +5,7 @@ gem "sinatra"
 gem "sinatra-flash"
 gem 'sinatra-redirect-with-flash'
 gem 'sinatra-reloader'
+gem 'sinatra-basic-auth'
 gem "nokogiri"
 gem "rubyzip"
 gem 'rack'
