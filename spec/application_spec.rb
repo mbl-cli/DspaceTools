@@ -19,7 +19,7 @@ describe 'application.rb' do
   it 'should save classification file keeping different versions' do
     post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_1, 'application/gzip')}, {"HTTP_AUTHORIZATION" => credentials("jdoe", "secret")})
     follow_redirect!
-    last_response.body.should include('Upload was successful')
+    last_response.body.should include('Check the correctness of generated files')
   end
 
 end
