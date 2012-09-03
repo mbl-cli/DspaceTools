@@ -13,6 +13,7 @@ enable :sessions
 
 protect  do
   get '/' do
+      session[:current_user] = DSpaceCSV::Conf.users[auth.credentials.first]
       erb :index
   end
 
@@ -39,14 +40,21 @@ protect  do
     e = DSpaceCSV::Expander.new(u)
     t = DSpaceCSV::Transformer.new(e)
     session[:path] = t.path
+    session[:collection_id] = params["collection_id"]
     redirect '/upload_result'
   end
 
   post '/submit' do
+    DSpaceCSV.submit(session[:path], session["collection_id"], session["current_user"])
+    redirect '/upload_finished'
   end
 
   get '/upload_result' do
     haml :upload_result
+  end
+
+  get '/upload_finished' do
+    haml :upload_finished
   end
 end
 
