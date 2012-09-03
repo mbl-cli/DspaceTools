@@ -5,9 +5,14 @@ def credentials(username, password)
 end
 
 describe 'application.rb' do
+  it 'should break on unknown user' do
+    get '/', {}, {"HTTP_AUTHORIZATION" => credentials("unknown", "bad_pass")}
+    last_response.status.should == 401
+  end
 
   it 'should show the default index page' do
     get '/', {}, {"HTTP_AUTHORIZATION" => credentials("jdoe", "secret")}
+    last_response.status.should == 200
     last_response.body.should include('CSV to DSpace XML')
   end
 

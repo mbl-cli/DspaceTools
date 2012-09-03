@@ -1,20 +1,21 @@
 source :rubygems
 
-gem 'rake'
+gem "rake"
 gem "sinatra"
 gem "sinatra-flash"
-gem 'sinatra-redirect-with-flash'
-gem 'sinatra-reloader'
-gem 'sinatra-basic-auth'
+gem "sinatra-redirect-with-flash"
+gem "sinatra-reloader"
+gem "sinatra-basic-auth"
+gem "haml"
 gem "nokogiri"
 gem "rubyzip"
-gem 'rack'
-gem 'rack-test'
-gem 'rack-timeout'
+gem "rack"
+gem "rack-test"
+gem "rack-timeout"
 
 group :test do
   # Pretty printed test output
-  gem 'debugger'
-  gem 'rspec'
-  gem 'turn', '0.8.2', :require => false
+  gem "debugger"
+  gem "rspec"
+  gem "turn", '0.8.2', :require => false
 end

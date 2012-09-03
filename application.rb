@@ -42,8 +42,11 @@ protect  do
     redirect '/upload_result'
   end
 
+  post '/submit' do
+  end
+
   get '/upload_result' do
-    erb :upload_result
+    haml :upload_result
   end
 end
 
