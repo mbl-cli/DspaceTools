@@ -16,7 +16,7 @@ describe 'application.rb' do
     last_response.body.should include('CSV to DSpace XML')
   end
 
-  it 'should save classification file keeping different versions' do
+  it 'should upload file and show generated content' do
     post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_1, 'application/gzip')}, {"HTTP_AUTHORIZATION" => credentials("jdoe", "secret")})
     follow_redirect!
     last_response.body.should include('Check the correctness of generated files')

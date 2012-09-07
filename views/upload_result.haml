@@ -1,5 +1,13 @@
 %section.grid_8
-  %p Check the correctness of generated files before 
+  %p Check the correctness of generated files before sending them to DSpace
+  %p If you see problems, press 'Cancel', fix them on your computer, and make a new upload.
+  - get_dir_structure(session[:path]).each_with_index do |item, i|
+    .dir_item= "Files for Item #{i+1}"
+    - item[-1].each do |f| 
+      .file_item= f[0]
+      .file_content
+        %pre= h f[1]
+  
   %form{ :method => "POST", :action => :submit }
     %input{ :type => :submit, :value => "Send"}
     %a{ :href => "/" } Cancel
