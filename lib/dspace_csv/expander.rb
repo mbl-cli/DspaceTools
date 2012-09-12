@@ -11,12 +11,16 @@ module DSpaceCSV
     private
 
     def unzip
-      Zip::ZipFile.open(@uploader.zip_file) do |zip_file| 
-        zip_file.each do |f|
-          f_path=File.join(@path, f.name)
-          FileUtils.mkdir_p(File.dirname(f_path))
-          zip_file.extract(f, f_path) unless File.exist?(f_path)
+      begin
+        Zip::ZipFile.open(@uploader.zip_file) do |zip_file| 
+          zip_file.each do |f|
+            f_path=File.join(@path, f.name)
+            FileUtils.mkdir_p(File.dirname(f_path))
+            zip_file.extract(f, f_path) unless File.exist?(f_path)
+          end
         end
+      rescue Zip::ZipError => e
+        raise DSpaceCSV::UploadError.new("Uploaded file is not in a valid zip format")
       end
     end
 

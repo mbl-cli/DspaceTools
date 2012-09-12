@@ -1,49 +1,58 @@
 module DSpaceCSV
   class Transformer
-    VALID_HEADERS = %w[Filename Contributor\ Advisor Contributor\ Author
-      Contributor\ Editor Contributor\ Illustrator Contributor\ Other
-      Contributor Coverage\ Spatial Coverage\ Temporal Creator
-      Date\ Accessioned Date\ Available Date\ Copyright Date\ Created
-      Date\ Issued Date\ Submitted Date\ Updated Date Description\ Abstract
-      Description\ Provenance Description\ Sponsorship 
-      Description\ Statementofresponsibility Description\ Tableofcontents 
-      Description\ Uri Description\ Version Description Format\ Extent 
-      Format\ Medium Format\ Mimetype Format Identifier\ Citation 
-      Identifier\ Govdoc Identifier\ Isbn Identifier\ Ismn Identifier\ Issn 
-      Identifier\ Other Identifier\ Sici Identifier\ Slug Identifier\ Uri 
-      Identifier Language\ Iso Language\ rfc3066 Language Publisher 
-      Relation\ Haspart Relation\ Hasversion Relation\ Isbasedon 
-      Relation\ Isformatof Relation\ Ispartof Relation\ Ispartofseries 
-      Relation\ Isreferencedby Relation\ Isreplacedby Relation\ Isversionof 
-      Relation\ Replaces Relation\ Requires Relation\ Uri Relation 
-      Rights\ Holder Rights\ Uri Rights Source\ Uri Source 
-      Subject\ Classification Subject\ Ddc Subject\ Lcc Subject\ Lcsh 
-      Subject\ Mesh Subject\ Other Subject Title\ Alternative Title Type]
-    attr_reader :expander, :path
+    VALID_HEADERS = DSpaceCSV::Conf.valid_fields
+
+    attr_reader :expander, :path, :errors
 
     def initialize(expander)
+      @errors = []
       @expander = expander
       @path = File.join(@expander.uploader.path, 'dspace')
-      transform
+      @csv_data = parse_csv
+      check_integrity
+      transform if @errors.empty?
     end
 
-    private
+    private 
 
-    def transform
-      csv_data = parse_csv
-      process_data(csv_data)
+    def check_integrity
+      success = has_exactly_one_filename_field
+      if success
+        #success = all_files_exist && no_extra_files
+      end
+      success 
+    end
+
+    def has_exactly_one_filename_field
+      res = @csv_data.headers.select {|f| f == "Filename"}
+      if res.empty?
+        @errors << "No Filename field"
+      elsif res.size > 1
+        @errors << "More than one Filename fields"
+      end
+      @errors.empty? ? true : false
+    end
+
+    def get_csv_file
+      csv_file = Dir.entries(@expander.path).select {|e| e.match(/\.csv$/)}[0]
+      raise DSpaceCSV::CsvError.new("Cannot find file with .csv extension") unless csv_file
+      csv_file
     end
 
     def parse_csv
-      csv_file = Dir.entries(@expander.path).select {|e| e.match(/\.csv$/)}[0]
-      csv_string = open(File.join(@expander.path, csv_file), "r:utf-8").read.gsub(/\r\n?/, "\n")
-      options = {:col_sep => ",", :row_sep => "\n", :headers => true}
-      CSV.parse(csv_string, options)
+      csv_file = get_csv_file
+      begin
+        csv_string = open(File.join(@expander.path, csv_file), "r:utf-8").read.gsub(/\r\n?/, "\n")
+        options = {:col_sep => ",", :row_sep => "\n", :headers => true}
+        CSV.parse(csv_string, options)
+      rescue CSV::MalformedCSVError
+        raise DSpaceCSV::CsvError.new("Cannot parse CSV file")
+      end
     end
 
-    def process_data(csv_data)
+    def transform
       count = -1
-      csv_data.each do |row|
+      @csv_data.each do |row|
         count += 1
         path = File.join(@path, "%04d" % count) 
         FileUtils.mkdir_p(path)

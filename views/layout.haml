@@ -1,0 +1,15 @@
+!!! 5
+%html
+  %head
+    %title 
+      CSV to DSpace XML
+      %link{ :href => "grid.css", :rel => "stylesheet" }
+      %link{ :href => "styles.css", :rel => "stylesheet" }
+    %body
+      = styled_flash
+      %div{ :id => "background" }
+      #wrapper.container.container_12
+        %h1{ :id => "title" }
+          %a{ :href => "/" } CSV to DSpace XML
+        = yield
+      %div{ :class => 'clear' } &nbsp;

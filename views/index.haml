@@ -1,0 +1,19 @@
+%section.grid_8
+  %ol
+    %li
+      Format
+      %p 
+        Format your CSV following these
+        %a{ :href => "formatting-rules" } rules
+        , then create a zip containing the csv file and corresponding archival files.
+    %li 
+      Upload
+      %form{ :action => "/upload", :method => "post", :enctype => "multipart/form-data" }
+        %p Change collection id if necessary
+        %input{ :type => "text", :name => "collection_id", :size => "3", :value => session[:current_user]["default_collection_id"] }
+        %p Upload your properly formatted CSV file.
+        %input{ :type => "file", :name => "file" }
+        %br
+        %input{ :type => "submit", :value => "Upload" }
+.grid_4
+.clear &nbsp;
