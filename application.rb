@@ -82,7 +82,7 @@ class DSpaceCsvGui < Sinatra::Base
         if t.errors.empty?
           session[:path] = t.path
           session[:collection_id] = params["collection_id"]
-          redirect '/upload_result'
+          redirect '/upload_result', :warning => t.warnings[0]
         else
           redirect "/", :error => t.errors.join("<br/>")
         end

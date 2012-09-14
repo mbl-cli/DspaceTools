@@ -61,4 +61,20 @@ describe 'application.rb' do
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('More than one Filename fields')
   end
+
+  it 'should generate error if a file is not found in archive' do
+    authorize 'jdoe', 'secret'
+    post('/upload', { :file => Rack::Test::UploadedFile.new(UPLOAD_MISSED_FILE, 'application/gzip') })
+    follow_redirect!
+    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.should include('The following files are missed from archive: missed_file.xhtml')
+  end
+
+  it 'should generate a warning if there is an extra file in archive' do
+    authorize 'jdoe', 'secret'
+    post('/upload', { :file => Rack::Test::UploadedFile.new(UPLOAD_EXTRA_FILE, 'application/gzip') })
+    follow_redirect!
+    last_response.body.should include('Check the correctness of generated files')
+    last_response.body.should include('The following files are extra in archive: extra_file.xhtml')
+  end
 end

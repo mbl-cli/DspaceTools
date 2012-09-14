@@ -2,10 +2,11 @@ module DSpaceCSV
   class Transformer
     VALID_HEADERS = DSpaceCSV::Conf.valid_fields
 
-    attr_reader :expander, :path, :errors
+    attr_reader :expander, :path, :errors, :warnings
 
     def initialize(expander)
       @errors = []
+      @warnings = []
       @expander = expander
       @path = File.join(@expander.uploader.path, 'dspace')
       @csv_data = parse_csv
@@ -18,9 +19,32 @@ module DSpaceCSV
     def check_integrity
       success = has_exactly_one_filename_field
       if success
-        #success = all_files_exist && no_extra_files
+        success = all_files_exist 
+        find_extra_files
       end
       success 
+    end
+
+    def all_files_exist
+      missing_files = files_list.select { |f| !File.exists?(File.join(@expander.path, f)) }
+      if missing_files.empty?
+        true
+      else
+        @errors << "The following files are missed from archive: %s" % missing_files.join(", ")
+        false
+      end
+    end
+
+    def files_list
+      @csv_data.values_at("Filename").join("|").split("|")
+    end
+
+    def find_extra_files
+      known_files = files_list
+      known_files << @csv_file
+      dir_files = Dir.entries(@expander.path).select { |f| f[0] != '.' }
+      extra_files = dir_files - known_files
+      @warnings << "The following files are extra in archive: %s" % extra_files.join(", ") unless extra_files.empty?
     end
 
     def has_exactly_one_filename_field
@@ -40,9 +64,9 @@ module DSpaceCSV
     end
 
     def parse_csv
-      csv_file = get_csv_file
+      @csv_file = get_csv_file
       begin
-        csv_string = open(File.join(@expander.path, csv_file), "r:utf-8").read.gsub(/\r\n?/, "\n")
+        csv_string = open(File.join(@expander.path, @csv_file), "r:utf-8").read.gsub(/\r\n?/, "\n")
         options = {:col_sep => ",", :row_sep => "\n", :headers => true}
         CSV.parse(csv_string, options)
       rescue CSV::MalformedCSVError
