@@ -1,6 +1,7 @@
 module DSpaceCSV
   class Transformer
     VALID_HEADERS = DSpaceCSV::Conf.valid_fields
+    RIGHTS_ARRAY = ['Rights', 'Rights Copyright', 'Rights License', 'Rights URI' ]
 
     attr_reader :expander, :path, :errors, :warnings
 
@@ -17,7 +18,7 @@ module DSpaceCSV
     private 
 
     def check_integrity
-      success = has_required_fields
+      success = has_required_fields && has_rights_field
       if success
         success = all_files_exist 
         find_extra_files
@@ -57,6 +58,16 @@ module DSpaceCSV
         end
       end
       @errors.empty? ? true : false
+    end
+
+    def has_rights_field
+      res = @csv_data.headers.select { |f| RIGHTS_ARRAY.map { |f| f.downcase }.include? f.downcase }
+      if res.empty?
+        @errors << "One of these fields must me in archive: %s" % RIGHTS_ARRAY.join(", ") 
+        false
+      else
+        true
+      end
     end
 
     def get_csv_file

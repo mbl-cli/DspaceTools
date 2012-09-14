@@ -18,6 +18,7 @@ unless defined?(SPEC_CONSTANTS)
   UPLOAD_EXTRA_FILE = File.join(File.dirname(__FILE__), "files", "extra_file.zip")
   UPLOAD_TYPO_IN_FILENAME_FIELD = File.join(File.dirname(__FILE__), "files", "typo_in_filename_field.zip")
   UPLOAD_NO_TITLE_FIELD = File.join(File.dirname(__FILE__), "files", "no_title_field.zip")
+  UPLOAD_NO_RIGHTS_FIELD = File.join(File.dirname(__FILE__), "files", "no_rights_field.zip")
   UPLOAD_TWO_FILENAME_FIELDS = File.join(File.dirname(__FILE__), "files", "two_filename_fields.zip")
   PARAMS_1 = {"file" => {:tempfile => open(UPLOAD_1), :filename => "upload.zip"}}
   SPEC_CONSTANTS = true

@@ -85,4 +85,12 @@ describe 'application.rb' do
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('No Title field')
   end
+  
+  it 'should generate an error if there is no rights field' do
+    authorize 'jdoe', 'secret'
+    post('/upload', { :file => Rack::Test::UploadedFile.new(UPLOAD_NO_RIGHTS_FIELD, 'application/gzip') })
+    follow_redirect!
+    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.should include('One of these fields must me in archive: Rights, Rights Copyright, Rights License, Rights URI')
+  end
 end
