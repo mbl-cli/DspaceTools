@@ -77,4 +77,12 @@ describe 'application.rb' do
     last_response.body.should include('Check the correctness of generated files')
     last_response.body.should include('The following files are extra in archive: extra_file.xhtml')
   end
+  
+  it 'should generate an error if there is no title field' do
+    authorize 'jdoe', 'secret'
+    post('/upload', { :file => Rack::Test::UploadedFile.new(UPLOAD_NO_TITLE_FIELD, 'application/gzip') })
+    follow_redirect!
+    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.should include('No Title field')
+  end
 end

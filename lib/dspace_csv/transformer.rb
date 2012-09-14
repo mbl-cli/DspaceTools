@@ -17,7 +17,7 @@ module DSpaceCSV
     private 
 
     def check_integrity
-      success = has_exactly_one_filename_field
+      success = has_required_fields
       if success
         success = all_files_exist 
         find_extra_files
@@ -47,12 +47,14 @@ module DSpaceCSV
       @warnings << "The following files are extra in archive: %s" % extra_files.join(", ") unless extra_files.empty?
     end
 
-    def has_exactly_one_filename_field
-      res = @csv_data.headers.select {|f| f == "Filename"}
-      if res.empty?
-        @errors << "No Filename field"
-      elsif res.size > 1
-        @errors << "More than one Filename fields"
+    def has_required_fields
+      ["filename", "title"].each do |field|
+        res = @csv_data.headers.select {|f| f.downcase == field}
+        if res.empty?
+          @errors << "No %s field" % field.capitalize
+        elsif res.size > 1
+          @errors << "More than one %s fields" % field.capitalize
+        end
       end
       @errors.empty? ? true : false
     end
