@@ -15,7 +15,8 @@ module DSpaceCSV
     :valid_fields => YAML.load(open(File.join(File.dirname(__FILE__), "config", "valid_fields.yml")).read).map { |f| f.strip },
   )
 
-  $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
-  $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_csv"))
-  Dir.glob(File.join(File.dirname(__FILE__), "lib", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }
 end
+  
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_csv"))
+Dir.glob(File.join(File.dirname(__FILE__), "lib", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }
