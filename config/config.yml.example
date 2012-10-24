@@ -1,0 +1,4 @@
+dspace_path: 
+tmp_dir: /tmp
+remote_tmp_dir: /tmp
+remote_login: root@localhost
