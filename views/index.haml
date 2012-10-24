@@ -11,7 +11,7 @@
       %form{ :action => "/upload", :method => "post", :enctype => "multipart/form-data" }
         %p Change collection id if necessary
         %input{ :type => "text", :name => "collection_id", :size => "3", :value => session[:current_user]["default_collection_id"] }
-        %p Upload your properly formatted CSV file.
+        %p Upload your properly formatted ZIP file.
         %input{ :type => "file", :name => "file" }
         %br
         %input{ :type => "submit", :value => "Upload" }

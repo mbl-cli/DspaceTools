@@ -3,11 +3,11 @@ module DSpaceCSV
     attr_reader :params, :file, :dir, :path, :zip_file
 
     def self.clean(days = 1)
-      tmpdir = DSpaceCSV::Conf.tmpdir
+      tmp_dir = DSpaceCSV::Conf.tmp_dir
       threshold = 86400 * days
       now = Time.now.to_i
-      Dir.entries(tmpdir).select {|e| e.match /^dspace_[\d]{10}/}.each do |dir|
-        path = File.join(tmpdir, dir)
+      Dir.entries(tmp_dir).select {|e| e.match /^dspace_[\d]{10}/}.each do |dir|
+        path = File.join(tmp_dir, dir)
         FileUtils.rm_rf(path) if (now - File.ctime(path).to_i) > threshold
       end
     end
@@ -26,7 +26,7 @@ module DSpaceCSV
       res = nil
       until res
         res = "dspace_%010d" % rand(9999999999)
-        @path = File.join(DSpaceCSV::Conf.tmpdir, res)
+        @path = File.join(DSpaceCSV::Conf.tmp_dir, res)
         @path = res = nil if File.exists?(@path)
       end
       res

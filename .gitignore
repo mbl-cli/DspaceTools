@@ -3,3 +3,4 @@ vendor
 .DS_Store
 *.swp
 config/users.yml
+config/config.yml
