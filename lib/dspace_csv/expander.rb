@@ -22,6 +22,22 @@ module DSpaceCSV
       rescue Zip::ZipError => e
         raise DSpaceCSV::UploadError.new("Uploaded file is not in a valid zip format")
       end
+      adjust_path
+    end
+
+    def adjust_path
+      return if has_csv_file? 
+      dirs = Dir.entries(@path).select{ |f| f[0] != '.' && File.directory?(File.join(@path, f)) }
+      if dirs.size == 1
+        @path = File.join(@path, dirs[0]) 
+        raise DSpaceCSV::UploadedError.new("Cannot find csv file in the zip archive") unless has_csv_file?
+      else
+        raise DSpaceCSV::UploadedError.new("Zip archive contains many folders") 
+      end
+    end
+
+    def has_csv_file?
+      !Dir.entries(@path).select { |f| f[-4..-1] == '.csv' }.empty?
     end
 
   end
