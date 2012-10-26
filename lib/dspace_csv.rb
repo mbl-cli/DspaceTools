@@ -6,12 +6,17 @@ module DSpaceCSV
   def self.submit(path, collection_id, user)
     remote_path = File.join(DSpaceCSV::Conf.remote_tmp_dir, 'csv_' + path.match(/(dspace_[\d]+)/)[1])
     `scp -r #{path} #{DSpaceCSV::Conf.remote_login}:#{remote_path}`
-    map_file = Time.now().to_s[0..9].gsub('-','_') + '_mapfile_' + user["name"].downcase.gsub(' ', '_')
+    map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + user["name"].downcase.gsub(' ', '_')
     params = [DSpaceCSV::Conf.dspace_path, user["email"], collection_id, remote_path, File.join(remote_dir_path, map_file)]
     dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % params
-    params[0] ? `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` : puts(dspace_command)
-    `scp #{DSpaceCSV::Conf.remote_login}:#{File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)} #{DSpaceCSV::Conf.tmp_dir}`
-    File.join(DSpaceCSV::Conf.tmp_dir, map_file)
+    if params[0] 
+      `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` 
+      local_mapfile_path = File.join(DSpaceCSV::Conf.root_path, 'public', 'map_files')
+      `scp #{DSpaceCSV::Conf.remote_login}:#{File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)} #{local_mapfile_path}`
+    else
+      puts(dspace_command)
+    end
+    map_file
   end
 
 end

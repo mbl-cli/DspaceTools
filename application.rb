@@ -94,8 +94,8 @@ class DSpaceCsvGui < Sinatra::Base
     end
 
     post '/submit' do
-      DSpaceCSV.submit(session[:path], session["collection_id"], session["current_user"])
-      redirect '/upload_finished'
+      @map_file = DSpaceCSV.submit(session[:path], session["collection_id"], session["current_user"])
+      redirect '/upload_finished?mapfile=' + URI.encode(@map_file)
     end
 
     get '/upload_result' do

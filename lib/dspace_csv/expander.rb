@@ -28,7 +28,6 @@ module DSpaceCSV
     def adjust_path
       return if has_csv_file? 
       dirs = Dir.entries(@path).select{ |f| !['.', '_', '-'].include?(f[0]) && File.directory?(File.join(@path, f)) }
-      puts dirs
       if dirs.size == 1
         @path = File.join(@path, dirs[0]) 
       elsif dirs.size > 1
