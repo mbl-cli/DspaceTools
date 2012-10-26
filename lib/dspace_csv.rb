@@ -7,7 +7,7 @@ module DSpaceCSV
     remote_path = File.join(DSpaceCSV::Conf.remote_tmp_dir, 'csv_' + path.match(/(dspace_[\d]+)/)[1])
     `scp -r #{path} #{DSpaceCSV::Conf.remote_login}:#{remote_path}`
     map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + user["name"].downcase.gsub(' ', '_')
-    params = [DSpaceCSV::Conf.dspace_path, user["email"], collection_id, remote_path, File.join(remote_dir_path, map_file)]
+    params = [DSpaceCSV::Conf.dspace_path, user["email"], collection_id, remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)]
     dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % params
     if params[0] 
       `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` 

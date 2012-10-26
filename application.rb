@@ -95,7 +95,7 @@ class DSpaceCsvGui < Sinatra::Base
 
     post '/submit' do
       @map_file = DSpaceCSV.submit(session[:path], session["collection_id"], session["current_user"])
-      redirect '/upload_finished?mapfile=' + URI.encode(@map_file)
+      redirect '/upload_finished?map_file=' + URI.encode(@map_file)
     end
 
     get '/upload_result' do
@@ -103,6 +103,8 @@ class DSpaceCsvGui < Sinatra::Base
     end
 
     get '/upload_finished' do
+      @map_file = params["map_file"]
+      require 'ruby-debug'; debugger
       haml :upload_finished
     end
   end
