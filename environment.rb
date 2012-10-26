@@ -14,6 +14,7 @@ module DSpaceCSV
     :root_path => File.dirname(__FILE__),
     :tmp_dir => conf_data['tmp_dir'],
     :remote_tmp_dir => conf_data['remote_tmp_dir'],
+    :dspace_repo => conf_data['dspace_repo'],
     :dspace_path => conf_data['dspace_path'],
     :remote_login => conf_data['remote_login'],
     :users => YAML.load(open(File.join(File.dirname(__FILE__), "config", "users.yml")).read),

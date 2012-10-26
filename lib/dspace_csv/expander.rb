@@ -27,12 +27,12 @@ module DSpaceCSV
 
     def adjust_path
       return if has_csv_file? 
-      dirs = Dir.entries(@path).select{ |f| f[0] != '.' && File.directory?(File.join(@path, f)) }
+      dirs = Dir.entries(@path).select{ |f| !['.', '_', '-'].include?(f[0]) && File.directory?(File.join(@path, f)) }
+      puts dirs
       if dirs.size == 1
         @path = File.join(@path, dirs[0]) 
-        raise DSpaceCSV::UploadedError.new("Cannot find csv file in the zip archive") unless has_csv_file?
-      else
-        raise DSpaceCSV::UploadedError.new("Zip archive contains many folders") 
+      elsif dirs.size > 1
+        raise DSpaceCSV::UploadError.new("Zip archive contains many folders") 
       end
     end
 

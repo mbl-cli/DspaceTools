@@ -13,6 +13,7 @@ module DSpaceCSV
       `scp -r #{dir_path} #{DSpaceCSV::Conf.remote_login}:#{remote_path}`
       params = [DSpaceCSV::Conf.dspace_path, user["email"], collection_id, remote_dir_path, File.join(remote_dir_path, 'dublin_core.xml') ]
       dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % params
+      # /dspace/bin/dspace import ItemImport -a -e drielinger@mbl.edu -c 28 -s /tmp/csv_dspace_7773576859/ -m /tmp10242012BMI
       params[0] ? `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` : puts(dspace_command)
     end
   end

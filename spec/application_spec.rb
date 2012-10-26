@@ -38,12 +38,20 @@ describe 'application.rb' do
     last_response.body.should include('Cannot find file with .csv extension')
   end
   
+  it 'should generate error if uploaded archive has a directory and does not contain csv file' do
+    authorize 'jdoe', 'secret'
+    post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_DIR_NO_CSV, 'application/gzip')})
+    follow_redirect!
+    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.should include('Cannot find file with .csv extension')
+  end
+  
   it 'should generate error if uploaded file has many directories' do
     authorize 'jdoe', 'secret'
     post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_MANY_DIRS, 'application/gzip')})
     follow_redirect!
     last_response.body.should_not include('Check the correctness of generated files')
-    last_response.body.should include('blabla')
+    last_response.body.should include('Zip archive contains many folders')
   end
   
   
