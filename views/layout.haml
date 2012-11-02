@@ -11,5 +11,9 @@
       #wrapper.container.container_12
         %h1{ :id => "title" }
           %a{ :href => "/" } CSV to DSpace XML
+        - if session[:current_user] && session[:current_user]["name"]
+          = "Welcome " + session[:current_user]["name"]
+        - else
+          - DSpaceCSV.authenticate('123','123')
         = yield
       %div{ :class => 'clear' } &nbsp;
