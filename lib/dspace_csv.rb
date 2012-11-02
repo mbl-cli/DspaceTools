@@ -17,7 +17,7 @@ module DSpaceCSV
     else
       puts(dspace_command)
     end
-    [map_file, results]
+    map_file
   end
 
 end
