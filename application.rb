@@ -104,7 +104,6 @@ class DSpaceCsvGui < Sinatra::Base
 
     get '/upload_finished' do
       @map_file = params["map_file"]
-      require 'ruby-debug'; debugger
       haml :upload_finished
     end
   end

@@ -10,13 +10,14 @@ module DSpaceCSV
     params = [DSpaceCSV::Conf.dspace_path, user["email"], collection_id, remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)]
     dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % params
     if params[0] 
-      `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` 
+      results = `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` 
       local_mapfile_path = File.join(DSpaceCSV::Conf.root_path, 'public', 'map_files')
       `scp #{DSpaceCSV::Conf.remote_login}:#{File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)} #{local_mapfile_path}`
+      `ssh #{DSpaceCSV::Conf.remote_login} 'find #{File.join(DSpaceCSV::Conf.remote_tmp_dir, "csv_dspace_*")} -maxdepth 0 -mtime 1 -exec rm -rf {} \;'`
     else
       puts(dspace_command)
     end
-    map_file
+    [map_file, results]
   end
 
 end
