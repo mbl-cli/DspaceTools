@@ -30,6 +30,13 @@ describe 'application.rb' do
     last_response.body.should include('Uploaded file is not in a valid zip format')
   end
   
+  it 'should encode latin1 uploaded file to UTF-8' do
+    authorize 'jdoe', 'secret'
+    post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_LATIN1, 'application/gzip')})
+    follow_redirect!
+    last_response.body.should include('Check the correctness of generated files')
+  end
+  
   it 'should generate error if uploaded archive does not contain csv file' do
     authorize 'jdoe', 'secret'
     post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip')})

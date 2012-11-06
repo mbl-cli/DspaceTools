@@ -79,7 +79,9 @@ module DSpaceCSV
     def parse_csv
       @csv_file = get_csv_file
       begin
-        csv_string = open(File.join(@expander.path, @csv_file), "r:utf-8").read.gsub(/\r\n?/, "\n")
+        csv_string = open(File.join(@expander.path, @csv_file), "r:utf-8").read
+        csv_string.encode!("UTF-8", "ISO8859-1") unless csv_string.valid_encoding?
+        csv_string.gsub!(/\r\n?/, "\n")
         options = {:col_sep => ",", :row_sep => "\n", :headers => true}
         CSV.parse(csv_string, options)
       rescue CSV::MalformedCSVError

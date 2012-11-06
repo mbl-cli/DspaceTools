@@ -12,6 +12,7 @@ RSpec.configure { |c| c.include RSpecMixin }
 unless defined?(SPEC_CONSTANTS)
   UPLOAD_1 = File.join(File.dirname(__FILE__), "files", "upload.zip")
   UPLOAD_2 = File.join(File.dirname(__FILE__), "files", "upload_dir.zip")
+  UPLOAD_LATIN1 = File.join(File.dirname(__FILE__), "files", "upload_latin1.zip")
   UPLOAD_MANY_DIRS = File.join(File.dirname(__FILE__), "files", "upload_many_dirs.zip")
   UPLOAD_NOT_ZIP = File.join(File.dirname(__FILE__), "files", "UploadTest.csv")
   UPLOAD_NO_CSV = File.join(File.dirname(__FILE__), "files", "no_csv.zip")
