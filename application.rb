@@ -50,6 +50,32 @@ class DSpaceCsvGui < Sinatra::Base
     end
   end
 
+  def api_authorization(params)
+    return nil unless (params["email"] && params["password"])
+    Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
+  end
+
+
+  ###########################################################################
+  #  API
+  ###########################################################################
+
+  get '/rest/users.?:format?' do
+    current_user = api_authorization(params)
+    if current_user
+      if params["format"] == "xml"
+        content_type 'text/xml', :charset => 'utf-8'
+      elsif params["format"] == "json"
+        content_type 'application/json', :charset => 'utf-8'
+      else
+        content_type 'text/plain', :charset => 'utf-8'
+      end
+      RestClient.get(DSpaceCSV::Conf.dspace_repo + request.env["REQUEST_PATH"], params)
+    else
+      throw(:halt, [401, "Not authorized\n"])
+    end
+  end
+
   protect  do
     get '/' do
         session[:current_user] = DSpaceCSV::Conf.users[auth.credentials.first]

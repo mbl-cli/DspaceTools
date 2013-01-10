@@ -3,3 +3,6 @@ tmp_dir: /tmp
 remote_tmp_dir: /tmp
 remote_login: root@localhost
 dspace_repo: http://example.com
+dspace_db: example.com
+dspace_dbuser: johndoe
+dspace_dbpass: secret 
