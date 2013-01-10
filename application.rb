@@ -50,18 +50,13 @@ class DSpaceCsvGui < Sinatra::Base
     end
   end
 
-  def api_authorization(params)
-    return nil unless (params["email"] && params["password"])
-    Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
-  end
-
 
   ###########################################################################
   #  API
   ###########################################################################
 
   get '/rest/users.?:format?' do
-    current_user = api_authorization(params)
+    current_user = DSpaceCsvGui.api_authorization(params)
     if current_user
       if params["format"] == "xml"
         content_type 'text/xml', :charset => 'utf-8'
@@ -78,7 +73,7 @@ class DSpaceCsvGui < Sinatra::Base
 
   protect  do
     get '/' do
-        session[:current_user] = DSpaceCSV::Conf.users[auth.credentials.first]
+        session[:current_user] = Eperson.where(:email => auth.credentials.first).first
         haml :index
     end
 
@@ -135,7 +130,7 @@ class DSpaceCsvGui < Sinatra::Base
   end
 
   authorize do |username, password|
-    DSpaceCSV.authenticate(username, password)
+    !!DSpaceCSV.api_authorization({"email" => username, "password" => password})
   end
 
   run! if app_file == $0

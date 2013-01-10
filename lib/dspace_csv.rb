@@ -1,13 +1,14 @@
 module DSpaceCSV
-  def self.authenticate(username, password)
-    self::Conf.users[username] && self::Conf.users[username]["hash"] == Digest::SHA1.hexdigest(password + "\n")
+  def self.api_authorization(params)
+    return nil unless (params["email"] && params["password"])
+    Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
   end
-    
+
   def self.submit(path, collection_id, user)
     remote_path = File.join(DSpaceCSV::Conf.remote_tmp_dir, 'csv_' + path.match(/(dspace_[\d]+)/)[1])
     `scp -r #{path} #{DSpaceCSV::Conf.remote_login}:#{remote_path}`
-    map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + user["name"].downcase.gsub(' ', '_')
-    params = [DSpaceCSV::Conf.dspace_path, user["email"], collection_id, remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)]
+    map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + user.email.gsub(/[\.@]/, '_')
+    params = [DSpaceCSV::Conf.dspace_path, user.email, collection_id, remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, map_file)]
     dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % params
     if params[0] 
       results = `ssh #{DSpaceCSV::Conf.remote_login} '#{dspace_command}'` 
