@@ -1,29 +1,22 @@
 module DSpaceCSV
-  # Type of bitstream objects 
-  BITSTREAM = 0
-
-  # Type of bundle objects 
-  BUNDLE = 1
-
-  # Type of item objects 
-  ITEM = 2
-
-  # Type of collection objects 
-  COLLECTION = 3
-
-  # Type of community objects 
-  COMMUNITY = 4
-
-  # DSpace site type 
-  SITE = 5
-
-  # Type of eperson groups 
-  GROUP = 6
-
-  # Type of individual eperson objects 
-  EPERSON = 7
+  #TODO: remove these!
+  class Bitstream; end
+  class Bundle; end
+  class Item; end
+  class Collection; end
+  class Community; end
+  class Site; end
 
   # lets you look up type names from the type IDs
-  RESOURCE_TYPE = [ "BITSTREAM", "BUNDLE", "ITEM",
-          "COLLECTION", "COMMUNITY", "SITE", "GROUP", "EPERSON" ]
+  RESOURCE_TYPE = {
+    0 => { rest_path: "bitstream/" },
+    1 => { rest_path: nil },
+    2 => { rest_path: "items/" },
+    3 => { rest_path: "collections/" },
+    4 => { rest_path: "communities/" },
+    5 => { rest_path: nil },
+    6 => { rest_path: "groups" },
+    7 => { rest_path: "users" }
+  }
+
 end

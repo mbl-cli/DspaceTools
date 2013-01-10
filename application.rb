@@ -54,9 +54,8 @@ class DSpaceCsvGui < Sinatra::Base
   ###########################################################################
   #  API
   ###########################################################################
-
-  get '/rest/users.?:format?' do
-    current_user = DSpaceCsvGui.api_authorization(params)
+  def rest_request(params)
+    current_user = DSpaceCSV.api_authorization(params)
     if current_user
       if params["format"] == "xml"
         content_type 'text/xml', :charset => 'utf-8'
@@ -65,12 +64,55 @@ class DSpaceCsvGui < Sinatra::Base
       else
         content_type 'text/plain', :charset => 'utf-8'
       end
-      RestClient.get(DSpaceCSV::Conf.dspace_repo + request.env["REQUEST_PATH"], params)
+      RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
     else
-      throw(:halt, [401, "Not authorized\n"])
+      yield
     end
   end
 
+  get '/rest/users.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+
+  get '/rest/users/:id.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+
+  get '/rest/items.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+  
+  get '/rest/items/:id.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+
+  get '/rest/collections.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+  
+  get '/rest/collections/:id.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+
+  get '/rest/communities/:id.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+
+  get '/rest/communities.:format' do
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+  end
+  
+  get '/rest/handle/:num1/:num2.:format' do
+    params["handle"] = "%s/%s" % [params["num1"], params["num2"]]
+    handle = Handle.where(:handle => params["handle"]).first
+    path = handle ? handle.path : nil
+    if path
+      redirect(request.fullpath.gsub(request.path_info, "%s.%s" % [path, params["format"]]), 303)
+    else
+      throw(:halt, [404, "Unknown handle %s" % params["handle"]])
+    end
+  end
+  
   protect  do
     get '/' do
         session[:current_user] = Eperson.where(:email => auth.credentials.first).first

@@ -34,4 +34,4 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "app"))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_csv"))
 Dir.glob(File.join(File.dirname(__FILE__), "lib", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }
-Dir.glob(File.join(File.dirname(__FILE__), "app", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }
+Dir.glob(File.join(File.dirname(__FILE__), "app", "**", "*.rb")) { |app| require File.basename(app, ".*") }
