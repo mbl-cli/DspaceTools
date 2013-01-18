@@ -55,7 +55,7 @@ class DSpaceCsvGui < Sinatra::Base
   #  API
   ###########################################################################
   def rest_request(params)
-    current_user = DSpaceCSV.api_authorization(params)
+    current_user = DSpaceCSV.api_key_authorization(params, request.path) || DSpaceCSV.password_authorization(params)
     if current_user
       if params["format"] == "xml"
         content_type 'text/xml', :charset => 'utf-8'
@@ -71,7 +71,7 @@ class DSpaceCsvGui < Sinatra::Base
   end
 
   get '/rest/users.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email/password, or API key/digest pair?\n"]) }
   end
 
   get '/rest/users/:id.:format' do
@@ -172,7 +172,7 @@ class DSpaceCsvGui < Sinatra::Base
   end
 
   authorize do |username, password|
-    !!DSpaceCSV.api_authorization({"email" => username, "password" => password})
+    !!DSpaceCSV.password_authorization({"email" => username, "password" => password})
   end
 
   run! if app_file == $0

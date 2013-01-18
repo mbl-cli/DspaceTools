@@ -1,7 +1,14 @@
 module DSpaceCSV
-  def self.api_authorization(params)
+  def self.password_authorization(params)
     return nil unless (params["email"] && params["password"])
     Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
+  end
+
+  def self.api_key_authorization(params, path)
+    return nil unless (params[:api_key] && params[:api_digest])
+    api_key = ApiKey.where(:public_key => params[:api_key]).first
+    success = api_key && Digest::SHA1.hexdigest(path + api_key.private_key) == params[:api_digest]
+    success ? api_key.eperson : nil
   end
 
   def self.submit(path, collection_id, user)

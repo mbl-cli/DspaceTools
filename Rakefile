@@ -47,7 +47,6 @@ namespace :db do
 
   desc "Migrate the database"
   task(:migrate => :environment) do
-    require 'ruby-debug'; debugger
     ActiveRecord::Base.logger = Logger.new(STDOUT)
     ActiveRecord::Migration.verbose = true
     ActiveRecord::Migrator.migrate("db/migrate")
@@ -76,6 +75,10 @@ namespace :db do
       end
     end
   end
+
+  task :seed do
+  end
+
 
 end
 
