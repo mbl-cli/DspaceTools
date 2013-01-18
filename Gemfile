@@ -14,6 +14,7 @@ gem "rack"
 gem "rack-test"
 gem "rack-timeout"
 gem "pg"
+gem "mysql2"
 gem "rest-client"
 
 group :test do

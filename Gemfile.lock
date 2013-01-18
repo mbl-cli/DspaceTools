@@ -30,6 +30,7 @@ GEM
     i18n (0.6.1)
     mime-types (1.19)
     multi_json (1.5.0)
+    mysql2 (0.3.11)
     nokogiri (1.5.5)
     pg (0.14.1)
     rack (1.4.1)
@@ -83,6 +84,7 @@ PLATFORMS
 DEPENDENCIES
   debugger
   haml
+  mysql2
   nokogiri
   pg
   rack

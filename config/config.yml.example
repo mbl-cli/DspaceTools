@@ -2,7 +2,28 @@ dspace_path:
 tmp_dir: /tmp
 remote_tmp_dir: /tmp
 remote_login: root@localhost
-dspace_repo: http://example.com
-dspace_db: example.com
-dspace_dbuser: johndoe
-dspace_dbpass: secret 
+dspacedb:
+  adapter: postgresql
+  host: example.com
+  database: dspace
+  username: johndoe
+  password: secret 
+localdb:
+  development:
+    adapter: mysql2
+    host: localhost
+    username: root
+    password:
+    database: dspace_api_dev
+  test:
+    adapter: mysql2
+    host: localhost
+    username: root
+    password:
+    database: dspace_api_test
+  production:
+    adapter: mysql2
+    host: localhost
+    username: root
+    password:
+    database: dspace_api
