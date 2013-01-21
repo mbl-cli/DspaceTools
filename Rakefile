@@ -74,9 +74,19 @@ namespace :db do
         end
       end
     end
+    task(:test) do
+      k = "test"
+      v = conf[k]
+      if ['0.0.0.0', '127.0.0.1', 'localhost'].include?(v['host'].strip)
+        database = v.delete('database')
+        ActiveRecord::Base.establish_connection(v)
+        ActiveRecord::Base.connection.execute("create database if not exists  #{database}")
+      end
+    end
   end
 
   task :seed do
+     require_relative './db/seeds'
   end
 
 

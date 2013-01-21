@@ -21,5 +21,6 @@ group :test do
   # Pretty printed test output
   gem "debugger"
   gem "rspec"
-  gem "turn", '0.8.2', :require => false
+  gem "rr"
+  # gem "turn", '0.8.2', :require => false
 end

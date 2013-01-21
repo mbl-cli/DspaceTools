@@ -2,6 +2,9 @@ rvm:
   - 1.9.3
 before_script: "sudo apt-get -y install zip unzip"
 before_script: "cp config/users.yml.example config/users.yml; cp config/config.yml.example config/config.yml"
+before_script: "rake db:create RACK_ENV=test"
+before_script: "rake db:migrate RACK_ENV=test"
+before_script: "rake db:seed RACK_ENV=test"
 branches:
   only:
       - master

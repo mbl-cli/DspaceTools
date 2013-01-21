@@ -12,6 +12,6 @@
         - if session[:current_user]
           = "Welcome " + session[:current_user].firstname + " " + session[:current_user].lastname
         - else
-          - DSpaceCSV.api_authorization({})
+          - DSpaceCSV.password_authorization({})
         = yield
       %div{ :class => 'clear' } &nbsp;

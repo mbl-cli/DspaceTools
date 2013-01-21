@@ -1,3 +1,5 @@
+ENV["RACK_ENV"] = 'test'
+
 require "rack/test"
 require "base64"
 require_relative "../application.rb"
@@ -7,7 +9,10 @@ module RSpecMixin
   def app() DSpaceCsvGui end
 end
 
-RSpec.configure { |c| c.include RSpecMixin }
+RSpec.configure do |c| 
+  c.include RSpecMixin 
+  c.mock_with :rr
+end
 
 unless defined?(SPEC_CONSTANTS)
   UPLOAD_1 = File.join(File.dirname(__FILE__), "files", "upload.zip")

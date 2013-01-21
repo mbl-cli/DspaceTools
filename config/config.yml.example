@@ -15,15 +15,18 @@ localdb:
     username: root
     password:
     database: dspace_api_dev
+    local_infile: true
   test:
     adapter: mysql2
     host: localhost
     username: root
     password:
     database: dspace_api_test
+    local_infile: true
   production:
     adapter: mysql2
     host: localhost
     username: root
     password:
     database: dspace_api
+    local_infile: true
