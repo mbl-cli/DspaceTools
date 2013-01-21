@@ -1,5 +1,6 @@
 rvm:
   - 1.9.3
+services: mysql
 before_script: "sudo apt-get -y install zip unzip"
 before_script: "cp config/users.yml.example config/users.yml; cp config/config.yml.example config/config.yml"
 before_script: "rake db:create RACK_ENV=test"

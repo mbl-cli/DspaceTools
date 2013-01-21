@@ -3,11 +3,24 @@ tmp_dir: /tmp
 remote_tmp_dir: /tmp
 remote_login: root@localhost
 dspacedb:
-  adapter: postgresql
-  host: example.com
-  database: dspace
-  username: johndoe
-  password: secret 
+  development:
+    adapter: postgresql
+    host: dspace
+    database: dspace
+    username: dspace
+    password: dspace
+  test:
+    adapter: mysql2
+    host: localhost
+    database: dspace_api_test
+    username: root
+    password: 
+  production:
+    adapter: postgresql
+    host: dspace
+    database: dspace
+    username: dspace
+    password: dspace
 localdb:
   development:
     adapter: mysql2
