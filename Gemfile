@@ -19,7 +19,7 @@ gem "rest-client"
 
 group :test do
   # Pretty printed test output
-  gem "debugger"
+  # gem "debugger"
   gem "rspec"
   gem "rr"
   gem "turn", '0.8.2', :require => false
