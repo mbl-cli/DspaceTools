@@ -112,6 +112,17 @@ class DSpaceCsvGui < Sinatra::Base
       throw(:halt, [404, "Unknown handle %s" % params["handle"]])
     end
   end
+
+  #takes handles in the following format /handle.xml?handle=http://hdl.handle.net/123/123
+  get '/rest/handle.:format' do
+    handle = params[:handle] ? Handle.where(:handle => params["handle"].gsub("http://hdl.handle.net/", '')).first : nil
+    path = handle ? handle.path : nil
+    if path
+      redirect(request.fullpath.gsub(request.path_info, "%s.%s" % [path, params["format"]]), 303)
+    else
+      throw(:halt, [404, "Unknown handle %s" % params["handle"]])
+    end
+  end
   
   protect  do
     get '/' do
