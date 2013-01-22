@@ -7,7 +7,7 @@ class DSpaceCSV
   def self.api_key_authorization(params, path)
     return nil unless (params[:api_key] && params[:api_digest])
     api_key = ApiKey.where(:public_key => params[:api_key]).first
-    success = api_key && Digest::SHA1.hexdigest(path + api_key.private_key) == params[:api_digest]
+    success = api_key && Digest::SHA1.hexdigest(path + api_key.private_key)[0..7] == params[:api_digest]
     success ? api_key.eperson : nil
   end
 
