@@ -1,4 +1,4 @@
-module DSpaceCSV
+class DSpaceCSV
   class Uploader
     attr_reader :params, :file, :dir, :path, :zip_file
 

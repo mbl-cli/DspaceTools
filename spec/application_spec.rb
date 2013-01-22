@@ -18,7 +18,8 @@ describe 'application.rb' do
   end
 
   it 'should upload file and show generated content' do
-    post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_1, 'application/gzip')}, {"HTTP_AUTHORIZATION" => credentials("jdoe@example.com", "secret")})
+    authorize('jdoe@example.com', 'secret')
+    post('/upload', {:file => Rack::Test::UploadedFile.new(UPLOAD_1, 'application/gzip')})
     follow_redirect!
     last_response.body.should include('Check the correctness of generated files')
   end

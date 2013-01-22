@@ -1,4 +1,4 @@
-module DSpaceCSV
+class DSpaceCSV
   def self.password_authorization(params)
     return nil unless (params["email"] && params["password"])
     Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
@@ -15,28 +15,28 @@ module DSpaceCSV
     @path = path
     @collection_id = collection_id
     @user = user
-    get_parameters
+    get_instance_vars
   end
 
-  def self.submit
-    if @params[0] #real stuff 
+  def submit
+    if @data[0] #real stuff 
       copy_submission_to_dspace
       import_submission
       copy_map_file_to_local
       cleanup
     else #fake stuff
-      puts(dspace_command)
+      puts(@dspace_command)
     end
-    map_file
+    @map_file
   end
 
   private
   
-  def get_parameters
-    @remote_path = File.join(DSpaceCSV::Conf.remote_tmp_dir, 'csv_' + path.match(/(dspace_[\d]+)/)[1]) 
-    @map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + user.email.gsub(/[\.@]/, '_')
-    @params = [DSpaceCSV::Conf.dspace_path, @user.email, @collection_id, @remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, @map_file)]
-    @dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % @params
+  def get_instance_vars
+    @remote_path = File.join(DSpaceCSV::Conf.remote_tmp_dir, 'csv_' + @path.match(/(dspace_[\d]+)/)[1]) 
+    @map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + @user.email.gsub(/[\.@]/, '_')
+    @data = [DSpaceCSV::Conf.dspace_path, @user.email, @collection_id, @remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, @map_file)]
+    @dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % @data
     @local_mapfile_path = File.join(DSpaceCSV::Conf.root_path, 'public', 'map_files')
   end
  

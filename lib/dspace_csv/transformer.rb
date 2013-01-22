@@ -1,4 +1,4 @@
-module DSpaceCSV
+class DSpaceCSV
   class Transformer
     VALID_HEADERS = DSpaceCSV::Conf.valid_fields
     RIGHTS_ARRAY = ['Rights', 'Rights Copyright', 'Rights License', 'Rights URI' ]

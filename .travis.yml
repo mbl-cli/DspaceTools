@@ -1,6 +1,7 @@
 rvm:
   - 1.9.3
 services: mysql
+bundler_args: --without development
 before_script: 
   - "sudo apt-get -y install zip unzip"
   - "cp config/users.yml.example config/users.yml; cp config/config.yml.example config/config.yml"

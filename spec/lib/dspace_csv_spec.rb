@@ -11,7 +11,7 @@ describe DSpaceCSV do
   end
 
   it "should submit data to dspace" do
-    s = DSpaceCSV.public_methods.include?(:submit).should be_true
+    s = DSpaceCSV.instance_methods.include?(:submit).should be_true
   end
 
 end

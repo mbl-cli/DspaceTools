@@ -1,4 +1,4 @@
-module DSpaceCSV
+class DSpaceCSV
   #TODO: remove these!
   class Bitstream; end
   class Bundle; end

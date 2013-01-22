@@ -17,9 +17,12 @@ gem "pg"
 gem "mysql2"
 gem "rest-client"
 
+group :development do
+  gem "debugger"
+end
+
 group :test do
   # Pretty printed test output
-  # gem "debugger"
   gem "rspec"
   gem "rr"
   gem "turn", '0.8.2', :require => false

@@ -11,7 +11,7 @@ require "rest-client"
 require "logger"
 
 
-module DSpaceCSV
+class DSpaceCSV
   #set environment
   environment = ENV["RACK_ENV"] || ENV["RAILS_ENV"]
   set :environment, (environment && ["production", "test", "development"].include?(environment.downcase)) ? environment.downcase.to_sym : :development

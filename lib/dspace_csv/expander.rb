@@ -1,4 +1,4 @@
-module DSpaceCSV
+class DSpaceCSV
   class Expander
     attr_reader :uploader, :path
 
