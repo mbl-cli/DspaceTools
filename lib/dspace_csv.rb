@@ -10,6 +10,7 @@ class DSpaceCSV
     success = api_key && Digest::SHA1.hexdigest(path + api_key.private_key)[0..7] == params[:api_digest]
     success ? api_key.eperson : nil
   end
+  
 
   def initialize(path, collection_id, user)
     @path = path

@@ -120,3 +120,47 @@ describe 'application.rb' do
     last_response.body.should include('One of these fields must me in archive: Rights, Rights Copyright, Rights License, Rights URI')
   end
 end
+
+
+describe 'api' do
+  before(:all) do
+    @api_string = "&api_key=jdoe_again&api_digest="
+  end
+  it 'should be possible to authorize by username and password' do
+    get('/rest/authentication_test.xml?email=jdoe@example.com&password=secret')
+    last_response.status.should == 200
+    last_response.body.match("John").should be_true
+  end
+  
+  it 'should not authorize with wrong username and password' do
+    get('/rest/authentication_test.xml?email=someone@example.com&password=secret')
+    last_response.status.should == 401
+    last_response.body.match("Not authorized").should be_true
+  end
+
+  it 'should be possible to authorize by api_key and api_digest' do
+    path = "/rest/authentication_test.json" 
+    get("%s?%s%s" % [path, @api_string, ApiKey.digest(path, 'abcdef')]) #using 2nd private key for jdoe
+    last_response.status.should == 200
+    last_response.body.match("John").should be_true
+  end
+  
+  it 'should not authorize by wrong api_key and api_digest' do
+    path = "/rest/authentication_test.json" 
+    get("%s?%s%s" % [path, @api_string, ApiKey.digest(path, 'bad_private_key')]) 
+    last_response.status.should == 401
+    last_response.body.match("Not authorized").should be_true
+  end
+  
+  it 'should be able to get handles' do
+    path = "/rest/handle.json"
+    url = "%s?%s%s&handle=http://hdl.handle.net/123/123" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
+    puts url
+    get(url)
+    last_response.status.should == 303
+    # follow_redirect!
+    # last_response.status.should == 200
+    # last_response.body.should == ""
+  end
+
+end

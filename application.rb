@@ -64,42 +64,58 @@ class DSpaceCsvGui < Sinatra::Base
       else
         content_type 'text/plain', :charset => 'utf-8'
       end
-      RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
+      if request.path.match 'authentication_test'
+        authentication_worked(current_user, params["format"])
+      else
+        RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
+      end
     else
       yield
     end
   end
 
+  def authentication_worked(user, format)
+    if format == "xml"
+      user.to_xml
+    else 
+      user.to_json
+    end
+  end
+
+  def bad_authentication 
+    throw(:halt, [401, "Not authorized. Did you submit correct email/password, or API key/digest pair?\n"]) 
+  end
+
   get '/rest/users.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email/password, or API key/digest pair?\n"]) }
+    rest_request(params) {bad_authentication}
   end
 
   get '/rest/users/:id.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
 
   get '/rest/items.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
   
   get '/rest/items/:id.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
 
   get '/rest/collections.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
   
   get '/rest/collections/:id.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
 
   get '/rest/communities/:id.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
 
   get '/rest/communities.:format' do
-    rest_request(params) { throw(:halt, [401, "Not authorized. Did you submit correct email and password?\n"]) }
+    rest_request(params) {bad_authentication}
   end
   
   get '/rest/handle/:num1/:num2.:format' do
@@ -107,7 +123,7 @@ class DSpaceCsvGui < Sinatra::Base
     handle = Handle.where(:handle => params["handle"]).first
     path = handle ? handle.path : nil
     if path
-      redirect(request.fullpath.gsub(request.path_info, "%s.%s" % [path, params["format"]]), 303)
+      redirect(handle.fullpath(request.fullpath, request.path_info), 303)
     else
       throw(:halt, [404, "Unknown handle %s" % params["handle"]])
     end
@@ -118,10 +134,14 @@ class DSpaceCsvGui < Sinatra::Base
     handle = params[:handle] ? Handle.where(:handle => params["handle"].gsub("http://hdl.handle.net/", '')).first : nil
     path = handle ? handle.path : nil
     if path
-      redirect(request.fullpath.gsub(request.path_info, "%s.%s" % [path, params["format"]]), 303)
+      redirect(handle.fullpath(request.fullpath, request.path_info), 303)
     else
       throw(:halt, [404, "Unknown handle %s" % params["handle"]])
     end
+  end
+
+  get '/rest/authentication_test.:format' do
+    rest_request(params) {bad_authentication}
   end
   
   protect  do
