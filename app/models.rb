@@ -8,6 +8,10 @@ class ApiKey < ActiveRecord::Base
   def digest(path)
     ApiKey.digest(path, private_key)
   end
+
+  def valid_digest?(a_digest, path)
+    digest(path) == a_digest
+  end
 end
 
 class DSpaceCSV::DspaceDb::Base
@@ -85,8 +89,11 @@ class Handle < DSpaceCSV::DspaceDb::Base
     public_key_match = original_fullpath.match(/api_key=([^&]+)(&|$)/)
     res = original_fullpath.gsub(original_path, path_with_format)
     if public_key_match
-      private_key = ApiKey.where(:public_key => public_key_match[1]).first.private_key
-      res.gsub!(/(api_digest=)[^&]+(&|$)/, '\1' + ApiKey.digest(path_with_format, private_key) + '\2')
+      ak = ApiKey.where(:public_key => public_key_match[1]).first
+      digest = res.match(/(api_digest=)([^&]+)(&|$)/)
+      if digest &&  ak.valid_digest?(digest[2], original_path)
+        res.gsub!(/(api_digest=)([^&])+(&|$)/, '\1' + ak.digest(path_with_format) + '\3')
+      end
     end
     res
   end

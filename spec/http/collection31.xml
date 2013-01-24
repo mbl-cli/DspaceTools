@@ -1,0 +1,2422 @@
+HTTP/1.1 200 OK
+Date: Thu, 24 Jan 2013 20:26:49 GMT
+Last-Modified: Thu, 24 Jan 2013 20:26:49 GMT
+ETag: 1359059209557
+Expires: Thu, 24 Jan 2013 20:36:49 GMT
+Cache-Control: public
+Cache-Control: max-age=600
+Cache-Control: s-maxage=600
+x-entity-prefix: collections
+x-entity-reference: /collections/31
+x-entity-url: /collections/31.xml
+x-entity-format: xml
+x-sdata-handler: org.dspace.rest.providers.CollectionsProvider
+x-sdata-url: /collections/31.xml
+Content-Type: application/xml;charset=UTF-8
+Connection: close
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<collections type='bean' size='18'>
+  <canEdit type='boolean'>false</canEdit>
+  <communities type='collection' size='1'>
+    <communityentity type='bean' size='16'>
+      <administrators/>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='11'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>29</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>35</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>34</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>33</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>13</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>40</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>28</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>17</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>36</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>7</id>
+        </collectionentityid>
+      </collections>
+      <copyrightText></copyrightText>
+      <countItems type='number'>1809</countItems>
+      <handle>10776/9</handle>
+      <id type='number'>4</id>
+      <introductoryText></introductoryText>
+      <logo type='bean' size='1'>
+        <id type='number'>19</id>
+      </logo>
+      <name>MBL History</name>
+      <parentCommunity/>
+      <recentSubmissions type='collection' size='0'>
+      </recentSubmissions>
+      <shortDescription></shortDescription>
+      <sidebarText></sidebarText>
+      <subCommunities type='collection' size='0'>
+      </subCommunities>
+      <type type='number'>4</type>
+    </communityentity>
+  </communities>
+  <copyrightText></copyrightText>
+  <countItems type='number'>11</countItems>
+  <handle>10776/2264</handle>
+  <id type='number'>31</id>
+  <introText></introText>
+  <items type='collection' size='11'>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10918</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10918</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5616</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1988</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1951</handle>
+      <id type='number'>1988</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:16-05:00'>1358377336473</lastModified>
+      <metadata type='collection' size='24'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Editorial Team, EP</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:56Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:56Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2008-10-24</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125551</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1951</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>The Marine Biological Laboratory in Woods Hole, Massachusetts, began in 1888 with one building housing researchers upstairs and students in a shared lab and lecture space downstairs.  For the first two years, instruction took the form of general lectures covering a range of topics in zoology.  In addition, the trustees offered some public lectures in Boston to raise funds for the lab.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:01:56Z (GMT). No. of bitstreams: 1
+embryo125551.xhtml: 4146 bytes, checksum: e22c241647b1df1f5d65d271bc831834 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Marine Biological Laboratory (Woods Hole, Mass.)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Biological Lectures Delivered at the Marine Biological Laboratory in Woods Hole</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>Organizations</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>Outreach</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Education</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>Publications</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>Biological Lectures Delivered at the Marine Biological Laboratory in Woods Hole</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10920</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10920</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5618</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1990</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1953</handle>
+      <id type='number'>1990</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:16-05:00'>1358377336484</lastModified>
+      <metadata type='collection' size='23'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Maienschein, Jane</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:56Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:56Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2008-10-25</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125569</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1953</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>In 1888 when students and investigators arrived in Woods Hole for the inaugural session of the Marine Biological Laboratory (MBL), they recognized the need for a library collection of books and journals.  The one wooden building on campus, later known as Old Main, housed everything, with researchers upstairs and the student laboratory downstairs.  Lectures were held in one corner, and shelves held what books and journals were contributed.  As the first MBL Director Charles Otis Whitman noted in his 1888 Annual Report, having a library was absolutely essential for the success of the lab and would have to be provided somehow.  The initial core volumes should include reference works and textbooks, and also the important journals in the four languages thought to be essential at the time.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:01:56Z (GMT). No. of bitstreams: 1
+embryo125569.xhtml: 13739 bytes, checksum: bb512ff93d5fd5fcb3b47cc437c33793 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Marine Biological Laboratory (Woods Hole, Mass.)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>The Marine Biological Laboratory-Woods Hole Oceanographic Institution Library</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier>alternative</qualifier>
+          <schema>dc</schema>
+          <value>MBL-WHOI Library</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>Organizations</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>Library</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>The Marine Biological Laboratory-Woods Hole Oceanographic Institution Library</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10742</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10742</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5460</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1702</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1678</handle>
+      <id type='number'>1702</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:18-05:00'>1358377338689</lastModified>
+      <metadata type='collection' size='24'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Elliott, Steve</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-08T20:33:23Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-08T20:33:23Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2009-06-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-08</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 123969</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1678</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>Jacques Loeb experimented on embryos in Europe and the United States at the end of the nineteenth and beginning of the twentieth centuries.  Among the first to study embryos through experimentation, Loeb helped found the new field of experimental embryology.  Notably, Loeb showed scientists how to create artificial parthenogenesis, thus refuting the idea that spermatozoa alone were necessary to develop eggs into embryos and confirming the idea that the chemical constitution of embryos  environment affected their development.  Furthermore, Loeb' s work showed that scientists could manipulate materials in a laboratory to create, as he called the process, the beginning stages of life.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-08T20:33:23Z (GMT). No. of bitstreams: 1
+embryo123969.xhtml: 8581 bytes, checksum: 2dfd1feacbaa6a512505722a1b4e7a6d (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Loeb, Jacques, 1959-1924</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mesh</qualifier>
+          <schema>dc</schema>
+          <value>Parthenogenesis</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Jacques Loeb</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Biography</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Parthenogenesis</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>Jacques Loeb</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10912</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10912</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5610</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1982</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1945</handle>
+      <id type='number'>1982</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:17-05:00'>1358377337617</lastModified>
+      <metadata type='collection' size='26'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Seward, Sheraden</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:55Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:55Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2008-09-12</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125471</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1945</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>James David Ebert was an innovative developmental biologist who contributed immensely to the study of developmental biology and also helped establish embryology.  During his career, Ebert developed a vision for how the Department of Embryology of the Carnegie Institution of Washington in Baltimore should be run.  He believed the focus of the department should be on biochemistry and genetics with regards to embryology.  This was a relatively novel idea since not many embryologists were doing biochemical studies on embryos.  In addition, he served as director for the Embryology Course and as director of the Marine Biological Laboratory at Woods Hole.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:01:55Z (GMT). No. of bitstreams: 1
+embryo125471.xhtml: 7614 bytes, checksum: 60f79df7949d190d77abcc55d3a6e6ae (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Ebert, James D. (James David), 1921-2001</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>James D. Ebert</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier>alternative</qualifier>
+          <schema>dc</schema>
+          <value>James Ebert</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Biography</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Carnegie Institution of Washington</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>Governance</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>James D. Ebert</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10819</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10819</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5537</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1782</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1755</handle>
+      <id type='number'>1782</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:17-05:00'>1358377337463</lastModified>
+      <metadata type='collection' size='25'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Wellner, Karen</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T13:10:29Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T13:10:29Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2009-07-22</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 124940</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1755</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>Frank R. Lillie was born in Toronto, Canada, on 27 June 1870.  His mother was Emily Ann Rattray and his father was George Waddell Little, an accountant and co-owner of a wholesale drug company.  While in high school Lillie took up interests in entomology and paleontology but went to the University of Toronto with the aim of studying ministry. He slowly became disillusioned with this career choice and decided to major in the natural sciences. It was during his senior year that he developed his lifelong interest in embryology.  Graduating with a BA in 1891 Lillie then moved to the Marine Biological Laboratory (MBL) at Woods Hole, Massachusetts, to work and study with Charles Otis Whitman, the founding director of the MBL. Lillie collected and studied cell lineage side-by-side with some of the most prominent embryologists of the time: Edmund B. Wilson, Edwin G. Conklin, and Aaron L. Treadwell.  Along with his cell lineage studies, Whitman guided Lillie to work on the question of how blastomeres contributed to the formation of organs in fresh water clams.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T13:10:29Z (GMT). No. of bitstreams: 1
+embryo124940.xhtml: 14001 bytes, checksum: d1c8b1b18a9fc0194f7aec1d0cbe6154 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Lillie, Frank Rattray, 1870-1947</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Frank Rattray Lillie</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier>alternative</qualifier>
+          <schema>dc</schema>
+          <value>Frank Lillie</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Biography</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Cell lineage</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>Frank Rattray Lillie</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10861</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10861</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5577</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1824</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1794</handle>
+      <id type='number'>1824</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:17-05:00'>1358377337469</lastModified>
+      <metadata type='collection' size='23'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Maienschein, Jane</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T13:23:53Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T13:23:53Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2007-10-24</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125213</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1794</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>The Marine Biological Laboratory (MBL) in Woods Hole, Massachusetts, began in 1888 to offer opportunities for instruction and research in biological topics.   For the first few years, this meant that individual investigators had a small lab space upstairs in the one wooden building on campus where students heard their lectures and did their research in a common area downstairs.  The lectures for those first years offered an overview of general biology with a focus on zoology, and they were intended for teachers and graduate students interested in acquiring the background for teaching about and/or actually doing laboratory work.  As the lab quickly grew, it added sets of lectures that made up courses in zoology, then botany, then physiology, and in 1893 what became the first Embryology Course.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T13:23:53Z (GMT). No. of bitstreams: 1
+embryo125213.xhtml: 16273 bytes, checksum: 1d270e20570852476b0ba5c2807407e3 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Marine Biological Laboratory (Woods Hole, Mass.)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>The Marine Biological Laboratory Embryology Course</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>Organizations</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Education</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>MBL Courses</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>The Marine Biological Laboratory Embryology Course</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10919</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10919</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5617</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1989</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1952</handle>
+      <id type='number'>1989</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:17-05:00'>1358377337474</lastModified>
+      <metadata type='collection' size='22'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Maienschein, Jane</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:56Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:56Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2008-10-24</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125554</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1952</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>From 1886 to 1889 Charles Otis Whitman was director of the Allis Lake Laboratory in Milwaukee, Wisconsin.  The lab was established by Edward Phelps Allis, Jr. to provide a place for biological research separate from a university setting and a place where an independent scholar like Allis himself could work.  Allis had hired Whitman as an instructor to establish the lab, direct it, and lead a research program there.  The lab lasted for eight years, attracted several researchers, and the papers that came out of the lab included a focus on embryology.  This raised the question of where to publish the work since there were few life science journals being published in the United States, which led Whitman to propose a new journal.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:01:56Z (GMT). No. of bitstreams: 1
+embryo125554.xhtml: 8998 bytes, checksum: 7857d0c9f9e6aefd219a36dfa430e61f (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Marine Biological Laboratory (Woods Hole, Mass.)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>The Biological Bulletin</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>Publications</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>Publications</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>The Biological Bulletin</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10744</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10744</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5462</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1704</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1680</handle>
+      <id type='number'>1704</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:18-05:00'>1358377338512</lastModified>
+      <metadata type='collection' size='24'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Maienschein, Jane</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-08T20:33:23Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-08T20:33:23Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2008-10-24</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-08</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 123978</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1680</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>The Marine Biological Laboratory (MBL) was founded in 1888 in Woods Hole, Massachusetts. Woods Hole was already the site for the government 's US Fish Commission Laboratory directed by Spencer Fullerton Baird, and it seemed like the obvious place to add an independent research laboratory that would draw individual scientific investigators along with students and instructors for courses.  From the beginning, the lab had the dual mission of teaching and research, and from the beginning leading biologists have found their way to this small village on the &quot;heel&quot; tip of Cape Cod.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-08T20:33:23Z (GMT). No. of bitstreams: 1
+embryo123978.xhtml: 11989 bytes, checksum: 27fa2049a7b46898b3f5780799a56240 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Marine Biological Laboratory (Woods Hole, Mass.)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>The Marine Biological Laboratory</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier>alternative</qualifier>
+          <schema>dc</schema>
+          <value>MBL</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>Organizations</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Education</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>Governance</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>The Marine Biological Laboratory</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10915</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10915</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5613</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1985</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1948</handle>
+      <id type='number'>1985</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:18-05:00'>1358377338030</lastModified>
+      <metadata type='collection' size='24'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Editorial Team, EP</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:55Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:55Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2008-10-24</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125546</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1948</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>Jane Maienschein is the daughter of Joyce Kylander and Fred Maienschein, and was born in Oak Ridge, Tennessee, on 23 September 1950.  She attended MIT as a freshman and then transferred to Yale University in 1969 when Yale decided to admit women undergraduates.  In 1972 she graduated with an honors degree in History, the Arts, and Letters having written a thesis on the history of science.  She then attended Indiana University and studied with historian of embryology Frederick B. Churchill, took courses with embryologist Rudolf Raff, and learned how to do embryological laboratory research with Robert Briggs.  She received her MA in 1976 and a PhD in 1978, with a pre-doctoral Fellowship at the Smithsonian to study the history of microscopes and microscopy, and an NSF-funded dissertation improvement visit to the Marine Biological Laboratory (MBL) to reproduce old embryological experiments and soak up the history and resources of the MBL Library and labs.  Maienschein's scholarly research focuses on the history and philosophy of developmental biology.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:01:55Z (GMT). No. of bitstreams: 1
+embryo125546.xhtml: 7003 bytes, checksum: 0ee2a2b614732de7e85cecc930e20897 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Maienschein, Jane</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Jane Maienschein</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Biography</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>History</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Philosophy</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>Jane Maienschein</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10917</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10917</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5615</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1987</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/1950</handle>
+      <id type='number'>1987</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:18-05:00'>1358377338036</lastModified>
+      <metadata type='collection' size='25'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Schuermann, D. Brian</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:55Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:01:55Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2009-01-21</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 125550</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/1950</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>Charles Otis Whitman was an extremely curious and driven researcher who was not content to limit himself to one field of expertise. Among the fields of study to which he made significant contributions were: embryology; morphology, or the form of living organisms and the relationships between their structures; natural history; and behavior. Whitman served as director of several programs and institutions, including the Biology Department at the University of Chicago, where he helped establish a new style of biology and influenced the work of many researchers of his generation, as well as future ones. He also served as first director of the Marine Biological Laboratory (MBL) in Woods Hole, MA. Besides his considerable achievements with his own scientific research, Whitman was a tireless mentor who had many students who went on to achieve great success in the field of embryology.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:01:55Z (GMT). No. of bitstreams: 1
+embryo125550.xhtml: 11913 bytes, checksum: 8e2f12665345971e1c84e7723f69de79 (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Whitman, Charles Otis, 1842-1910</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Charles Otis Whitman</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier>alternative</qualifier>
+          <schema>dc</schema>
+          <value>Charles Whitman</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Biography</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Morphology</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Laboratories</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>Charles Otis Whitman</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+    <itementity type='bean' size='15'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>11007</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>11007</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5705</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>2078</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='2'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+      </collections>
+      <communities type='collection' size='2'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <handle>10776/2039</handle>
+      <id type='number'>2078</id>
+      <isArchived type='boolean'>true</isArchived>
+      <isWithdrawn type='boolean'>false</isWithdrawn>
+      <lastModified type='date' date='2013-01-16T18:02:18-05:00'>1358377338041</lastModified>
+      <metadata type='collection' size='26'>
+        <metadataentity type='bean' size='4'>
+          <element>creator</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Wellner, Karen</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>accessioned</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:06:09Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>available</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10T14:06:09Z</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>created</qualifier>
+          <schema>dc</schema>
+          <value>2010-06-16</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>date</element>
+          <qualifier>issued</qualifier>
+          <schema>dc</schema>
+          <value>2012-05-10</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>other</qualifier>
+          <schema>dc</schema>
+          <value>embryo: 127992</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>identifier</element>
+          <qualifier>uri</qualifier>
+          <schema>dc</schema>
+          <value>http://hdl.handle.net/10776/2039</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>abstract</qualifier>
+          <schema>dc</schema>
+          <value>Ernest Everett Just was an early twentieth century American experimental embryologist involved in research at the Marine Biological Laboratory (MBL) at Woods Hole, Massachusetts, and the Stazione Zoologica in Naples, Italy. Just was known for simple but elegant experiments that supported the &quot;fertilizing&quot; theory of Frank R. Lillie and served as an antagonist to Jacques Loeb's work with artificial parthenogenesis. Just's many experiments with marine invertebrates showed that the egg surface, or ectoplasm, plays an important role in the fertilization and development of eggs.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>provenance</qualifier>
+          <schema>dc</schema>
+          <value>Made available in DSpace on 2012-05-10T14:06:09Z (GMT). No. of bitstreams: 1
+embryo127992.xhtml: 12889 bytes, checksum: f3f5997d0e6ada3d8877496d212d76ee (MD5)</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>format</element>
+          <qualifier>medium</qualifier>
+          <schema>dc</schema>
+          <value>text/xhtml</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>language</element>
+          <qualifier>iso</qualifier>
+          <schema>dc</schema>
+          <value>eng</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>publisher</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>relation</element>
+          <qualifier>ispartof</qualifier>
+          <schema>dc</schema>
+          <value>Embryo Project Encyclopedia</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>© Arizona Board of Regents</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>lcsh</qualifier>
+          <schema>dc</schema>
+          <value>Just, Ernest Everett, 1883-1941</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mesh</qualifier>
+          <schema>dc</schema>
+          <value>Fertilization</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Ernest Everett Just</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>title</element>
+          <qualifier>alternative</qualifier>
+          <schema>dc</schema>
+          <value>Ernest Just</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>type</element>
+          <qualifier/>
+          <schema>dc</schema>
+          <value>Text</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>rights</element>
+          <qualifier>license</qualifier>
+          <schema>dc</schema>
+          <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>embryo</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Biography</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Invertebrates</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>tag</qualifier>
+          <schema>dc</schema>
+          <value>Fertilization</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>subject</element>
+          <qualifier>mblhistory</qualifier>
+          <schema>dc</schema>
+          <value>People</value>
+        </metadataentity>
+        <metadataentity type='bean' size='4'>
+          <element>description</element>
+          <qualifier>type</qualifier>
+          <schema>dc</schema>
+          <value>Articles</value>
+        </metadataentity>
+      </metadata>
+      <name>Ernest Everett Just</name>
+      <owningCollection type='bean' size='1'>
+        <id type='number'>26</id>
+      </owningCollection>
+      <submitter type='bean' size='5'>
+        <firstName>Diane</firstName>
+        <fullName>Diane Rielinger</fullName>
+        <id type='number'>7</id>
+        <lastName>Rielinger</lastName>
+        <type type='number'>7</type>
+      </submitter>
+      <type type='number'>2</type>
+    </itementity>
+  </items>
+  <licence>NOTE: PLACE YOUR OWN LICENSE HERE
+This sample license is provided for informational purposes only.
+
+NON-EXCLUSIVE DISTRIBUTION LICENSE
+
+By signing and submitting this license, you (the author(s) or copyright
+owner) grants to DSpace University (DSU) the non-exclusive right to reproduce,
+translate (as defined below), and/or distribute your submission (including
+the abstract) worldwide in print and electronic format and in any medium,
+including but not limited to audio or video.
+
+You agree that DSU may, without changing the content, translate the
+submission to any medium or format for the purpose of preservation.
+
+You also agree that DSU may keep more than one copy of this submission for
+purposes of security, back-up and preservation.
+
+You represent that the submission is your original work, and that you have
+the right to grant the rights contained in this license. You also represent
+that your submission does not, to the best of your knowledge, infringe upon
+anyone's copyright.
+
+If the submission contains material for which you do not hold copyright,
+you represent that you have obtained the unrestricted permission of the
+copyright owner to grant DSU the rights required by this license, and that
+such third-party owned material is clearly identified and acknowledged
+within the text or content of the submission.
+
+IF THE SUBMISSION IS BASED UPON WORK THAT HAS BEEN SPONSORED OR SUPPORTED
+BY AN AGENCY OR ORGANIZATION OTHER THAN DSU, YOU REPRESENT THAT YOU HAVE
+FULFILLED ANY RIGHT OF REVIEW OR OTHER OBLIGATIONS REQUIRED BY SUCH
+CONTRACT OR AGREEMENT.
+
+DSU will clearly identify your name(s) as the author(s) or owner(s) of the
+submission, and will not make any alteration, other than as allowed by this
+license, to your submission.
+</licence>
+  <logo/>
+  <name>Articles</name>
+  <provenance></provenance>
+  <shortDescription></shortDescription>
+  <sidebarText></sidebarText>
+  <type type='number'>3</type>
+  <entityReference>/collections/31</entityReference>
+  <entityURL>http://localhost:8080/rest/collections/31</entityURL>
+  <entityId>31</entityId>
+</collections>

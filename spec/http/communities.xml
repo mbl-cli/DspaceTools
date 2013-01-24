@@ -1,0 +1,124 @@
+HTTP/1.1 200 OK
+Date: Thu, 24 Jan 2013 15:48:53 GMT
+Last-Modified: Thu, 24 Jan 2013 15:48:53 GMT
+ETag: 1359042533828
+Expires: Thu, 24 Jan 2013 15:58:53 GMT
+Cache-Control: public
+Cache-Control: max-age=600
+Cache-Control: s-maxage=600
+x-entity-prefix: communities
+x-entity-reference: /communities
+x-entity-url: /communities.xml
+x-entity-format: xml
+x-sdata-handler: org.dspace.rest.providers.CommunitiesProvider
+x-sdata-url: /communities.xml
+Content-Type: application/xml;charset=UTF-8
+Connection: close
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<communities_collection entityPrefix="communities">
+<communities type='bean' size='19'>
+  <administrators/>
+  <canEdit type='boolean'>false</canEdit>
+  <collections type='collection' size='11'>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>29</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>31</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>35</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>34</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>33</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>13</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>40</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>28</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>17</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>36</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>7</id>
+    </collectionentityid>
+  </collections>
+  <copyrightText></copyrightText>
+  <countItems type='number'>1809</countItems>
+  <handle>10776/9</handle>
+  <id type='number'>4</id>
+  <introductoryText></introductoryText>
+  <logo type='bean' size='1'>
+    <id type='number'>19</id>
+  </logo>
+  <name>MBL History</name>
+  <parentCommunity/>
+  <recentSubmissions type='collection' size='0'>
+  </recentSubmissions>
+  <shortDescription></shortDescription>
+  <sidebarText></sidebarText>
+  <subCommunities type='collection' size='0'>
+  </subCommunities>
+  <type type='number'>4</type>
+  <entityReference>/communities/4</entityReference>
+  <entityURL>http://localhost:8080/rest/communities/4</entityURL>
+  <entityId>4</entityId>
+</communities>
+<communities type='bean' size='19'>
+  <administrators/>
+  <canEdit type='boolean'>false</canEdit>
+  <collections type='collection' size='6'>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>26</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>6</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>30</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>22</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>23</id>
+    </collectionentityid>
+    <collectionentityid type='bean' size='1'>
+      <id type='number'>27</id>
+    </collectionentityid>
+  </collections>
+  <copyrightText></copyrightText>
+  <countItems type='number'>1512</countItems>
+  <handle>10776/434</handle>
+  <id type='number'>6</id>
+  <introductoryText></introductoryText>
+  <logo type='bean' size='1'>
+    <id type='number'>869</id>
+  </logo>
+  <name>The Embryo Project</name>
+  <parentCommunity/>
+  <recentSubmissions type='collection' size='0'>
+  </recentSubmissions>
+  <shortDescription>The Embryo Project at Arizona State University</shortDescription>
+  <sidebarText></sidebarText>
+  <subCommunities type='collection' size='0'>
+  </subCommunities>
+  <type type='number'>4</type>
+  <entityReference>/communities/6</entityReference>
+  <entityURL>http://localhost:8080/rest/communities/6</entityURL>
+  <entityId>6</entityId>
+</communities>
+</communities_collection>
