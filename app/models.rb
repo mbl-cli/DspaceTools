@@ -136,7 +136,16 @@ class Community < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class Policy < DSpaceCSV::DspaceDb::Base
+class Bitstream < DSpaceCSV::DspaceDb::Base
+  self.table_name = 'bitstream'
+  self.primary_key = 'bitstream_id'
+
+  def self.find(id_num)
+    Bitstream.where(:community_id => id_num).first
+  end
+end
+
+class Resourcepolicy < DSpaceCSV::DspaceDb::Base
   include Resource
   self.table_name = 'resourcepolicy'
   self.primary_key = 'policy_id'

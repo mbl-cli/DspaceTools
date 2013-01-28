@@ -1,5 +1,7 @@
 require_relative '../environment'
 
+exit if settings.environment != :test
+
 class Seeder
   attr :common_dir, :env_dir
 
@@ -17,7 +19,7 @@ class Seeder
       table = file.gsub(/\.csv/, '')
       data = get_data(table, file) 
       @db.execute("truncate table %s" % table)
-      @db.execute("insert into %s values %s" % [table, data])
+      @db.execute("insert into %s values %s" % [table, data]) if data
     end
   end
 
@@ -32,8 +34,8 @@ class Seeder
       res = get_row(row, ca_index, ua_index)
       (columns.size - res.size).times { res << 'null' } 
       res.join(",")
-    end
-    "(%s)" % data.join("), (")
+    end rescue []
+    data.empty? ? nil : "(%s)" % data.join("), (")
   end
 
   def get_row(row, ca_index, ua_index)

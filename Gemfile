@@ -27,4 +27,5 @@ group :test do
   gem "rr"
   gem "webmock"
   gem "turn", '0.8.2', :require => false
+  gem "factory_girl"
 end

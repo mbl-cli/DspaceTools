@@ -3,6 +3,7 @@ ENV["RACK_ENV"] = 'test'
 require "rack/test"
 require "webmock/rspec"
 require "base64"
+require "factory_girl"
 require_relative "../application.rb"
 
 module RSpecMixin
@@ -16,6 +17,7 @@ RSpec.configure do |c|
 end
 
 unless defined?(SPEC_CONSTANTS)
+  FG = FactoryGirl
   HTTP_DIR = File.join(File.dirname(__FILE__), "http")
   FILE_DIR = File.join(File.dirname(__FILE__), "files")
   UPLOAD_1 = File.join(FILE_DIR, "upload.zip")
@@ -35,3 +37,5 @@ unless defined?(SPEC_CONSTANTS)
   PARAMS_1 = {"file" => {:tempfile => open(UPLOAD_1), :filename => "upload.zip"}}
   SPEC_CONSTANTS = true
 end
+
+#FG.find_definitions
