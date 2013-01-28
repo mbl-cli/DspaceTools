@@ -89,6 +89,10 @@ namespace :db do
      require_relative './db/seeds'
   end
 
+  task :http_seed do
+    require_relative './db/http_seeds'
+  end
+
 
 end
 
