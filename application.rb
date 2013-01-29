@@ -8,7 +8,7 @@ require 'sinatra/redirect_with_flash'
 require_relative "./environment"
 
 
-class DSpaceCsvGui < Sinatra::Base
+class DSpaceCsvUi < Sinatra::Base
   mime_type :csv, 'application/csv'
   register Sinatra::Flash
   register Sinatra::BasicAuth
@@ -51,71 +51,36 @@ class DSpaceCsvGui < Sinatra::Base
   end
 
 
-  ###########################################################################
-  #  API
-  ###########################################################################
-  def rest_request(params)
-    current_user = DSpaceCSV.api_key_authorization(params, request.path) || DSpaceCSV.password_authorization(params)
-    if current_user
-      if params["format"] == "xml"
-        content_type 'text/xml', :charset => 'utf-8'
-      elsif params["format"] == "json"
-        content_type 'application/json', :charset => 'utf-8'
-      else
-        content_type 'text/plain', :charset => 'utf-8'
-      end
-      if request.path.match 'authentication_test'
-        authentication_worked(current_user, params["format"])
-      else
-        RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
-      end
-    else
-      yield
-    end
-  end
-
-  def authentication_worked(user, format)
-    if format == "xml"
-      user.to_xml
-    else 
-      user.to_json
-    end
-  end
-
-  def bad_authentication 
-    throw(:halt, [401, "Not authorized. Did you submit correct email/password, or API key/digest pair?\n"]) 
-  end
-
   get '/rest/users.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params) 
   end
 
   get '/rest/users/:id.:format' do
-    rest_request(params) {bad_authentication}
+    rest_equest(params)
   end
 
   get '/rest/items.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params)
   end
   
   get '/rest/items/:id.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params)
   end
 
   get '/rest/collections.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params) 
   end
   
   get '/rest/collections/:id.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params)
   end
 
   get '/rest/communities/:id.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params)
   end
 
   get '/rest/communities.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params) 
   end
   
   get '/rest/handle/:num1/:num2.:format' do
@@ -141,12 +106,13 @@ class DSpaceCsvGui < Sinatra::Base
   end
 
   get '/rest/authentication_test.:format' do
-    rest_request(params) {bad_authentication}
+    rest_request(params)
   end
   
   protect  do
     get '/' do
         session[:current_user] = Eperson.where(:email => auth.credentials.first).first
+        require 'ruby-debug'; debugger
         haml :index
     end
 

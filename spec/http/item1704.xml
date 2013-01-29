@@ -1,0 +1,2950 @@
+HTTP/1.1 200 OK
+Date: Tue, 29 Jan 2013 16:02:42 GMT
+Last-Modified: Wed, 16 Jan 2013 23:02:18 GMT
+ETag: 1358377338512
+Expires: Tue, 29 Jan 2013 16:12:42 GMT
+Cache-Control: public
+Cache-Control: max-age=600
+Cache-Control: s-maxage=600
+x-entity-prefix: items
+x-entity-reference: /items/1704
+x-entity-url: /items/1704.xml
+x-entity-format: xml
+x-sdata-handler: org.dspace.rest.providers.ItemsProvider
+x-sdata-url: /items/1704.xml
+Content-Type: application/xml;charset=UTF-8
+Connection: close
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<items type='bean' size='18'>
+  <bitstreams type='collection' size='1'>
+    <bitstreamentity type='bean' size='15'>
+      <bundles type='collection' size='1'>
+        <bundleentity type='bean' size='7'>
+          <bitstreams type='collection' size='1'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>10744</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <handle/>
+          <id type='number'>5462</id>
+          <items type='collection' size='1'>
+            <itementityid type='bean' size='1'>
+              <id type='number'>1704</id>
+            </itementityid>
+          </items>
+          <name>ORIGINAL</name>
+          <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+          <type type='number'>1</type>
+        </bundleentity>
+      </bundles>
+      <checkSum>a3b827059a7a162777f975ddbdb637f4</checkSum>
+      <checkSumAlgorithm>MD5</checkSumAlgorithm>
+      <description></description>
+      <formatDescription>Unknown</formatDescription>
+      <handle/>
+      <id type='number'>10744</id>
+      <mimeType>application/octet-stream</mimeType>
+      <name>embryo123978.xhtml</name>
+      <sequenceId type='number'>1</sequenceId>
+      <size type='number'>10397</size>
+      <source>embryo123978.xhtml</source>
+      <storeNumber type='number'>1</storeNumber>
+      <type type='number'>0</type>
+      <userFormatDescription/>
+    </bitstreamentity>
+  </bitstreams>
+  <bundles type='collection' size='1'>
+    <bundleentity type='bean' size='7'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentityid type='bean' size='1'>
+          <id type='number'>10744</id>
+        </bitstreamentityid>
+      </bitstreams>
+      <handle/>
+      <id type='number'>5462</id>
+      <items type='collection' size='1'>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1704</id>
+        </itementityid>
+      </items>
+      <name>ORIGINAL</name>
+      <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+      <type type='number'>1</type>
+    </bundleentity>
+  </bundles>
+  <canEdit type='boolean'>false</canEdit>
+  <collections type='collection' size='2'>
+    <collectionentity type='bean' size='15'>
+      <canEdit type='boolean'>false</canEdit>
+      <communities type='collection' size='1'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>4</id>
+        </communityentityid>
+      </communities>
+      <copyrightText></copyrightText>
+      <countItems type='number'>11</countItems>
+      <handle>10776/2264</handle>
+      <id type='number'>31</id>
+      <introText></introText>
+      <items type='collection' size='11'>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1988</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1990</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1702</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1982</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1782</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1824</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1989</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1704</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1985</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1987</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2078</id>
+        </itementityid>
+      </items>
+      <licence>NOTE: PLACE YOUR OWN LICENSE HERE
+This sample license is provided for informational purposes only.
+
+NON-EXCLUSIVE DISTRIBUTION LICENSE
+
+By signing and submitting this license, you (the author(s) or copyright
+owner) grants to DSpace University (DSU) the non-exclusive right to reproduce,
+translate (as defined below), and/or distribute your submission (including
+the abstract) worldwide in print and electronic format and in any medium,
+including but not limited to audio or video.
+
+You agree that DSU may, without changing the content, translate the
+submission to any medium or format for the purpose of preservation.
+
+You also agree that DSU may keep more than one copy of this submission for
+purposes of security, back-up and preservation.
+
+You represent that the submission is your original work, and that you have
+the right to grant the rights contained in this license. You also represent
+that your submission does not, to the best of your knowledge, infringe upon
+anyone's copyright.
+
+If the submission contains material for which you do not hold copyright,
+you represent that you have obtained the unrestricted permission of the
+copyright owner to grant DSU the rights required by this license, and that
+such third-party owned material is clearly identified and acknowledged
+within the text or content of the submission.
+
+IF THE SUBMISSION IS BASED UPON WORK THAT HAS BEEN SPONSORED OR SUPPORTED
+BY AN AGENCY OR ORGANIZATION OTHER THAN DSU, YOU REPRESENT THAT YOU HAVE
+FULFILLED ANY RIGHT OF REVIEW OR OTHER OBLIGATIONS REQUIRED BY SUCH
+CONTRACT OR AGREEMENT.
+
+DSU will clearly identify your name(s) as the author(s) or owner(s) of the
+submission, and will not make any alteration, other than as allowed by this
+license, to your submission.
+</licence>
+      <logo/>
+      <name>Articles</name>
+      <provenance></provenance>
+      <shortDescription></shortDescription>
+      <sidebarText></sidebarText>
+      <type type='number'>3</type>
+    </collectionentity>
+    <collectionentity type='bean' size='15'>
+      <canEdit type='boolean'>false</canEdit>
+      <communities type='collection' size='1'>
+        <communityentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </communityentityid>
+      </communities>
+      <copyrightText></copyrightText>
+      <countItems type='number'>400</countItems>
+      <handle>10776/1580</handle>
+      <id type='number'>26</id>
+      <introText></introText>
+      <items type='collection' size='400'>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1728</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1735</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1742</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1745</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1751</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1752</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1753</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1754</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1768</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1692</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1705</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1743</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1699</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1696</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2374</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>3791</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>3792</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2359</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>3793</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1715</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1718</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>3794</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>3795</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2004</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1986</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2068</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1720</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1721</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1722</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1724</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4027</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1772</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2023</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2077</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2364</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4028</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4029</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4030</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4025</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4032</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4033</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4034</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4035</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4026</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>4031</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1713</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1714</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1717</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1719</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1723</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1984</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2003</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2002</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2005</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2012</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1960</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1963</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1967</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1971</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1979</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2014</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1988</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2016</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1990</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2017</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1996</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2018</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1778</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1781</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1783</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1785</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1773</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1775</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1794</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1992</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2007</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2009</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2011</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2075</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2015</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2024</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2105</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2095</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2025</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2026</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2027</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2028</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2029</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2048</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2050</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2051</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2055</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2060</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2058</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1793</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1774</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1776</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1777</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1779</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1780</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2360</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1789</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1791</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2361</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2045</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2090</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2053</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2057</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2108</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2106</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2082</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2107</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2109</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2110</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1802</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1808</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1809</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1804</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1805</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1818</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1806</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1819</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2097</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2098</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1993</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2030</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2035</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2071</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2091</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2092</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2123</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2124</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1702</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1725</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1730</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2130</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1801</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1822</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2393</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1823</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1825</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1826</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1832</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1833</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1834</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1716</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1982</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2367</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2368</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2033</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2034</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1769</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1770</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1813</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1814</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1815</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1816</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1707</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1727</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2062</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2063</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2064</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2065</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2353</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2354</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2355</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2356</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1738</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1739</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2337</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2338</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2136</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2339</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2340</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2341</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2342</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2343</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2344</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2345</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2346</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2347</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2349</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2350</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2380</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2381</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2382</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2383</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2384</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2385</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2386</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2387</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2388</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1757</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1758</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1759</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2020</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2021</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2022</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2094</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2079</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1999</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2019</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2000</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2080</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2093</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2104</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2139</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2143</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1997</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2056</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2070</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2072</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2111</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2112</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2113</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2114</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2115</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2116</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2117</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2118</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2119</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2120</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2121</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2362</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2363</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2331</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2332</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1782</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1824</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1989</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2357</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2358</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2067</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2373</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2375</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2376</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2377</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2378</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2379</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2334</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2335</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2125</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1703</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1704</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1706</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1731</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1763</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2366</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1689</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1690</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1983</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1691</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1695</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1697</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1698</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1701</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1991</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1994</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1995</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1998</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2001</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2006</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2008</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2010</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2013</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2031</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2032</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2036</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2037</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1708</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2038</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1709</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2039</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1710</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2040</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1711</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2041</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2042</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2043</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2044</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2046</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2047</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2049</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2073</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2074</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2052</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2076</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2369</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2370</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2371</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2372</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2390</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2054</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2059</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2069</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2081</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2083</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2395</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2137</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2391</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2392</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2084</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2085</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2086</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2087</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2088</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2089</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2099</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2100</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2101</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2102</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2103</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2140</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2141</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2142</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2144</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1985</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1987</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2078</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2394</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1765</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1766</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1767</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1784</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1786</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1787</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2138</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1788</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1820</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1790</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1792</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1797</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1798</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1800</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1821</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1810</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1827</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1828</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1829</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1831</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2145</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1964</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1799</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1803</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1807</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1811</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1830</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1961</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1962</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1965</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1966</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1969</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1968</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1970</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1972</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1973</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1974</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1975</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1976</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1977</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1978</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1980</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1981</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2389</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1733</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1734</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1736</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2096</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1740</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1688</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1693</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1694</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1700</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1741</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1764</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1771</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1732</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1737</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1744</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1746</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1747</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1748</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1749</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1750</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1755</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1756</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1760</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1761</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>1762</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2351</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2122</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2126</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2127</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2128</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2129</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2131</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2132</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2133</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2134</id>
+        </itementityid>
+        <itementityid type='bean' size='1'>
+          <id type='number'>2135</id>
+        </itementityid>
+      </items>
+      <licence>NOTE: PLACE YOUR OWN LICENSE HERE
+This sample license is provided for informational purposes only.
+
+NON-EXCLUSIVE DISTRIBUTION LICENSE
+
+By signing and submitting this license, you (the author(s) or copyright
+owner) grants to DSpace University (DSU) the non-exclusive right to reproduce,
+translate (as defined below), and/or distribute your submission (including
+the abstract) worldwide in print and electronic format and in any medium,
+including but not limited to audio or video.
+
+You agree that DSU may, without changing the content, translate the
+submission to any medium or format for the purpose of preservation.
+
+You also agree that DSU may keep more than one copy of this submission for
+purposes of security, back-up and preservation.
+
+You represent that the submission is your original work, and that you have
+the right to grant the rights contained in this license. You also represent
+that your submission does not, to the best of your knowledge, infringe upon
+anyone's copyright.
+
+If the submission contains material for which you do not hold copyright,
+you represent that you have obtained the unrestricted permission of the
+copyright owner to grant DSU the rights required by this license, and that
+such third-party owned material is clearly identified and acknowledged
+within the text or content of the submission.
+
+IF THE SUBMISSION IS BASED UPON WORK THAT HAS BEEN SPONSORED OR SUPPORTED
+BY AN AGENCY OR ORGANIZATION OTHER THAN DSU, YOU REPRESENT THAT YOU HAVE
+FULFILLED ANY RIGHT OF REVIEW OR OTHER OBLIGATIONS REQUIRED BY SUCH
+CONTRACT OR AGREEMENT.
+
+DSU will clearly identify your name(s) as the author(s) or owner(s) of the
+submission, and will not make any alteration, other than as allowed by this
+license, to your submission.
+</licence>
+      <logo/>
+      <name>Embryo Project Articles</name>
+      <provenance></provenance>
+      <shortDescription></shortDescription>
+      <sidebarText></sidebarText>
+      <type type='number'>3</type>
+    </collectionentity>
+  </collections>
+  <communities type='collection' size='2'>
+    <communityentity type='bean' size='16'>
+      <administrators/>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='11'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>29</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>31</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>35</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>34</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>33</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>13</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>40</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>28</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>17</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>36</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>7</id>
+        </collectionentityid>
+      </collections>
+      <copyrightText></copyrightText>
+      <countItems type='number'>1809</countItems>
+      <handle>10776/9</handle>
+      <id type='number'>4</id>
+      <introductoryText></introductoryText>
+      <logo type='bean' size='1'>
+        <id type='number'>19</id>
+      </logo>
+      <name>MBL History</name>
+      <parentCommunity/>
+      <recentSubmissions type='collection' size='0'>
+      </recentSubmissions>
+      <shortDescription></shortDescription>
+      <sidebarText></sidebarText>
+      <subCommunities type='collection' size='0'>
+      </subCommunities>
+      <type type='number'>4</type>
+    </communityentity>
+    <communityentity type='bean' size='16'>
+      <administrators/>
+      <canEdit type='boolean'>false</canEdit>
+      <collections type='collection' size='6'>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>26</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>6</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>30</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>22</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>23</id>
+        </collectionentityid>
+        <collectionentityid type='bean' size='1'>
+          <id type='number'>27</id>
+        </collectionentityid>
+      </collections>
+      <copyrightText></copyrightText>
+      <countItems type='number'>1512</countItems>
+      <handle>10776/434</handle>
+      <id type='number'>6</id>
+      <introductoryText></introductoryText>
+      <logo type='bean' size='1'>
+        <id type='number'>869</id>
+      </logo>
+      <name>The Embryo Project</name>
+      <parentCommunity/>
+      <recentSubmissions type='collection' size='0'>
+      </recentSubmissions>
+      <shortDescription>The Embryo Project at Arizona State University</shortDescription>
+      <sidebarText></sidebarText>
+      <subCommunities type='collection' size='0'>
+      </subCommunities>
+      <type type='number'>4</type>
+    </communityentity>
+  </communities>
+  <handle>10776/1680</handle>
+  <id type='number'>1704</id>
+  <isArchived type='boolean'>true</isArchived>
+  <isWithdrawn type='boolean'>false</isWithdrawn>
+  <lastModified type='date' date='2013-01-16T18:02:18-05:00'>1358377338512</lastModified>
+  <metadata type='collection' size='24'>
+    <metadataentity type='bean' size='4'>
+      <element>creator</element>
+      <qualifier/>
+      <schema>dc</schema>
+      <value>Maienschein, Jane</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>date</element>
+      <qualifier>accessioned</qualifier>
+      <schema>dc</schema>
+      <value>2012-05-08T20:33:23Z</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>date</element>
+      <qualifier>available</qualifier>
+      <schema>dc</schema>
+      <value>2012-05-08T20:33:23Z</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>date</element>
+      <qualifier>created</qualifier>
+      <schema>dc</schema>
+      <value>2008-10-24</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>date</element>
+      <qualifier>issued</qualifier>
+      <schema>dc</schema>
+      <value>2012-05-08</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>identifier</element>
+      <qualifier>other</qualifier>
+      <schema>dc</schema>
+      <value>embryo: 123978</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>identifier</element>
+      <qualifier>uri</qualifier>
+      <schema>dc</schema>
+      <value>http://hdl.handle.net/10776/1680</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>description</element>
+      <qualifier>abstract</qualifier>
+      <schema>dc</schema>
+      <value>The Marine Biological Laboratory (MBL) was founded in 1888 in Woods Hole, Massachusetts. Woods Hole was already the site for the government 's US Fish Commission Laboratory directed by Spencer Fullerton Baird, and it seemed like the obvious place to add an independent research laboratory that would draw individual scientific investigators along with students and instructors for courses.  From the beginning, the lab had the dual mission of teaching and research, and from the beginning leading biologists have found their way to this small village on the &quot;heel&quot; tip of Cape Cod.</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>description</element>
+      <qualifier>provenance</qualifier>
+      <schema>dc</schema>
+      <value>Made available in DSpace on 2012-05-08T20:33:23Z (GMT). No. of bitstreams: 1
+embryo123978.xhtml: 11989 bytes, checksum: 27fa2049a7b46898b3f5780799a56240 (MD5)</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>format</element>
+      <qualifier>medium</qualifier>
+      <schema>dc</schema>
+      <value>text/xhtml</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>language</element>
+      <qualifier>iso</qualifier>
+      <schema>dc</schema>
+      <value>eng</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>publisher</element>
+      <qualifier/>
+      <schema>dc</schema>
+      <value>Arizona State University. School of Life Sciences. Center for Biology and Society. Embryo Project Encyclopedia.</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>relation</element>
+      <qualifier>ispartof</qualifier>
+      <schema>dc</schema>
+      <value>Embryo Project Encyclopedia</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>rights</element>
+      <qualifier/>
+      <schema>dc</schema>
+      <value>© Arizona Board of Regents</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>subject</element>
+      <qualifier>lcsh</qualifier>
+      <schema>dc</schema>
+      <value>Marine Biological Laboratory (Woods Hole, Mass.)</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>title</element>
+      <qualifier/>
+      <schema>dc</schema>
+      <value>The Marine Biological Laboratory</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>title</element>
+      <qualifier>alternative</qualifier>
+      <schema>dc</schema>
+      <value>MBL</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>type</element>
+      <qualifier/>
+      <schema>dc</schema>
+      <value>Text</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>rights</element>
+      <qualifier>license</qualifier>
+      <schema>dc</schema>
+      <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>subject</element>
+      <qualifier>embryo</qualifier>
+      <schema>dc</schema>
+      <value>Organizations</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>subject</element>
+      <qualifier>tag</qualifier>
+      <schema>dc</schema>
+      <value>Education</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>subject</element>
+      <qualifier>tag</qualifier>
+      <schema>dc</schema>
+      <value>Laboratories</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>subject</element>
+      <qualifier>mblhistory</qualifier>
+      <schema>dc</schema>
+      <value>Governance</value>
+    </metadataentity>
+    <metadataentity type='bean' size='4'>
+      <element>description</element>
+      <qualifier>type</qualifier>
+      <schema>dc</schema>
+      <value>Articles</value>
+    </metadataentity>
+  </metadata>
+  <name>The Marine Biological Laboratory</name>
+  <owningCollection type='bean' size='15'>
+    <canEdit type='boolean'>false</canEdit>
+    <communities type='collection' size='1'>
+      <communityentityid type='bean' size='1'>
+        <id type='number'>6</id>
+      </communityentityid>
+    </communities>
+    <copyrightText></copyrightText>
+    <countItems type='number'>400</countItems>
+    <handle>10776/1580</handle>
+    <id type='number'>26</id>
+    <introText></introText>
+    <items type='collection' size='400'>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1728</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1735</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1742</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1745</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1751</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1752</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1753</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1754</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1768</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1692</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1705</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1743</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1699</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1696</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2374</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>3791</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>3792</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2359</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>3793</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1715</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1718</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>3794</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>3795</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2004</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1986</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2068</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1720</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1721</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1722</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1724</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4027</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1772</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2023</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2077</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2364</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4028</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4029</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4030</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4025</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4032</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4033</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4034</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4035</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4026</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>4031</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1713</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1714</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1717</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1719</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1723</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1984</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2003</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2002</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2005</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2012</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1960</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1963</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1967</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1971</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1979</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2014</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1988</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2016</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1990</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2017</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1996</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2018</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1778</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1781</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1783</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1785</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1773</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1775</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1794</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1992</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2007</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2009</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2011</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2075</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2015</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2024</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2105</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2095</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2025</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2026</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2027</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2028</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2029</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2048</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2050</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2051</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2055</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2060</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2058</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1793</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1774</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1776</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1777</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1779</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1780</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2360</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1789</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1791</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2361</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2045</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2090</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2053</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2057</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2108</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2106</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2082</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2107</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2109</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2110</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1802</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1808</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1809</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1804</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1805</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1818</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1806</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1819</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2097</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2098</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1993</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2030</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2035</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2071</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2091</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2092</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2123</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2124</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1702</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1725</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1730</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2130</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1801</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1822</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2393</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1823</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1825</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1826</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1832</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1833</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1834</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1716</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1982</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2367</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2368</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2033</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2034</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1769</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1770</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1813</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1814</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1815</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1816</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1707</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1727</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2062</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2063</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2064</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2065</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2353</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2354</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2355</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2356</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1738</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1739</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2337</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2338</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2136</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2339</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2340</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2341</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2342</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2343</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2344</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2345</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2346</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2347</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2349</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2350</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2380</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2381</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2382</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2383</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2384</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2385</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2386</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2387</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2388</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1757</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1758</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1759</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2020</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2021</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2022</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2094</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2079</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1999</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2019</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2000</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2080</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2093</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2104</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2139</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2143</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1997</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2056</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2070</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2072</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2111</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2112</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2113</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2114</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2115</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2116</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2117</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2118</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2119</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2120</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2121</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2362</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2363</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2331</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2332</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1782</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1824</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1989</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2357</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2358</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2067</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2373</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2375</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2376</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2377</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2378</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2379</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2334</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2335</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2125</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1703</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1704</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1706</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1731</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1763</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2366</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1689</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1690</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1983</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1691</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1695</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1697</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1698</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1701</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1991</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1994</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1995</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1998</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2001</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2006</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2008</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2010</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2013</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2031</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2032</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2036</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2037</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1708</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2038</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1709</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2039</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1710</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2040</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1711</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2041</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2042</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2043</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2044</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2046</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2047</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2049</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2073</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2074</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2052</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2076</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2369</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2370</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2371</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2372</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2390</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2054</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2059</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2069</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2081</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2083</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2395</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2137</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2391</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2392</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2084</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2085</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2086</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2087</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2088</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2089</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2099</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2100</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2101</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2102</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2103</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2140</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2141</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2142</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2144</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1985</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1987</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2078</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2394</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1765</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1766</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1767</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1784</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1786</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1787</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2138</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1788</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1820</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1790</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1792</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1797</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1798</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1800</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1821</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1810</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1827</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1828</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1829</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1831</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2145</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1964</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1799</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1803</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1807</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1811</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1830</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1961</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1962</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1965</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1966</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1969</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1968</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1970</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1972</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1973</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1974</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1975</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1976</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1977</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1978</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1980</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1981</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2389</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1733</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1734</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1736</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2096</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1740</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1688</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1693</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1694</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1700</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1741</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1764</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1771</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1732</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1737</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1744</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1746</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1747</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1748</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1749</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1750</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1755</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1756</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1760</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1761</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>1762</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2351</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2122</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2126</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2127</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2128</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2129</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2131</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2132</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2133</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2134</id>
+      </itementityid>
+      <itementityid type='bean' size='1'>
+        <id type='number'>2135</id>
+      </itementityid>
+    </items>
+    <licence>NOTE: PLACE YOUR OWN LICENSE HERE
+This sample license is provided for informational purposes only.
+
+NON-EXCLUSIVE DISTRIBUTION LICENSE
+
+By signing and submitting this license, you (the author(s) or copyright
+owner) grants to DSpace University (DSU) the non-exclusive right to reproduce,
+translate (as defined below), and/or distribute your submission (including
+the abstract) worldwide in print and electronic format and in any medium,
+including but not limited to audio or video.
+
+You agree that DSU may, without changing the content, translate the
+submission to any medium or format for the purpose of preservation.
+
+You also agree that DSU may keep more than one copy of this submission for
+purposes of security, back-up and preservation.
+
+You represent that the submission is your original work, and that you have
+the right to grant the rights contained in this license. You also represent
+that your submission does not, to the best of your knowledge, infringe upon
+anyone's copyright.
+
+If the submission contains material for which you do not hold copyright,
+you represent that you have obtained the unrestricted permission of the
+copyright owner to grant DSU the rights required by this license, and that
+such third-party owned material is clearly identified and acknowledged
+within the text or content of the submission.
+
+IF THE SUBMISSION IS BASED UPON WORK THAT HAS BEEN SPONSORED OR SUPPORTED
+BY AN AGENCY OR ORGANIZATION OTHER THAN DSU, YOU REPRESENT THAT YOU HAVE
+FULFILLED ANY RIGHT OF REVIEW OR OTHER OBLIGATIONS REQUIRED BY SUCH
+CONTRACT OR AGREEMENT.
+
+DSU will clearly identify your name(s) as the author(s) or owner(s) of the
+submission, and will not make any alteration, other than as allowed by this
+license, to your submission.
+</licence>
+    <logo/>
+    <name>Embryo Project Articles</name>
+    <provenance></provenance>
+    <shortDescription></shortDescription>
+    <sidebarText></sidebarText>
+    <type type='number'>3</type>
+  </owningCollection>
+  <submitter type='bean' size='5'>
+    <firstName>Diane</firstName>
+    <fullName>Diane Rielinger</fullName>
+    <id type='number'>7</id>
+    <lastName>Rielinger</lastName>
+    <type type='number'>7</type>
+  </submitter>
+  <type type='number'>2</type>
+  <entityReference>/items/1704</entityReference>
+  <entityURL>http://localhost:8080/rest/items/1704</entityURL>
+  <entityId>1704</entityId>
+</items>
