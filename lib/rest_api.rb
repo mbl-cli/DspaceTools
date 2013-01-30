@@ -72,6 +72,7 @@ module RestApi
   def process_restrictions(an_xpath, klass)
     entities = @doc.xpath(an_xpath).inject({}) do |res, node|
       id = node.xpath('id').text.to_i
+      id = node.xpath('entityId') unless id
       res[id] ? res[id] << node : res[id] = [node]
       res
     end

@@ -40,10 +40,10 @@ class HttpSeeder
     FG.create(:resourcepolicy, :resource_type_id => Community.resource_number, :resource_id => 6, :eperson_id => 1)
     FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :resource_id => 6)
     FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :resource_id => 7, :eperson_id => 1)
-    FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :resource_id => 13, :epersongroup_id => 1)
+    FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :resource_id => 13, :epersongroup_id => 2)
     FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1702)
     FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1704, :eperson_id => 1)
-    FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1782, :epersongroup_id => 1)
+    FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1782, :epersongroup_id => 2)
   end
 
   private
