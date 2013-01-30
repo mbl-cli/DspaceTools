@@ -70,29 +70,31 @@ module RestApi
 
   def process_restrictions(an_xpath, klass)
     entities = @doc.xpath(an_xpath).inject({}) do |res, node|
-      id = node.xpath('id').text.to_i
-      id = node.xpath('entityId') unless id
-      res[id] ? res[id] << node : res[id] = [node]
+      id = node.xpath('id').text
+      id = node.xpath('entityId').text if id.empty?
+      unless id.empty?
+        id = id.to_i
+        res[id] ? res[id][:nodes] << node : res[id] = { nodes: [node], remove: true }
+      end
       res
     end
-    restrictions = []
-    unless entities.empty?
-      restrictions = Resourcepolicy.where("resource_type_id = %s and action_id = %s and (eperson_id > 0 or epersongroup_id > 0) and resource_id in (%s)" % [klass.resource_number, DSpaceCSV::ACTION_TYPE["READ"], entities.keys.join(",")] )
-    end
-    if restrictions
-      to_remove = {}
-      restrictions.each do |r|
-        to_remove[r.resource_id] = true unless to_remove[r.resource_id]
-        auth_group = @request_user && @request_user.groups.map(&:eperson_group_id).include?(r.epersongroup_id)
-        auth_user = @request_user && @request_user.id == r.eperson_id
-        to_remove[r.resource_id] = false if (auth_group || auth_user)
+    return if entities.empty?
+    permissions = Resourcepolicy.where("resource_type_id = %s and action_id in (%s) and (eperson_id is not null or epersongroup_id is not null) and resource_id in (%s)" % [klass.resource_number, DSpaceCSV::ACCESS_ACTIONS.join(","), entities.keys.join(",")] )
+    permissions.each do |r|
+      auth_group = auth_user = false
+      if r.epersongroup_id
+        auth_group = r.epersongroup_id == 0 || (@request_user && @request_user.groups.map(&:eperson_group_id).include?(r.epersongroup_id))
       end
-      to_remove.each do |id, remove|
-        if remove
-          entities[id].each {|node| node.remove}
-        end
-      end 
+      if @request_user && r.eperson_id
+        auth_user = @request_user.id == r.eperson_id
+      end
+      entities[r.resource_id][:remove] = false if (auth_group || auth_user)
     end
+    entities.each do |id, value|
+      if value[:remove]
+        value[:nodes].each {|node| node.remove}
+      end
+    end 
   end
 
   def get_content_type(params)
