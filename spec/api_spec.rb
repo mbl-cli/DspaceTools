@@ -91,6 +91,20 @@ describe 'api' do
     end.should_not be_empty
   end
 
+  it 'should filter restricted information from bulk queries' do 
+    stub_request(:get, /communities/).to_return(open(File.join(HTTP_DIR, "/communities.xml")))
+    url = "/rest/communities.xml"
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('//communities').select do |element|
+      element.xpath('id').text == '6'
+    end.should be_empty
+    doc.xpath('//communities').select do |element|
+      element.xpath('id').text == '4'
+    end.should_not be_empty
+  end
+
 
 
   # it 'should be able to get handles for authorized access of restricted file' do

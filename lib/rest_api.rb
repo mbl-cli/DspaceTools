@@ -16,12 +16,16 @@ module RestApi
     if params[:id] && params[:id].to_i.is_a?(Fixnum)
       handle_single_request
     else
-      #handle_bulk_request
+      handle_bulk_request
     end
   end
 
   def handle_single_request
     can_access_the_entity? ? perform_request : bad_authentication
+  end
+
+  def handle_bulk_request
+    perform_request
   end
 
   def can_access_the_entity?
@@ -45,7 +49,6 @@ module RestApi
     authorizations.size > 0
   end
 
-
   def perform_request
     begin
       response = RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
@@ -56,15 +59,25 @@ module RestApi
   end
 
   def filter_response(response)
-    doc = Nokogiri.parse(response.body)
-    communities = doc.xpath('//communityentityid').inject({}) do |res, node|
+    @doc = Nokogiri.parse(response.body)
+    process_restrictions('//communities', Community)
+    process_restrictions('//communityentityid', Community)
+    process_restrictions('//collections', Collection)
+    process_restrictions('//collectionentityid', Collection)
+    process_restrictions('//items', Item)
+    process_restrictions('//itementityid', Item)
+    @doc.to_xml
+  end
+
+  def process_restrictions(an_xpath, klass)
+    entities = @doc.xpath(an_xpath).inject({}) do |res, node|
       id = node.xpath('id').text.to_i
       res[id] ? res[id] << node : res[id] = [node]
       res
     end
     restrictions = []
-    unless communities.empty?
-      restrictions = Resourcepolicy.where("resource_type_id = %s and action_id = %s and (eperson_id > 0 or epersongroup_id > 0) and resource_id in (%s)" % [Community.resource_number, DSpaceCSV::ACTION_TYPE["READ"], communities.keys.join(",")] )
+    unless entities.empty?
+      restrictions = Resourcepolicy.where("resource_type_id = %s and action_id = %s and (eperson_id > 0 or epersongroup_id > 0) and resource_id in (%s)" % [klass.resource_number, DSpaceCSV::ACTION_TYPE["READ"], entities.keys.join(",")] )
     end
     if restrictions
       to_remove = {}
@@ -76,11 +89,10 @@ module RestApi
       end
       to_remove.each do |id, remove|
         if remove
-          communities[id].each {|node| node.remove}
+          entities[id].each {|node| node.remove}
         end
       end 
     end
-    doc.to_xml
   end
 
   def get_content_type(params)
