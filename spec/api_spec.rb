@@ -55,7 +55,44 @@ describe 'api' do
     get(url)
     last_response.status.should == 404
   end
+
+  it 'should show restricted item to authorized user' do
+    path = "/rest/items/1704.xml"
+    stub_request(:get, /.*items\/1704.*/).to_return(open(File.join(HTTP_DIR, "/item1704.xml")))
+    url = "%s?%s%s" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('/items/entityId').text.should == "1704"
+  end
   
+  it 'should show restricted item to authorized group' do
+    path = "/rest/items/1782.xml"
+    stub_request(:get, /.*items\/1782.*/).to_return(open(File.join(HTTP_DIR, "/item1782.xml")))
+    url = "%s?%s%s" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('/items/entityId').text.should == "1782"
+  end
+
+  it 'should filter restricted information from returned document' do 
+    stub_request(:get, /.*items\/1702.*/).to_return(open(File.join(HTTP_DIR, "/item1702.xml")))
+    url = "/rest/items/1702.xml"
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('/items/entityId').text.should == "1702"
+    doc.xpath('//communityentityid').select do |element|
+      element.xpath('id').text == '6'
+    end.should be_empty
+    doc.xpath('//communityentityid').select do |element|
+      element.xpath('id').text == '4'
+    end.should_not be_empty
+  end
+
+
+
   # it 'should be able to get handles for authorized access of restricted file' do
   #   stub_request(:get, /.*items\\/2807.*/).to_return(open(File.join(HTTP_DIR, "/item2807.xml")))
   #   path = "/rest/handle.xml"
