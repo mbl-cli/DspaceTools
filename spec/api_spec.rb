@@ -3,6 +3,7 @@ require "spec_helper"
 describe 'api' do
   before(:all) do
     @api_string = "&api_key=jdoe_again&api_digest="
+    @admin_api_string = "&api_key=admin&api_digest="
   end
 
   it 'should be possible to authorize by username and password' do
@@ -75,6 +76,16 @@ describe 'api' do
     doc = Nokogiri.parse(last_response.body)
     doc.xpath('/items/entityId').text.should == "1782"
   end
+  
+  it 'should show restricted item to admins' do
+    path = "/rest/items/1782.xml"
+    stub_request(:get, /.*items\/1782.*/).to_return(open(File.join(HTTP_DIR, "/item1782.xml")))
+    url = "%s?%s%s" % [path, @admin_api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('/items/entityId').text.should == "1782"
+  end
 
   it 'should filter restricted information from returned document' do 
     stub_request(:get, /.*items\/1702.*/).to_return(open(File.join(HTTP_DIR, "/item1702.xml")))
@@ -100,6 +111,21 @@ describe 'api' do
     doc.xpath('//communities').select do |element|
       element.xpath('id').text == '6'
     end.should be_empty
+    doc.xpath('//communities').select do |element|
+      element.xpath('id').text == '4'
+    end.should_not be_empty
+  end
+
+  it "should not filter restricted information for admins" do
+    stub_request(:get, /communities/).to_return(open(File.join(HTTP_DIR, "/communities.xml")))
+    path = "/rest/communities.xml"
+    url = "%s?%s%s" % [path, @admin_api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('//communities').select do |element|
+      element.xpath('id').text == '6'
+    end.should_not be_empty
     doc.xpath('//communities').select do |element|
       element.xpath('id').text == '4'
     end.should_not be_empty

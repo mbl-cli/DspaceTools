@@ -36,6 +36,7 @@ module RestApi
   end
 
   def entity_authorized?(auth)
+    return true if @request_user && @request_user.is_admin?
     restrictions = auth.select do |r|
       r.action_id == DSpaceCSV::ACTION_TYPE["READ"] && (r.eperson_id || (r.epersongroup_id && r.epersongroup_id > 0)) 
     end
@@ -59,6 +60,7 @@ module RestApi
   end
 
   def filter_response(response)
+    return response if @request_user && @request_user.is_admin?
     @doc = Nokogiri.parse(response.body)
     process_restrictions('//communities', Community)
     process_restrictions('//communityentityid', Community)

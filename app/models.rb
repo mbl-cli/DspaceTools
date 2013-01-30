@@ -49,6 +49,10 @@ class Eperson < DSpaceCSV::DspaceDb::Base
     Eperson.where(:eperson_id => id_num).first
   end
 
+  def is_admin?
+    groups.include?(Group.find(1))
+  end
+
   private
 
   def password; end
