@@ -7,7 +7,7 @@ before_script:
   - "cp config/users.yml.example config/users.yml; cp config/config.yml.example config/config.yml"
   - "rake db:create:test"
   - "rake db:migrate RACK_ENV=test"
-  - "rake db:seed RACK_ENV=test"
+  - "rake db:http_seed RACK_ENV=test"
 branches:
   only:
       - master
