@@ -133,29 +133,30 @@ describe 'api' do
 
 
 
-  # it 'should be able to get handles for authorized access of restricted file' do
-  #   stub_request(:get, /.*items\\/2807.*/).to_return(open(File.join(HTTP_DIR, "/item2807.xml")))
-  #   path = "/rest/handle.xml"
-  #   url = "%s?%s%s&handle=http://hdl.handle.net/10776/2740" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
-  #   get(url)
-  #   last_response.status.should == 303
-  #   follow_redirect!
-  #   last_response.status.should == 200
-  #   last_response.body.match(/<id type='number'>2807<\\/id>/).should be_true
-  # end
+  it 'should be able to translate handles into underlying object for restricted data' do
+    stub_request(:get, %r|.*items/1704.*|).to_return(open(File.join(HTTP_DIR, "/item1704.xml")))
+    path = "/rest/handle.xml"
+    url = "%s?%s%s&handle=http://hdl.handle.net/10776/2740" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 303
+    follow_redirect!
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('//entityId').text.should == "1704"
+  end
 
-  # it 'should restrict file from viewing if not authorized' do
-  #   path = "/rest/handle.xml"
-  #   url1 = "%s?handle=http://hdl.handle.net/10776/2740" % [path]
-  #   url2 = "%s?%s%s&handle=http://hdl.handle.net/10776/2740" % [path, @api_string, ApiKey.digest(path, 'bad_digest')]
-  #   [url1, url2].each do |url|
-  #     get(url)
-  #     last_response.status.should == 303
-  #     follow_redirect!
-  #     last_response.status.should == 401
-  #     last_response.body.match("Not authorized").should be_true
-  #   end
-  # end
+  it 'should restrict file from viewing if not authorized' do
+    path = "/rest/handle.xml"
+    url1 = "%s?handle=http://hdl.handle.net/10776/2740" % [path]
+    url2 = "%s?%s%s&handle=http://hdl.handle.net/10776/2740" % [path, @api_string, ApiKey.digest(path, 'bad_digest')]
+    [url1, url2].each do |url|
+      get(url)
+      last_response.status.should == 303
+      follow_redirect!
+      last_response.status.should == 401
+      last_response.body.match("Not authorized").should be_true
+    end
+  end
 
 end
 
