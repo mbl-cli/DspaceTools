@@ -26,4 +26,6 @@ class DSpaceCSV
 
   ACTION_TYPE = ACTION.inject({}) { |res, type| res[type] = res.size; res }
 
+  ACCESS_ACTIONS = [ ACTION_TYPE["READ"], ACTION_TYPE["ADMIN"] ]
+
 end

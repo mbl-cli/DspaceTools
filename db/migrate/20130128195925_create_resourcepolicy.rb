@@ -8,7 +8,7 @@ class CreateResourcepolicy < ActiveRecord::Migration
       `resource_id` int(11) NOT NULL,
       `action_id` int(11) NOT NULL,
       `eperson_id` int(11) DEFAULT NULL,
-      `epersongroup_id` int(11) NOT NULL DEFAULT 0,
+      `epersongroup_id` int(11) DEFAULT NULL,
       `start_date` datetime,
       `end_date` datetime,
       PRIMARY KEY (`policy_id`)

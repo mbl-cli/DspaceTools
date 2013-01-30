@@ -37,17 +37,14 @@ module RestApi
 
   def entity_authorized?(auth)
     return true if @request_user && @request_user.is_admin?
-    restrictions = auth.select do |r|
-      r.action_id == DSpaceCSV::ACTION_TYPE["READ"] && (r.eperson_id || (r.epersongroup_id && r.epersongroup_id > 0)) 
+    permissions = auth.select do |r|
+      return true if  DSpaceCSV::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && r.epersongroup_id == 0)
+      if @request_user
+        return true if DSpaceCSV::ACCESS_ACTIONS.include?(r.action_id) && (r.eperson_id && r.eperson_id == @request_user.eperson_id)
+        return true if DSpaceCSV::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && @request_user.groups.map(&:eperson_group_id).include?(r.epersongroup_id))
+      end
     end
-    return true if restrictions.empty?
-    return false unless @request_user
-    authorizations = restrictions.select do |r|
-      auth_group = @request_user.groups.map(&:eperson_group_id).include?(r.epersongroup_id)
-      auth_user = @request_user.id == r.eperson_id
-      auth_group || auth_user
-    end
-    authorizations.size > 0
+    false
   end
 
   def perform_request

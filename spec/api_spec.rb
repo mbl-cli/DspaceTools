@@ -50,11 +50,11 @@ describe 'api' do
     last_response.status.should ==401 
   end
 
-  it 'should show not found for unexisting item' do
+  it 'should show not authorized for unexisting items too' do
     stub_request(:get, /.*items\/9999.*/).to_return(open(File.join(HTTP_DIR, "/404_item.xml")))
     url = "/rest/items/9999.xml"
     get(url)
-    last_response.status.should == 404
+    last_response.status.should == 401
   end
 
   it 'should show restricted item to authorized user' do

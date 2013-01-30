@@ -59,7 +59,7 @@ FG.define do
     resource_id nil
     action_id 0
     eperson_id nil
-    epersongroup_id 0
+    epersongroup_id nil 
     start_date nil
     end_date nil
   end
