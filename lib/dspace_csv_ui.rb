@@ -1,4 +1,4 @@
-class DSpaceCsvUi < Sinatra::Base
+module RestApi
 
   def rest_request(params)
     get_content_type(params)

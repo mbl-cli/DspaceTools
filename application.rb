@@ -9,6 +9,7 @@ require_relative "./environment"
 
 
 class DSpaceCsvUi < Sinatra::Base
+  include RestApi
   mime_type :csv, 'application/csv'
   register Sinatra::Flash
   register Sinatra::BasicAuth
@@ -112,7 +113,6 @@ class DSpaceCsvUi < Sinatra::Base
   protect  do
     get '/' do
         session[:current_user] = Eperson.where(:email => auth.credentials.first).first
-        require 'ruby-debug'; debugger
         haml :index
     end
 
