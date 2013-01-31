@@ -116,6 +116,24 @@ describe 'api' do
     end.should_not be_empty
   end
 
+  it 'should show collection to its admin' do
+    stub_request(:get, %r|collections/31|).to_return(open(File.join(HTTP_DIR, "/collection31.xml")))
+    path = "/rest/collections/31.xml"
+    url = "%s?%s%s" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('//entityId').text.should == "31"
+  end
+
+  it 'should not show collection to a registered but not authorized user' do
+    path = "/rest/collections/31.xml"
+    jane_api_string = "&api_key=&janedoe456api_digest="
+    url = "%s?%s%s" % [path, jane_api_string, ApiKey.digest(path, '678990')]
+    get(url)
+    last_response.status.should == 401 
+  end
+
   it "should not filter restricted information for admins" do
     stub_request(:get, /communities/).to_return(open(File.join(HTTP_DIR, "/communities.xml")))
     path = "/rest/communities.xml"
@@ -131,6 +149,18 @@ describe 'api' do
     end.should_not be_empty
   end
 
+  it "should allow access to a resource without explicit permissions only to admin" do
+    stub_request(:get, %r|bitstream/4833|).to_return(open(File.join(HTTP_DIR, "/bitstream4833.xml")))
+    path = "/rest/bitstream/4833.xml"
+    url = "%s?%s%s" % [path, @admin_api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 200
+    doc = Nokogiri.parse(last_response.body)
+    doc.xpath('//entityId').text.should == "4833"
+    url = "%s?%s%s" % [path, @api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 401
+  end
 
 
   it 'should be able to translate handles into underlying object for restricted data' do

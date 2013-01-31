@@ -6,7 +6,7 @@ class DSpaceCSV
 
   # lets you look up type names from the type IDs
   RESOURCE_TYPE = {
-    0 => { rest_path: "bitstreams/", klass: Bitstream },
+    0 => { rest_path: "bitstream/", klass: Bitstream },
     1 => { rest_path: nil },
     2 => { rest_path: "items/", klass: Item },
     3 => { rest_path: "collections/", klass: Collection },

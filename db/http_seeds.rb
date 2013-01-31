@@ -40,10 +40,13 @@ class HttpSeeder
     FG.create(:resourcepolicy, :resource_type_id => Community.resource_number, :resource_id => 6, :eperson_id => 1)
     FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :resource_id => 6, :epersongroup_id => 0)
     FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :resource_id => 7, :eperson_id => 1, :epersongroup_id => nil)
-    FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :action_id => 11, :resource_id => 13, :epersongroup_id => 2)
+    FG.create(:resourcepolicy, :resource_type_id => Collection.resource_number, :action_id => 11, :resource_id => 31, :epersongroup_id => 2)
     FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1702, :epersongroup_id => 0)
     FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1704, :eperson_id => 1, :epersongroup_id => nil)
     FG.create(:resourcepolicy, :resource_type_id => Item.resource_number, :resource_id => 1782, :epersongroup_id => 2)
+    FG.create(:resourcepolicy, :resource_type_id => Bitstream.resource_number, :resource_id => 4761, :epersongroup_id => 0)
+    FG.create(:resourcepolicy, :resource_type_id => Bitstream.resource_number, :resource_id => 4762, :epersongroup_id => 1)
+    FG.create(:resourcepolicy, :resource_type_id => Bitstream.resource_number, :resource_id => 4832, :eperson_id => 1)
   end
 
   private

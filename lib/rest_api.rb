@@ -65,6 +65,9 @@ module RestApi
     process_restrictions('//collectionentityid', Collection)
     process_restrictions('//items', Item)
     process_restrictions('//itementityid', Item)
+    process_restrictions('//bitstream', Bitstream)
+    # process_restrictions('//bitstreamentity', Bitstream)
+    # process_restrictions('//bitstreamentityid', Bitstream)
     @doc.to_xml
   end
 

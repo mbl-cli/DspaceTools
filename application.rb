@@ -83,6 +83,10 @@ class DSpaceCsvUi < Sinatra::Base
   get '/rest/communities.:format' do
     rest_request(params) 
   end
+
+  get '/rest/bitstream/:id.:format' do
+    rest_request(params)
+  end
   
   get '/rest/handle/:num1/:num2.:format' do
     params["handle"] = "%s/%s" % [params["num1"], params["num2"]]
