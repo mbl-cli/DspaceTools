@@ -1,0 +1,295 @@
+HTTP/1.1 200 OK
+Date: Wed, 30 Jan 2013 21:37:17 GMT
+Last-Modified: Wed, 30 Jan 2013 21:37:17 GMT
+ETag: 1359581837026
+Expires: Wed, 30 Jan 2013 21:47:17 GMT
+Cache-Control: public
+Cache-Control: max-age=600
+Cache-Control: s-maxage=600
+x-entity-prefix: bitstream
+x-entity-reference: /bitstream/4762
+x-entity-url: /bitstream/4762.xml
+x-entity-format: xml
+x-sdata-handler: org.dspace.rest.providers.BitstreamProvider
+x-sdata-url: /bitstream/4762.xml
+Content-Type: application/xml;charset=UTF-8
+Connection: close
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<bitstream type='bean' size='18'>
+  <bundles type='collection' size='1'>
+    <bundleentity type='bean' size='7'>
+      <bitstreams type='collection' size='1'>
+        <bitstreamentity type='bean' size='15'>
+          <bundles type='collection' size='1'>
+            <bundleentity type='bean' size='7'>
+              <bitstreams type='collection' size='1'>
+<bitstreamentityid>MAX level reached (8):Entity (BITSTREAM) with id:4762</bitstreamentityid>
+              </bitstreams>
+              <handle/>
+              <id type='number'>2242</id>
+              <items type='collection' size='1'>
+<itementityid>MAX level reached (8):Entity (ITEM) with id:1643</itementityid>
+              </items>
+              <name>ORIGINAL</name>
+              <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+              <type type='number'>1</type>
+            </bundleentity>
+          </bundles>
+          <checkSum>e0141c32c3eb7b38a2236782ff63441a</checkSum>
+          <checkSumAlgorithm>MD5</checkSumAlgorithm>
+          <description/>
+          <formatDescription>Adobe PDF</formatDescription>
+          <handle/>
+          <id type='number'>4762</id>
+          <mimeType>application/pdf</mimeType>
+          <name>generalembryolog021950hubr.pdf</name>
+          <sequenceId type='number'>1</sequenceId>
+          <size type='number'>9220276</size>
+          <source/>
+          <storeNumber type='number'>1</storeNumber>
+          <type type='number'>0</type>
+          <userFormatDescription/>
+        </bitstreamentity>
+      </bitstreams>
+      <handle/>
+      <id type='number'>2242</id>
+      <items type='collection' size='1'>
+        <itementity type='bean' size='15'>
+          <bitstreams type='collection' size='2'>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>4833</id>
+            </bitstreamentityid>
+            <bitstreamentityid type='bean' size='1'>
+              <id type='number'>4762</id>
+            </bitstreamentityid>
+          </bitstreams>
+          <bundles type='collection' size='2'>
+            <bundleentity type='bean' size='7'>
+              <bitstreams type='collection' size='1'>
+<bitstreamentityid>MAX level reached (8):Entity (BITSTREAM) with id:4833</bitstreamentityid>
+              </bitstreams>
+              <handle/>
+              <id type='number'>2313</id>
+              <items type='collection' size='1'>
+<itementityid>MAX level reached (8):Entity (ITEM) with id:1643</itementityid>
+              </items>
+              <name>TEXT</name>
+              <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+              <type type='number'>1</type>
+            </bundleentity>
+            <bundleentity type='bean' size='7'>
+              <bitstreams type='collection' size='1'>
+<bitstreamentityid>MAX level reached (8):Entity (BITSTREAM) with id:4762</bitstreamentityid>
+              </bitstreams>
+              <handle/>
+              <id type='number'>2242</id>
+              <items type='collection' size='1'>
+<itementityid>MAX level reached (8):Entity (ITEM) with id:1643</itementityid>
+              </items>
+              <name>ORIGINAL</name>
+              <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+              <type type='number'>1</type>
+            </bundleentity>
+          </bundles>
+          <canEdit type='boolean'>false</canEdit>
+          <collections type='collection' size='1'>
+            <collectionentityid type='bean' size='1'>
+              <id type='number'>27</id>
+            </collectionentityid>
+          </collections>
+          <communities type='collection' size='1'>
+            <communityentityid type='bean' size='1'>
+              <id type='number'>6</id>
+            </communityentityid>
+          </communities>
+          <handle>10776/1623</handle>
+          <id type='number'>1643</id>
+          <isArchived type='boolean'>true</isArchived>
+          <isWithdrawn type='boolean'>false</isWithdrawn>
+          <lastModified type='date' date='2012-10-05T12:09:51-04:00'>1349453391630</lastModified>
+          <metadata type='collection' size='24'>
+            <metadataentity type='bean' size='4'>
+              <element>coverage</element>
+              <qualifier>temporal</qualifier>
+              <schema>dc</schema>
+              <value>1950</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>date</element>
+              <qualifier>accessioned</qualifier>
+              <schema>dc</schema>
+              <value>2012-05-08T19:24:33Z</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>date</element>
+              <qualifier>available</qualifier>
+              <schema>dc</schema>
+              <value>2012-05-08T19:24:33Z</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>date</element>
+              <qualifier>created</qualifier>
+              <schema>dc</schema>
+              <value>1950</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>date</element>
+              <qualifier>issued</qualifier>
+              <schema>dc</schema>
+              <value>2012-05-08</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>identifier</element>
+              <qualifier>uri</qualifier>
+              <schema>dc</schema>
+              <value>http://hdl.handle.net/10776/1623</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>description</element>
+              <qualifier/>
+              <schema>dc</schema>
+              <value>Journal issued by the Hubrecht Laboratory on behalf of the General Embryological Information Service Foundation.</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>description</element>
+              <qualifier>provenance</qualifier>
+              <schema>dc</schema>
+              <value>Made available in DSpace on 2012-05-08T19:24:33Z (GMT). No. of bitstreams: 1
+generalembryolog021950hubr.pdf: 9220276 bytes, checksum: e0141c32c3eb7b38a2236782ff63441a (MD5)</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>format</element>
+              <qualifier>medium</qualifier>
+              <schema>dc</schema>
+              <value>Text</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>language</element>
+              <qualifier>iso</qualifier>
+              <schema>dc</schema>
+              <value>Eng</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>relation</element>
+              <qualifier>ispartof</qualifier>
+              <schema>dc</schema>
+              <value>Embryo Project Encyclopedia</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>source</element>
+              <qualifier/>
+              <schema>dc</schema>
+              <value>MBLWHOI Library Journal Collection</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>subject</element>
+              <qualifier>lcsh</qualifier>
+              <schema>dc</schema>
+              <value>Embryology - Bibliography</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>subject</element>
+              <qualifier>lcsh</qualifier>
+              <schema>dc</schema>
+              <value>Embryology - Societies, etc.</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>subject</element>
+              <qualifier>mesh</qualifier>
+              <schema>dc</schema>
+              <value>Embryology - Directory</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>title</element>
+              <qualifier/>
+              <schema>dc</schema>
+              <value>General Embryological Information Service, vol. 2</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>title</element>
+              <qualifier>alternative</qualifier>
+              <schema>dc</schema>
+              <value>General Embryological Information Service, 1950</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>type</element>
+              <qualifier/>
+              <schema>dc</schema>
+              <value>Text</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>publisher</element>
+              <qualifier>digital</qualifier>
+              <schema>dc</schema>
+              <value>Biodiversity Heritage Library</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>publisher</element>
+              <qualifier>original</qualifier>
+              <schema>dc</schema>
+              <value>Hubrecht Laboratory</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>rights</element>
+              <qualifier>license</qualifier>
+              <schema>dc</schema>
+              <value>Licensed as Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported. http://creativecommons.org/licenses/by-nc-sa/3.0/</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>subject</element>
+              <qualifier>embryo</qualifier>
+              <schema>dc</schema>
+              <value>People</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>subject</element>
+              <qualifier>embryo</qualifier>
+              <schema>dc</schema>
+              <value>Organizations</value>
+            </metadataentity>
+            <metadataentity type='bean' size='4'>
+              <element>description</element>
+              <qualifier>type</qualifier>
+              <schema>dc</schema>
+              <value>Publications</value>
+            </metadataentity>
+          </metadata>
+          <name>General Embryological Information Service, vol. 2</name>
+          <owningCollection type='bean' size='1'>
+            <id type='number'>27</id>
+          </owningCollection>
+          <submitter type='bean' size='5'>
+            <firstName>Diane</firstName>
+            <fullName>Diane Rielinger</fullName>
+            <id type='number'>7</id>
+            <lastName>Rielinger</lastName>
+            <type type='number'>7</type>
+          </submitter>
+          <type type='number'>2</type>
+        </itementity>
+      </items>
+      <name>ORIGINAL</name>
+      <primaryBitstreamId type='number'>-1</primaryBitstreamId>
+      <type type='number'>1</type>
+    </bundleentity>
+  </bundles>
+  <checkSum>e0141c32c3eb7b38a2236782ff63441a</checkSum>
+  <checkSumAlgorithm>MD5</checkSumAlgorithm>
+  <description/>
+  <formatDescription>Adobe PDF</formatDescription>
+  <handle/>
+  <id type='number'>4762</id>
+  <mimeType>application/pdf</mimeType>
+  <name>generalembryolog021950hubr.pdf</name>
+  <sequenceId type='number'>1</sequenceId>
+  <size type='number'>9220276</size>
+  <source/>
+  <storeNumber type='number'>1</storeNumber>
+  <type type='number'>0</type>
+  <userFormatDescription/>
+  <entityReference>/bitstream/4762</entityReference>
+  <entityURL>http://localhost:8080/rest/bitstream/4762</entityURL>
+  <entityId>4762</entityId>
+</bitstream>
