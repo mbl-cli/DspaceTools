@@ -143,6 +143,10 @@ end
 class Bitstream < DSpaceCSV::DspaceDb::Base
   self.table_name = 'bitstream'
   self.primary_key = 'bitstream_id'
+  
+  def self.resource_number
+    0
+  end
 
   def self.find(id_num)
     Bitstream.where(:community_id => id_num).first
