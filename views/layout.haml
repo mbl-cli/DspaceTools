@@ -9,7 +9,7 @@
       #wrapper.container.container_12
         %h1{ :id => "title" }
           %a{ :href => "/" } CSV to DSpace XML
-        - if auth.credentials && (session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first)
+        - if session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first
           = "Welcome " + session[:current_user].firstname + " " + session[:current_user].lastname
         - else
           - authorize('', '')

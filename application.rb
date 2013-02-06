@@ -38,6 +38,7 @@ class DSpaceCsvUi < Sinatra::Base
     end
 
     def api_keys
+      session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first
       @api_keys ||= ApiKey.where(:eperson_id => session[:current_user].eperson_id)
     end
 
@@ -122,7 +123,6 @@ class DSpaceCsvUi < Sinatra::Base
   protect  do
 
     get '/' do
-      # session[:current_user] = Eperson.where(:email => auth.credentials.first).first
       haml :index
     end
 
