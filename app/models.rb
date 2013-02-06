@@ -6,17 +6,18 @@ class ApiKey < ActiveRecord::Base
   end
 
   def self.get_public_key
-    new_key = false
     key = 0
-    until new_key
-      key = rand(0xffffffff - 0x100000000).+(0x100000000).to_s(16)
-      new_key = ApiKey.where(:public_key => key).empty?
+    while true do
+      rand_max = 0xffffffff - 0x10000000
+      key = rand(rand_max).+(0x10000000).to_s(16)
+      break if ApiKey.where(:public_key => key).empty?
     end
     key
   end
 
   def self.get_private_key
-    rand(0xffffffffffffffff - 0x10000000000000000).+(0x1000000000000000).to_s(16)
+    rand_max = 0xffffffffffffffff - 0x1000000000000000
+    key = rand(rand_max).+(0x1000000000000000).to_s(16)
   end
 
 
