@@ -5,6 +5,21 @@ class ApiKey < ActiveRecord::Base
     Digest::SHA1.hexdigest(path.to_s + key.to_s)[0..7]
   end
 
+  def self.get_public_key
+    new_key = false
+    key = 0
+    until new_key
+      key = rand(0x10000000..0xffffffff).to_s(16)
+      new_key = ApiKey.where(:public_key => key).empty?
+    end
+    key
+  end
+
+  def self.get_private_key
+    rand(0x1000000000000000..0xffffffffffffffff).to_s(16)
+  end
+
+
   def digest(path)
     ApiKey.digest(path, private_key)
   end

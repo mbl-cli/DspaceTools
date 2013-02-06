@@ -119,5 +119,12 @@ describe 'application.rb' do
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('One of these fields must me in archive: Rights, Rights Copyright, Rights License, Rights URI')
   end
+
+  it 'should show api key page' do
+    authorize 'jdoe@example.com', 'secret'
+    get('/api_keys')
+    last_response.status.should == 200
+    last_response.body.match(/abcdef/).should be_true
+  end
 end
 

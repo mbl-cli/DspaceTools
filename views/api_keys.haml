@@ -1,0 +1,29 @@
+%section.grid_8
+  - unless api_keys.empty?
+    %h3 Your Current Api Keys:
+    %table
+      %tr
+        %th App/project
+        %th Public Key
+        %th Private Key
+        %th Action
+      - api_keys.each do |key|
+        %tr
+          %td= key.app_name
+          %td= key.public_key
+          %td= key.private_key
+          %td
+            %form{ :action => "/api_keys", :method => "post" }
+              %input{ :type => "hidden", :name => "_method", :value => "delete" }
+              %input{ :type => "hidden", :name => "public_key", :value => key.public_key }
+              %input{ :type => "submit", :value => "Delete"}
+
+  %h3 Generate new public/private key pair:
+  %form{ :action => "/api_keys", :method => "post"}
+    %p Name of an app/project where the key will be used
+    %input{ :type => "text", :name => "app_name", :size => "20" }
+    %br
+    %input{ :type => "submit", :value => "New Key" }
+  
+
+

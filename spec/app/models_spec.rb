@@ -30,6 +30,17 @@ describe ApiKey do
     ApiKey.digest('onetwo', 'abcdef').should == '805d5daf'
     ApiKey.where(:eperson_id => 1)[-1].digest('onetwo').should == '805d5daf'
   end
+
+  it "should generate public key" do
+    key = ApiKey.get_public_key
+    key.match(/[\h]{8}/).should_not be_nil
+  end
+  
+  it "should generate private key" do
+    key = ApiKey.get_private_key
+    key.match(/[\h]{16}/).should_not be_nil
+  end
+
 end
 
 describe Handle do

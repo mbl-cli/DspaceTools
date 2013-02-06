@@ -17,6 +17,7 @@ class DSpaceCsvUi < Sinatra::Base
   
   enable :sessions
 
+  use Rack::MethodOverride
   use Rack::Timeout
   Rack::Timeout.timeout = 9_000_000
 
@@ -34,6 +35,10 @@ class DSpaceCsvUi < Sinatra::Base
         end
       end
       res
+    end
+
+    def api_keys
+      @api_keys ||= ApiKey.where(:eperson_id => session[:current_user].eperson_id)
     end
 
     private
@@ -115,9 +120,10 @@ class DSpaceCsvUi < Sinatra::Base
   end
   
   protect  do
+
     get '/' do
-        session[:current_user] = Eperson.where(:email => auth.credentials.first).first
-        haml :index
+      # session[:current_user] = Eperson.where(:email => auth.credentials.first).first
+      haml :index
     end
 
     get '/formatting-rules' do
@@ -171,6 +177,22 @@ class DSpaceCsvUi < Sinatra::Base
       @map_file = params["map_file"]
       haml :upload_finished
     end
+
+    get '/api_keys' do 
+      haml :api_keys
+    end
+
+    post '/api_keys' do
+      ApiKey.create(:eperson_id => session[:current_user].eperson_id, :app_name => params[:app_name], :public_key => ApiKey.get_public_key, :private_key => ApiKey.get_private_key)
+      redirect "/api_keys"
+    end
+
+    delete '/api_keys' do
+      key = ApiKey.where(:public_key => params[:public_key]).first
+      key.destroy if key
+      redirect "/api_keys"
+    end
+
   end
 
   authorize do |username, password|
