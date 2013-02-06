@@ -62,7 +62,7 @@ class DSpaceCsvUi < Sinatra::Base
   end
 
   get '/rest/users/:id.:format' do
-    rest_equest(params)
+    rest_request(params)
   end
 
   get '/rest/items.:format' do
