@@ -56,7 +56,23 @@ describe 'api' do
     get(url)
     last_response.status.should == 401
   end
-
+  
+  it 'should show return not found for admin' do
+    stub_request(:get, /.*items\/9999.*/).to_return(open(File.join(HTTP_DIR, "/404_item.xml")))
+    path = "/rest/items/9999.xml"
+    url = "%s?%s%s" % [path, @admin_api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 404
+  end
+  
+  it 'should show return server errors for admin' do
+    stub_request(:get, /.*items\/9999.*/).to_return(open(File.join(HTTP_DIR, "/500.xml")))
+    path = "/rest/items/9999.xml"
+    url = "%s?%s%s" % [path, @admin_api_string, ApiKey.digest(path, 'abcdef')]
+    get(url)
+    last_response.status.should == 500
+  end
+  
   it 'should show restricted item to authorized user' do
     path = "/rest/items/1704.xml"
     stub_request(:get, /.*items\/1704.*/).to_return(open(File.join(HTTP_DIR, "/item1704.xml")))

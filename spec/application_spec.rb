@@ -126,5 +126,23 @@ describe 'application.rb' do
     last_response.status.should == 200
     last_response.body.match(/abcdef/).should be_true
   end
+
+  it 'should create and delete api key' do
+    ApiKey.all.each {|a| a.destroy if a.app_name == 'new_app'}
+    keys_num = ApiKey.count
+    authorize 'jdoe@example.com', 'secret'
+    post('/api_keys', :app_name => 'new_app')
+    last_response.status.should == 302
+    follow_redirect!
+    last_response.status.should == 200
+    last_response.body.match(/new_app/).should be_true
+    (ApiKey.count - keys_num).should == 1
+    delete('/api_keys', :public_key => ApiKey.last.public_key)
+    last_response.status.should == 302
+    follow_redirect!
+    last_response.status.should == 200
+    last_response.body.match(/new_app/).should be_false
+    (ApiKey.count - keys_num).should == 0
+  end
 end
 

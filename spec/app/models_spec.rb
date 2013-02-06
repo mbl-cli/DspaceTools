@@ -28,7 +28,7 @@ describe ApiKey do
 
   it "should be able to get digest as a class and instance methods" do
     ApiKey.digest('onetwo', 'abcdef').should == '805d5daf'
-    ApiKey.where(:eperson_id => 1)[-1].digest('onetwo').should == '805d5daf'
+    ApiKey.where(:eperson_id => 1)[1].digest('onetwo').should == '805d5daf'
   end
 
   it "should generate public key" do

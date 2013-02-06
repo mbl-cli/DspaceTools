@@ -52,7 +52,12 @@ module RestApi
       response = RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
       filter_response(response)
     rescue RestClient::Exception => e
-      not_found
+      code = e.message.to_i
+      if code != 0
+        throw(:halt, [e.message.to_i, e.message])
+      else
+        throw(:halt, [500, "Server problem"])
+      end
     end
   end
 
@@ -121,10 +126,6 @@ module RestApi
 
   def bad_authentication 
     throw(:halt, [401, "Not authorized. Did you submit correct email/password, or API key/digest pair?"]) 
-  end
-
-  def not_found
-    throw(:halt, [404, "Resource is not found"])
   end
 
 end

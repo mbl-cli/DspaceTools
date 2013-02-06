@@ -38,7 +38,6 @@ class DSpaceCsvUi < Sinatra::Base
     end
 
     def api_keys
-      session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first
       @api_keys ||= ApiKey.where(:eperson_id => session[:current_user].eperson_id)
     end
 
@@ -89,6 +88,14 @@ class DSpaceCsvUi < Sinatra::Base
   get '/rest/communities.:format' do
     rest_request(params) 
   end
+  
+  get '/rest/harvest.:format' do
+    rest_request(params)
+  end
+  
+  get '/rest/harvest/:id.:format' do
+    rest_request(params)
+  end
 
   get '/rest/bitstream/:id.:format' do
     rest_request(params)
@@ -119,7 +126,16 @@ class DSpaceCsvUi < Sinatra::Base
   get '/rest/authentication_test.:format' do
     rest_request(params)
   end
-  
+
+  get '/bitstream/handle/:num1/:num2/:filename' do
+    path = request.fullpath
+    RestClient.get(DSpaceCSV::Conf.dspace_repo + path)
+  end
+ 
+  before %r@^(?!/(rest|bitstream))@ do
+    session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first rescue nil
+  end
+
   protect  do
 
     get '/' do
