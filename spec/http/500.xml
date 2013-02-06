@@ -1,0 +1,13 @@
+HTTP/1.1 500 Internal Server Error
+Date: Wed, 06 Feb 2013 15:43:23 GMT
+Status: 500 Internal Server Error
+X-Frame-Options: sameorigin
+X-XSS-Protection: 1; mode=block
+Content-Type: text/html;charset=utf-8
+Content-Length: 30
+Set-Cookie: rack.session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRiJFYmU2MDM0ZDJkYmYxMzdkMDBhY2Zi%0AYzA2MmZkZTc5NDI0Y2NhNTVhYzc5ZWY5M2JjZjI0ZmRkZDJmYWU5ZTg5MEki%0ADXRyYWNraW5nBjsARnsISSIUSFRUUF9VU0VSX0FHRU5UBjsARiItYTRiMGRl%0AMWVjNDYwYjA0MmU0ZmRiZTRmMzg4NzI1NmQzMTI3YzBmOUkiGUhUVFBfQUND%0ARVBUX0VOQ09ESU5HBjsARiItZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2%0AMDE4OTBhZmQ4MDcwOUkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsARiItZGEz%0AOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOQ%3D%3D%0A--68a1814b55026e2bdd42759c76a68ea8ffbe1c57; path=/; HttpOnly
+Via: 1.1 import.hps.ubio.org
+Vary: Accept-Encoding
+Connection: close
+
+<h1>Internal Server Error</h1>
