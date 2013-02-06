@@ -9,14 +9,14 @@ class ApiKey < ActiveRecord::Base
     new_key = false
     key = 0
     until new_key
-      key = rand(0x10000000..0xffffffff).to_s(16)
+      key = rand(0xffffffff - 0x100000000).+(0x100000000).to_s(16)
       new_key = ApiKey.where(:public_key => key).empty?
     end
     key
   end
 
   def self.get_private_key
-    rand(0x1000000000000000..0xffffffffffffffff).to_s(16)
+    rand(0xffffffffffffffff - 0x10000000000000000).+(0x1000000000000000).to_s(16)
   end
 
 
