@@ -9,9 +9,8 @@
       #wrapper.container.container_12
         %h1{ :id => "title" }
           %a{ :href => "/" } CSV to DSpace XML
-        - if session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first
+        - if session[:current_user]
           = "Welcome " + session[:current_user].firstname + " " + session[:current_user].lastname
-        - else
-          - authorize('', '')
+          %a{ :href => "/logout" } logout
         = yield
       %div{ :class => 'clear' } &nbsp;

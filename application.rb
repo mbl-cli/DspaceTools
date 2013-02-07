@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require 'rack/timeout'
 require 'sinatra'
-require 'sinatra/basic_auth'
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
@@ -12,7 +11,6 @@ class DSpaceCsvUi < Sinatra::Base
   include RestApi
   mime_type :csv, 'application/csv'
   register Sinatra::Flash
-  register Sinatra::BasicAuth
   helpers Sinatra::RedirectWithFlash
   
   enable :sessions
@@ -132,88 +130,97 @@ class DSpaceCsvUi < Sinatra::Base
     RestClient.get(DSpaceCSV::Conf.dspace_repo + path)
   end
  
-  before %r@^(?!/(rest|bitstream))@ do
-    session[:current_user] ||= Eperson.where(:email => auth.credentials.first).first rescue nil
+  before %r@^(?!/(login|rest|bitstream))@ do
+    session[:previous_location] = (request.fullpath == "/login" ? "/" : request.fullpath )
+    redirect "/login" unless session[:current_user] and session[:current_user].class.to_s == "Eperson"
   end
 
-  protect  do
+  get '/' do
+    haml :index
+  end
 
-    get '/' do
-      haml :index
-    end
+  get "/login" do
+    haml :login
+  end
 
-    get '/formatting-rules' do
-        erb :rules
-    end
+  post "/login" do
+    eperson = DSpaceCSV.password_authorization({ "email" => params[:email], "password" => params[:password] })
+    session[:current_user] = eperson if eperson
+    redirect session[:previous_location] || "/" 
+  end
 
-    get '/stsrepository-instructions' do
-        erb :sts
-    end
+  get "/logout" do
+    session[:current_user] = nil
+    redirect "/login"
+  end
 
-    get '/extra-help' do
-        erb :help
-    end
+  get '/formatting-rules' do
+      erb :rules
+  end
 
-    get 'template.csv' do
-        content_type :csv
-        send_file 'template.csv'
-    end
+  get '/stsrepository-instructions' do
+      erb :sts
+  end
 
-    post '/upload' do
-      begin
-        DSpaceCSV::Uploader.clean(1)
-        u = DSpaceCSV::Uploader.new(params)
-        e = DSpaceCSV::Expander.new(u)
-        t = DSpaceCSV::Transformer.new(e)
-        if t.errors.empty?
-          session[:path] = t.path
-          session[:collection_id] = params["collection_id"]
-          redirect '/upload_result', :warning => t.warnings[0]
-        else
-          redirect "/", :error => t.errors.join("<br/>")
-        end
-      rescue DSpaceCSV::CsvError => e
-        redirect "/", :error => e.message 
-      rescue DSpaceCSV::UploadError => e
-        redirect "/", :error => e.message 
+  get '/extra-help' do
+      erb :help
+  end
+
+  get 'template.csv' do
+      content_type :csv
+      send_file 'template.csv'
+  end
+
+  post '/upload' do
+    begin
+      DSpaceCSV::Uploader.clean(1)
+      u = DSpaceCSV::Uploader.new(params)
+      e = DSpaceCSV::Expander.new(u)
+      t = DSpaceCSV::Transformer.new(e)
+      if t.errors.empty?
+        session[:path] = t.path
+        session[:collection_id] = params["collection_id"]
+        redirect '/upload_result', :warning => t.warnings[0]
+      else
+        redirect "/", :error => t.errors.join("<br/>")
       end
+    rescue DSpaceCSV::CsvError => e
+      redirect "/", :error => e.message 
+    rescue DSpaceCSV::UploadError => e
+      redirect "/", :error => e.message 
     end
-
-    post '/submit' do
-      dscsv= DSpaceCSV.new(session[:path], session[:collection_id], session[:current_user])
-      @map_file = dscsv.submit
-      redirect '/upload_finished?map_file=' + URI.encode(@map_file)
-    end
-
-    get '/upload_result' do
-      haml :upload_result
-    end
-
-    get '/upload_finished' do
-      @map_file = params["map_file"]
-      haml :upload_finished
-    end
-
-    get '/api_keys' do 
-      haml :api_keys
-    end
-
-    post '/api_keys' do
-      ApiKey.create(:eperson_id => session[:current_user].eperson_id, :app_name => params[:app_name], :public_key => ApiKey.get_public_key, :private_key => ApiKey.get_private_key)
-      redirect "/api_keys"
-    end
-
-    delete '/api_keys' do
-      key = ApiKey.where(:public_key => params[:public_key]).first
-      key.destroy if key
-      redirect "/api_keys"
-    end
-
   end
 
-  authorize do |username, password|
-    !!DSpaceCSV.password_authorization({"email" => username, "password" => password})
+  post '/submit' do
+    dscsv= DSpaceCSV.new(session[:path], session[:collection_id], session[:current_user])
+    @map_file = dscsv.submit
+    redirect '/upload_finished?map_file=' + URI.encode(@map_file)
   end
+
+  get '/upload_result' do
+    haml :upload_result
+  end
+
+  get '/upload_finished' do
+    @map_file = params["map_file"]
+    haml :upload_finished
+  end
+
+  get '/api_keys' do 
+    haml :api_keys
+  end
+
+  post '/api_keys' do
+    ApiKey.create(:eperson_id => session[:current_user].eperson_id, :app_name => params[:app_name], :public_key => ApiKey.get_public_key, :private_key => ApiKey.get_private_key)
+    redirect "/api_keys"
+  end
+
+  delete '/api_keys' do
+    key = ApiKey.where(:public_key => params[:public_key]).first
+    key.destroy if key
+    redirect "/api_keys"
+  end
+
 
   run! if app_file == $0
 
