@@ -34,6 +34,11 @@ class DspaceTools::DspaceDb::Base
   def self.resource_number
     DspaceTools::RESOURCE_TYPE_IDS[self]
   end
+
+  def self.find_id(hsh = {})
+    return nil unless hsh.values[0].is_a?(Fixnum)
+    self.where(hsh).first
+  end
 end
 
 module Resource
@@ -61,8 +66,7 @@ class Eperson < DspaceTools::DspaceDb::Base
   has_many :api_keys
 
   def self.find(id_num)
-    return nil unless id_num.is_a?(Fixnum)
-    Eperson.where(:eperson_id => id_num).first
+    self.find_id(:eperson_id => id_num)
   end
 
   def is_admin?
@@ -87,9 +91,8 @@ class Group < DspaceTools::DspaceDb::Base
   has_many :epersons, :through => :eperson_groups
 
   def self.find(id_num)
-    return nil unless id_num.is_a?(Fixnum)
     return AnonymousGroup.new if id_num == 0
-    Group.where(:eperson_group_id => id_num).first
+    self.find_id(:eperson_group_id => id_num)
   end
 end
 
@@ -126,7 +129,7 @@ class Item < DspaceTools::DspaceDb::Base
   has_many :collections, :through => :collection_items
 
   def self.find(id_num)
-    Item.where(:item_id => id_num).first
+    self.find_id(:item_id => id_num)
   end
 end
 
@@ -137,7 +140,7 @@ class Collection < DspaceTools::DspaceDb::Base
   has_many :collections, :through => :collection_items
   
   def self.find(id_num)
-    Collection.where(:collection_id => id_num).first
+    self.find_id(:collection_id => id_num)
   end
 end
 
@@ -152,7 +155,7 @@ class Community < DspaceTools::DspaceDb::Base
   self.primary_key = 'community_id'
 
   def self.find(id_num)
-    Community.where(:community_id => id_num).first
+    self.find_id(:community_id => id_num)
   end
 end
 
@@ -165,7 +168,7 @@ class Bitstream < DspaceTools::DspaceDb::Base
   end
 
   def self.find(id_num)
-    Bitstream.where(:community_id => id_num).first
+    self.find_id(:bitstream_id => id_num)
   end
 end
 
