@@ -49,5 +49,5 @@ end
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "app"))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_tools"))
-Dir.glob(File.join(File.dirname(__FILE__), "app", "**", "*.rb")) { |app| require File.basename(app, ".*") }
+Dir.glob(File.join(File.dirname(__FILE__), "app", "**", "*.rb")) { |app| require File.basename(app, 'base'); require File.basename(app, ".*") }
 Dir.glob(File.join(File.dirname(__FILE__), "lib", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }

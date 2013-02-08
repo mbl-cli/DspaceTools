@@ -64,30 +64,30 @@ module RestApi
   def filter_response(response)
     return response if @request_user && @request_user.is_admin?
     @doc = Nokogiri.parse(response.body)
-    process_restrictions('//communities', Community)
-    process_restrictions('//communityentityid', Community)
-    process_restrictions('//collections', Collection)
-    process_restrictions('//collectionentityid', Collection)
-    process_restrictions('//items', Item)
-    process_restrictions('//itementityid', Item)
-    process_restrictions('//bitstream', Bitstream)
-    # process_restrictions('//bitstreamentity', Bitstream)
-    # process_restrictions('//bitstreamentityid', Bitstream)
+    [['//communities', Community], ['//communityentityid', Community], ['//collections', Collection],
+    ['//collectionentityid', Collection], ['//items', Item], ['//itementityid', Item],
+    ['//bitstream', Bitstream], ['//bitstreamentity', Bitstream],
+    ['//bitstreamentityid', Bitstream]].each { |path, klass| filter(path, klass) }
     @doc.to_xml
   end
 
-  def process_restrictions(an_xpath, klass)
-    entities = @doc.xpath(an_xpath).inject({}) do |res, node|
-      id = node.xpath('id').text
-      id = node.xpath('entityId').text if id.empty?
-      unless id.empty?
-        id = id.to_i
-        res[id] ? res[id][:nodes] << node : res[id] = { nodes: [node], remove: true }
-      end
-      res
-    end
+  def filter(an_xpath, klass)
+    entities = get_entities(an_xpath)
     return if entities.empty?
     permissions = Resourcepolicy.where("resource_type_id = %s and action_id in (%s) and (eperson_id is not null or epersongroup_id is not null) and resource_id in (%s)" % [klass.resource_number, DspaceTools::ACCESS_ACTIONS.join(","), entities.keys.join(",")] )
+    process_permissions(permissions, entities)
+    remove_unauthorized_entities(entities)
+  end
+
+  def remove_unauthorized_entities(entities)
+    entities.each do |id, value|
+      if value[:remove]
+        value[:nodes].each {|node| node.remove}
+      end
+    end 
+  end
+
+  def process_permissions(permissions, entities)
     permissions.each do |r|
       auth_group = auth_user = false
       if r.epersongroup_id
@@ -98,11 +98,18 @@ module RestApi
       end
       entities[r.resource_id][:remove] = false if (auth_group || auth_user)
     end
-    entities.each do |id, value|
-      if value[:remove]
-        value[:nodes].each {|node| node.remove}
+  end
+  
+  def get_entities(an_xpath)
+    @doc.xpath(an_xpath).inject({}) do |res, node|
+      id = node.xpath('id').text
+      id = node.xpath('entityId').text if id.empty?
+      unless id.empty?
+        id = id.to_i
+        res[id] ? res[id][:nodes] << node : res[id] = { nodes: [node], remove: true }
       end
-    end 
+      res
+    end
   end
 
   def get_content_type(params)
