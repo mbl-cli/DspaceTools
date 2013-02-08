@@ -8,7 +8,7 @@ require_relative "../application.rb"
 
 module RSpecMixin
   include Rack::Test::Methods
-  def app() DSpaceCsvUi end
+  def app() DspaceToolsUi end
 end
 
 RSpec.configure do |c| 

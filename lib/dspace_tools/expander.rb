@@ -1,4 +1,4 @@
-class DSpaceCSV
+class DspaceTools
   class Expander
     attr_reader :uploader, :path
 
@@ -20,7 +20,7 @@ class DSpaceCSV
           end
         end
       rescue Zip::ZipError => e
-        raise DSpaceCSV::UploadError.new("Uploaded file is not in a valid zip format")
+        raise DspaceTools::UploadError.new("Uploaded file is not in a valid zip format")
       end
       adjust_path
     end
@@ -31,7 +31,7 @@ class DSpaceCSV
       if dirs.size == 1
         @path = File.join(@path, dirs[0]) 
       elsif dirs.size > 1
-        raise DSpaceCSV::UploadError.new("Zip archive contains many folders") 
+        raise DspaceTools::UploadError.new("Zip archive contains many folders") 
       end
     end
 

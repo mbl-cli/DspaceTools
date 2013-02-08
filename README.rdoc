@@ -1,5 +1,22 @@
-= DSpace CSV
+= DspaceTools
 
 {<img src="https://secure.travis-ci.org/mbl-cli/CSV-To-DSpace-XML.png" />}[http://travis-ci.org/mbl-cli/CSV-To-DSpace-XML] {<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/mbl-cli/CSV-To-DSpace-XML]
 
-This is a way to automate CSV -> XML -> DSpace
+== Description
+
+DspaceTools app serves following purposes:
+
+  * It simplifies bulk upload to Dspace converting comma-separated lists of terms into xml import files compatible with dspace. 
+  * It adds authentication and authorization to Dspace restful API, hiding restricted data from users who are not supposed to see it.
+  * It adds api_key/api_digest authentication mechanism to restful API
+
+== Install
+
+Install info goes here
+Vagrant Wiki link
+
+== API description
+
+Link to Wiki
+
+

@@ -9,4 +9,4 @@ $stdout.reopen(log)
 $stderr.reopen(log)
 use ActiveRecord::ConnectionAdapters::ConnectionManagement
 
-run DSpaceCsvUi 
+run DspaceToolsUi 

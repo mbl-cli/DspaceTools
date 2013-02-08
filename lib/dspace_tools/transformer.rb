@@ -1,6 +1,6 @@
-class DSpaceCSV
+class DspaceTools
   class Transformer
-    VALID_HEADERS = DSpaceCSV::Conf.valid_fields
+    VALID_HEADERS = DspaceTools::Conf.valid_fields
     RIGHTS_ARRAY = ['Rights', 'Rights Copyright', 'Rights License', 'Rights URI' ]
 
     attr_reader :expander, :path, :errors, :warnings
@@ -72,7 +72,7 @@ class DSpaceCSV
 
     def get_csv_file
       csv_file = Dir.entries(@expander.path).select {|e| e.match(/\.csv$/)}[0]
-      raise DSpaceCSV::CsvError.new("Cannot find file with .csv extension") unless csv_file
+      raise DspaceTools::CsvError.new("Cannot find file with .csv extension") unless csv_file
       csv_file
     end
 
@@ -85,7 +85,7 @@ class DSpaceCSV
         options = {:col_sep => ",", :row_sep => "\n", :headers => true}
         CSV.parse(csv_string, options)
       rescue CSV::MalformedCSVError
-        raise DSpaceCSV::CsvError.new("Cannot parse CSV file")
+        raise DspaceTools::CsvError.new("Cannot parse CSV file")
       end
     end
 

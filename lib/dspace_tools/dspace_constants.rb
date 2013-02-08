@@ -1,4 +1,4 @@
-class DSpaceCSV
+class DspaceTools
   #TODO: remove these!
   class Bitstream; end
   class Bundle; end

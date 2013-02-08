@@ -11,7 +11,7 @@ require "rest-client"
 require "logger"
 
 
-class DSpaceCSV
+class DspaceTools
   #set environment
   environment = ENV["RACK_ENV"] || ENV["RAILS_ENV"]
   set :environment, (environment && ["production", "test", "development"].include?(environment.downcase)) ? environment.downcase.to_sym : :development
@@ -48,6 +48,6 @@ end
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "app"))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_csv"))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_tools"))
 Dir.glob(File.join(File.dirname(__FILE__), "app", "**", "*.rb")) { |app| require File.basename(app, ".*") }
 Dir.glob(File.join(File.dirname(__FILE__), "lib", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }

@@ -2,7 +2,7 @@ module RestApi
 
   def rest_request(params)
     get_content_type(params)
-    @request_user = DSpaceCSV.api_key_authorization(params, request.path) || DSpaceCSV.password_authorization(params)
+    @request_user = DspaceTools.api_key_authorization(params, request.path) || DspaceTools.password_authorization(params)
     if request.path.match 'authentication_test'
       authentication_worked(params["format"]) || bad_authentication
     else
@@ -30,7 +30,7 @@ module RestApi
 
   def can_access_the_entity?
     resource_path = request.path.split("/")[2]
-    resource_number = DSpaceCSV::RESOURCE_TYPE_PATHS[resource_path]
+    resource_number = DspaceTools::RESOURCE_TYPE_PATHS[resource_path]
     auth = Resourcepolicy.where(:resource_type_id => resource_number, :resource_id => params[:id])
     entity_authorized?(auth)
   end
@@ -38,10 +38,10 @@ module RestApi
   def entity_authorized?(auth)
     return true if @request_user && @request_user.is_admin?
     permissions = auth.select do |r|
-      return true if  DSpaceCSV::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && r.epersongroup_id == 0)
+      return true if  DspaceTools::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && r.epersongroup_id == 0)
       if @request_user
-        return true if DSpaceCSV::ACCESS_ACTIONS.include?(r.action_id) && (r.eperson_id && r.eperson_id == @request_user.eperson_id)
-        return true if DSpaceCSV::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && @request_user.groups.map(&:eperson_group_id).include?(r.epersongroup_id))
+        return true if DspaceTools::ACCESS_ACTIONS.include?(r.action_id) && (r.eperson_id && r.eperson_id == @request_user.eperson_id)
+        return true if DspaceTools::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && @request_user.groups.map(&:eperson_group_id).include?(r.epersongroup_id))
       end
     end
     false
@@ -49,7 +49,7 @@ module RestApi
 
   def perform_request
     begin
-      response = RestClient.get(DSpaceCSV::Conf.dspace_repo + request.fullpath)
+      response = RestClient.get(DspaceTools::Conf.dspace_repo + request.fullpath)
       filter_response(response)
     rescue RestClient::Exception => e
       code = e.message.to_i
@@ -87,7 +87,7 @@ module RestApi
       res
     end
     return if entities.empty?
-    permissions = Resourcepolicy.where("resource_type_id = %s and action_id in (%s) and (eperson_id is not null or epersongroup_id is not null) and resource_id in (%s)" % [klass.resource_number, DSpaceCSV::ACCESS_ACTIONS.join(","), entities.keys.join(",")] )
+    permissions = Resourcepolicy.where("resource_type_id = %s and action_id in (%s) and (eperson_id is not null or epersongroup_id is not null) and resource_id in (%s)" % [klass.resource_number, DspaceTools::ACCESS_ACTIONS.join(","), entities.keys.join(",")] )
     permissions.each do |r|
       auth_group = auth_user = false
       if r.epersongroup_id

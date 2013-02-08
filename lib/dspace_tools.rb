@@ -1,4 +1,4 @@
-class DSpaceCSV
+class DspaceTools
   def self.password_authorization(params)
     return nil unless (params["email"] && params["password"])
     Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
@@ -34,27 +34,27 @@ class DSpaceCSV
   private
   
   def get_instance_vars
-    @remote_path = File.join(DSpaceCSV::Conf.remote_tmp_dir, 'csv_' + @path.match(/(dspace_[\d]+)/)[1]) 
+    @remote_path = File.join(DspaceTools::Conf.remote_tmp_dir, 'csv_' + @path.match(/(dspace_[\d]+)/)[1]) 
     @map_file = Time.now().to_s[0..18].gsub(/[\-\s]/,'_') + '_mapfile_' + @user.email.gsub(/[\.@]/, '_')
-    @data = [DSpaceCSV::Conf.dspace_path, @user.email, @collection_id, @remote_path, File.join(DSpaceCSV::Conf.remote_tmp_dir, @map_file)]
+    @data = [DspaceTools::Conf.dspace_path, @user.email, @collection_id, @remote_path, File.join(DspaceTools::Conf.remote_tmp_dir, @map_file)]
     @dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % @data
-    @local_mapfile_path = File.join(DSpaceCSV::Conf.root_path, 'public', 'map_files')
+    @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 'public', 'map_files')
   end
  
   def copy_submission_to_dspace
-    `scp -r #{@path} #{DSpaceCSV::Conf.remote_login}:#{@remote_path}`
+    `scp -r #{@path} #{DspaceTools::Conf.remote_login}:#{@remote_path}`
   end
   
   def import_submission
-    results = `ssh #{DSpaceCSV::Conf.remote_login} '#{@dspace_command}'` 
+    results = `ssh #{DspaceTools::Conf.remote_login} '#{@dspace_command}'` 
   end
     
   def copy_map_file_to_local
-    `scp #{DSpaceCSV::Conf.remote_login}:#{File.join(DSpaceCSV::Conf.remote_tmp_dir, @map_file)} #{@local_mapfile_path}`
+    `scp #{DspaceTools::Conf.remote_login}:#{File.join(DspaceTools::Conf.remote_tmp_dir, @map_file)} #{@local_mapfile_path}`
   end
 
   def cleanup
-    `ssh #{DSpaceCSV::Conf.remote_login} 'find #{File.join(DSpaceCSV::Conf.remote_tmp_dir, "csv_dspace_*")} -maxdepth 0 -mtime 1 -exec rm -rf {} \;'`
+    `ssh #{DspaceTools::Conf.remote_login} 'find #{File.join(DspaceTools::Conf.remote_tmp_dir, "csv_dspace_*")} -maxdepth 0 -mtime 1 -exec rm -rf {} \;'`
   end
 
 end

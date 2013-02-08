@@ -1,9 +1,9 @@
-class DSpaceCSV
+class DspaceTools
   class Uploader
     attr_reader :params, :file, :dir, :path, :zip_file
 
     def self.clean(days = 1)
-      tmp_dir = DSpaceCSV::Conf.tmp_dir
+      tmp_dir = DspaceTools::Conf.tmp_dir
       threshold = 86400 * days
       now = Time.now.to_i
       Dir.entries(tmp_dir).select {|e| e.match /^dspace_[\d]{10}/}.each do |dir|
@@ -14,7 +14,7 @@ class DSpaceCSV
 
     def initialize(params)
       @params = params
-      @file = @params["file"] || raise(DSpaceCSV::UploadError.new("No file to upload")) 
+      @file = @params["file"] || raise(DspaceTools::UploadError.new("No file to upload")) 
       @dir = get_dir
       copy_file
       @zip_file = File.join(@path, @file[:filename])
@@ -26,7 +26,7 @@ class DSpaceCSV
       res = nil
       until res
         res = "dspace_%010d" % rand(9999999999)
-        @path = File.join(DSpaceCSV::Conf.tmp_dir, res)
+        @path = File.join(DspaceTools::Conf.tmp_dir, res)
         @path = res = nil if File.exists?(@path)
       end
       res

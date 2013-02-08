@@ -30,16 +30,16 @@ class ApiKey < ActiveRecord::Base
   end
 end
 
-class DSpaceCSV::DspaceDb::Base
+class DspaceTools::DspaceDb::Base
   def self.resource_number
-    DSpaceCSV::RESOURCE_TYPE_IDS[self]
+    DspaceTools::RESOURCE_TYPE_IDS[self]
   end
 end
 
 module Resource
 
   def resource_type
-    DSpaceCSV::RESOURCE_TYPE[resource_type_id][:klass]
+    DspaceTools::RESOURCE_TYPE[resource_type_id][:klass]
   end
 
   def resource
@@ -53,7 +53,7 @@ class AnonymousGroup
    
 end
 
-class Eperson < DSpaceCSV::DspaceDb::Base
+class Eperson < DspaceTools::DspaceDb::Base
   self.table_name = 'eperson'
   self.primary_key = 'eperson_id'
   has_many :eperson_groups, :class_name => 'EpersonGroup'
@@ -74,13 +74,13 @@ class Eperson < DSpaceCSV::DspaceDb::Base
   def password; end
 end
 
-class EpersonGroup < DSpaceCSV::DspaceDb::Base
+class EpersonGroup < DspaceTools::DspaceDb::Base
   self.table_name = 'epersongroup2eperson'
   belongs_to :group, :class_name => 'Group', :foreign_key => 'eperson_group_id'
   belongs_to :eperson, :class_name => 'Eperson', :foreign_key => 'eperson_id'
 end
 
-class Group < DSpaceCSV::DspaceDb::Base
+class Group < DspaceTools::DspaceDb::Base
   self.table_name = 'epersongroup'
   self.primary_key = 'eperson_group_id'
   has_many :eperson_groups, :class_name => 'EpersonGroup', :foreign_key => 'eperson_group_id'
@@ -93,14 +93,14 @@ class Group < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class Handle < DSpaceCSV::DspaceDb::Base
+class Handle < DspaceTools::DspaceDb::Base
   include Resource
   self.table_name = 'handle'
   self.primary_key = 'handle_id'
 
   def path
     return nil unless resource_id
-    "/rest/%s%s" % [DSpaceCSV::RESOURCE_TYPE[resource_type_id][:rest_path], resource_id] 
+    "/rest/%s%s" % [DspaceTools::RESOURCE_TYPE[resource_type_id][:rest_path], resource_id] 
   end
 
   def fullpath(original_fullpath, original_path)
@@ -119,7 +119,7 @@ class Handle < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class Item < DSpaceCSV::DspaceDb::Base
+class Item < DspaceTools::DspaceDb::Base
   self.table_name = 'item'
   self.primary_key = 'item_id'
   has_many :collection_items, :class_name => 'CollectionItem', :foreign_key => 'item_id'
@@ -130,7 +130,7 @@ class Item < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class Collection < DSpaceCSV::DspaceDb::Base
+class Collection < DspaceTools::DspaceDb::Base
   self.table_name = 'collection'
   self.primary_key = 'collection_id'
   has_many :collection_items, :class_name => 'CollectionItem', :foreign_key => 'collection_id'
@@ -141,13 +141,13 @@ class Collection < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class CollectionItem < DSpaceCSV::DspaceDb::Base
+class CollectionItem < DspaceTools::DspaceDb::Base
   self.table_name = 'collection2item'
   belongs_to :collection, :class_name => 'Collection', :foreign_key => 'collection_id'
   belongs_to :item, :class_name => 'Item', :foreign_key => 'item_id'
 end
 
-class Community < DSpaceCSV::DspaceDb::Base
+class Community < DspaceTools::DspaceDb::Base
   self.table_name = 'community'
   self.primary_key = 'community_id'
 
@@ -156,7 +156,7 @@ class Community < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class Bitstream < DSpaceCSV::DspaceDb::Base
+class Bitstream < DspaceTools::DspaceDb::Base
   self.table_name = 'bitstream'
   self.primary_key = 'bitstream_id'
   
@@ -169,13 +169,13 @@ class Bitstream < DSpaceCSV::DspaceDb::Base
   end
 end
 
-class Resourcepolicy < DSpaceCSV::DspaceDb::Base
+class Resourcepolicy < DspaceTools::DspaceDb::Base
   include Resource
   self.table_name = 'resourcepolicy'
   self.primary_key = 'policy_id'
   
   def action
-    DSpaceCSV::ACTION[action_id]
+    DspaceTools::ACTION[action_id]
   end
 
   def group

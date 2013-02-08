@@ -7,7 +7,7 @@ require 'sinatra/redirect_with_flash'
 require_relative "./environment"
 
 
-class DSpaceCsvUi < Sinatra::Base
+class DspaceToolsUi < Sinatra::Base
   include RestApi
   mime_type :csv, 'application/csv'
   register Sinatra::Flash
@@ -127,7 +127,7 @@ class DSpaceCsvUi < Sinatra::Base
 
   get '/bitstream/handle/:num1/:num2/:filename' do
     path = request.fullpath
-    RestClient.get(DSpaceCSV::Conf.dspace_repo + path)
+    RestClient.get(DspaceTools::Conf.dspace_repo + path)
   end
  
   before %r@^(?!/(login|rest|bitstream))@ do
@@ -144,7 +144,7 @@ class DSpaceCsvUi < Sinatra::Base
   end
 
   post "/login" do
-    eperson = DSpaceCSV.password_authorization({ "email" => params[:email], "password" => params[:password] })
+    eperson = DspaceTools.password_authorization({ "email" => params[:email], "password" => params[:password] })
     session[:current_user] = eperson if eperson
     redirect session[:previous_location] || "/" 
   end
@@ -173,10 +173,10 @@ class DSpaceCsvUi < Sinatra::Base
 
   post '/upload' do
     begin
-      DSpaceCSV::Uploader.clean(1)
-      u = DSpaceCSV::Uploader.new(params)
-      e = DSpaceCSV::Expander.new(u)
-      t = DSpaceCSV::Transformer.new(e)
+      DspaceTools::Uploader.clean(1)
+      u = DspaceTools::Uploader.new(params)
+      e = DspaceTools::Expander.new(u)
+      t = DspaceTools::Transformer.new(e)
       if t.errors.empty?
         session[:path] = t.path
         session[:collection_id] = params["collection_id"]
@@ -184,15 +184,15 @@ class DSpaceCsvUi < Sinatra::Base
       else
         redirect "/", :error => t.errors.join("<br/>")
       end
-    rescue DSpaceCSV::CsvError => e
+    rescue DspaceTools::CsvError => e
       redirect "/", :error => e.message 
-    rescue DSpaceCSV::UploadError => e
+    rescue DspaceTools::UploadError => e
       redirect "/", :error => e.message 
     end
   end
 
   post '/submit' do
-    dscsv= DSpaceCSV.new(session[:path], session[:collection_id], session[:current_user])
+    dscsv= DspaceTools.new(session[:path], session[:collection_id], session[:current_user])
     @map_file = dscsv.submit
     redirect '/upload_finished?map_file=' + URI.encode(@map_file)
   end
