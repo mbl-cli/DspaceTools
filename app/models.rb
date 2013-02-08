@@ -39,6 +39,11 @@ class DspaceTools::DspaceDb::Base
     return nil unless hsh.values[0].is_a?(Fixnum)
     self.where(hsh).first
   end
+
+  def self.table_params(hsh)
+    self.table_name = hsh[:table_name] if hsh[:table_name]
+    self.primary_key = hsh[:primary_key] if hsh[:primary_key]
+  end
 end
 
 module Resource
@@ -59,8 +64,7 @@ class AnonymousGroup
 end
 
 class Eperson < DspaceTools::DspaceDb::Base
-  self.table_name = 'eperson'
-  self.primary_key = 'eperson_id'
+  self.table_params(:table_name => 'eperson', :primary_key => 'eperson_id')
   has_many :eperson_groups, :class_name => 'EpersonGroup'
   has_many :groups, :through => :eperson_groups
   has_many :api_keys
@@ -85,8 +89,7 @@ class EpersonGroup < DspaceTools::DspaceDb::Base
 end
 
 class Group < DspaceTools::DspaceDb::Base
-  self.table_name = 'epersongroup'
-  self.primary_key = 'eperson_group_id'
+  self.table_params(:table_name => 'epersongroup', :primary_key => 'eperson_group_id')
   has_many :eperson_groups, :class_name => 'EpersonGroup', :foreign_key => 'eperson_group_id'
   has_many :epersons, :through => :eperson_groups
 
@@ -98,8 +101,7 @@ end
 
 class Handle < DspaceTools::DspaceDb::Base
   include Resource
-  self.table_name = 'handle'
-  self.primary_key = 'handle_id'
+  self.table_params(:table_name => 'handle', :primary_key => 'handle_id')
 
   def path
     return nil unless resource_id
@@ -123,8 +125,7 @@ class Handle < DspaceTools::DspaceDb::Base
 end
 
 class Item < DspaceTools::DspaceDb::Base
-  self.table_name = 'item'
-  self.primary_key = 'item_id'
+  self.table_params(:table_name => 'item', :primary_key => 'item_id')
   has_many :collection_items, :class_name => 'CollectionItem', :foreign_key => 'item_id'
   has_many :collections, :through => :collection_items
 
@@ -134,8 +135,7 @@ class Item < DspaceTools::DspaceDb::Base
 end
 
 class Collection < DspaceTools::DspaceDb::Base
-  self.table_name = 'collection'
-  self.primary_key = 'collection_id'
+  self.table_params(:table_name => 'collection', :primary_key => 'collection_id')
   has_many :collection_items, :class_name => 'CollectionItem', :foreign_key => 'collection_id'
   has_many :collections, :through => :collection_items
   
@@ -151,8 +151,7 @@ class CollectionItem < DspaceTools::DspaceDb::Base
 end
 
 class Community < DspaceTools::DspaceDb::Base
-  self.table_name = 'community'
-  self.primary_key = 'community_id'
+  self.table_params(:table_name => 'community', :primary_key => 'community_id')
 
   def self.find(id_num)
     self.find_id(:community_id => id_num)
@@ -160,8 +159,7 @@ class Community < DspaceTools::DspaceDb::Base
 end
 
 class Bitstream < DspaceTools::DspaceDb::Base
-  self.table_name = 'bitstream'
-  self.primary_key = 'bitstream_id'
+  self.table_params(:table_name => 'bitstream', :primary_key => 'bitstream_id')
   
   def self.resource_number
     0
@@ -174,8 +172,7 @@ end
 
 class Resourcepolicy < DspaceTools::DspaceDb::Base
   include Resource
-  self.table_name = 'resourcepolicy'
-  self.primary_key = 'policy_id'
+  self.table_params(:table_name => 'resourcepolicy', :primary_key => 'policy_id')
   
   def action
     DspaceTools::ACTION[action_id]
