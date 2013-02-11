@@ -1,6 +1,6 @@
 = DspaceTools
 
-{<img src="https://secure.travis-ci.org/mbl-cli/CSV-To-DSpace-XML.png" />}[http://travis-ci.org/mbl-cli/CSV-To-DSpace-XML] {<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/mbl-cli/CSV-To-DSpace-XML]
+{<img src="https://secure.travis-ci.org/mbl-cli/DspaceTools.png" />}[http://travis-ci.org/mbl-cli/DspaceTools] {<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/mbl-cli/DspaceTools]
 
 == Description
 

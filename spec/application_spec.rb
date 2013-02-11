@@ -6,6 +6,10 @@ end
 
 describe 'application.rb no login' do
 
+  it 'should return version number' do 
+    DspaceTools.version.match(/[\d]+\.+[\d]+\.[\d]+/).should be_true
+  end
+
   it 'should break on unknown user' do
     get '/', {}, {"HTTP_AUTHORIZATION" => credentials("unknown", "bad_pass")}
     last_response.redirect?.should be_true

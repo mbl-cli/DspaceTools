@@ -1,4 +1,9 @@
 class DspaceTools
+  
+  def self.version
+    open(File.join(File.dirname(__FILE__), '..', 'VERSION')).read.strip
+  end
+
   def self.password_authorization(params)
     return nil unless (params["email"] && params["password"])
     Eperson.where(:email => params["email"], :password => Digest::MD5.hexdigest(params["password"])).first
