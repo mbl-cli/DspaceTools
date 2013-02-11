@@ -6,17 +6,38 @@
 
 DspaceTools app serves following purposes:
 
-  * It simplifies bulk upload to Dspace converting comma-separated lists of terms into xml import files compatible with dspace. 
-  * It adds authentication and authorization to Dspace restful API, hiding restricted data from users who are not supposed to see it.
-  * It adds api_key/api_digest authentication mechanism to restful API
+* It simplifies bulk upload to Dspace converting comma-separated lists of terms into xml import files compatible with dspace. 
+
+* It adds authentication and authorization to Dspace restful API, hiding restricted data from users who are not supposed to see it.
+
+* It adds api_key/api_digest authentication mechanism to restful API
+
+
+== Requirements 
+
+* Ruby v1.9.3 or higher
+
+* Ruby Virtual Machine (rvm) is recommended for development
+
+* Working DSpace with Postgresql in backend
+
+* MySQL database
+
+== Running tests
+
+Look at content of {.travis.yml}[https://github.com/mbl-cli/DspaceTools/blob/master/.travis.yml] in the project directory. It is used by continuous integration server to create tests environment.
 
 == Install
 
-Install info goes here
-Vagrant Wiki link
+TODO:
+
+== Automatic virtual machine creation
+
+TODO: Vagrant wiki link
+
 
 == API description
 
-Link to Wiki
+{API}[https://github.com/mbl-cli/DspaceTools/wiki/API]
 
 
