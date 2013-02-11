@@ -106,7 +106,7 @@ class DspaceToolsUi < Sinatra::Base
     if path
       redirect(handle.fullpath(request.fullpath, request.path_info), 303)
     else
-      throw(:halt, [404, "Unknown handle %s" % params["handle"]])
+      not_found
     end
   end
 
@@ -117,7 +117,7 @@ class DspaceToolsUi < Sinatra::Base
     if path
       redirect(handle.fullpath(request.fullpath, request.path_info), 303)
     else
-      throw(:halt, [404, "Unknown handle %s" % params["handle"]])
+      not_found
     end
   end
 

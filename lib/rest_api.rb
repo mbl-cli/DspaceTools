@@ -135,4 +135,8 @@ module RestApi
     throw(:halt, [401, "Not authorized. Did you submit correct email/password, or API key/digest pair?"]) 
   end
 
+  def not_found
+    throw(:halt, [404, "Unknown handle %s" % params["handle"]])
+  end
+
 end
