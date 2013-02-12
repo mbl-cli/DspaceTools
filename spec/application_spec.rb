@@ -15,13 +15,13 @@ describe 'application.rb no login' do
     last_response.redirect?.should be_true
     follow_redirect!
     last_response.successful?.should be_true
-    last_response.body.match("Login to Dspace Tools").should be_true
+    last_response.body.match("Email").should be_true
   end
   
   it "should get login page" do
     get('/login')
     last_response.status.should == 200
-    last_response.body.match(/Login to Dspace Tools/).should be_true
+    last_response.body.match(/Email/).should be_true
   end
 end
 
@@ -34,7 +34,7 @@ describe 'application.rb with login' do
   it 'should show the default index page' do
     get '/'
     last_response.status.should == 200
-    last_response.body.should include('CSV to DSpace XML')
+    last_response.body.should include('Welcome')
   end
 
   it 'should upload file and show generated content' do
@@ -159,7 +159,7 @@ describe 'application.rb with login' do
     follow_redirect!
     last_response.successful?.should be_true
     last_response.body.match(/Doe/).should be_false
-    last_response.body.match("Login to Dspace Tools").should be_true
+    last_response.body.match("Email").should be_true
   end
 
 end

@@ -130,8 +130,8 @@ class DspaceToolsUi < Sinatra::Base
     RestClient.get(DspaceTools::Conf.dspace_repo + path)
   end
  
-  before %r@^(?!/(login|rest|bitstream))@ do
-    session[:previous_location] = (request.fullpath == "/login" ? "/" : request.fullpath )
+  before %r@^(?!/(login|rest|bitstream|favicon))@ do
+    session[:previous_location] = request.fullpath
     redirect "/login" unless session[:current_user] and session[:current_user].class.to_s == "Eperson"
   end
 
