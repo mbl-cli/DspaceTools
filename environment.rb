@@ -21,6 +21,7 @@ class DspaceTools
     :root_path => File.dirname(__FILE__),
     :tmp_dir => conf_data['tmp_dir'],
     :remote_tmp_dir => conf_data['remote_tmp_dir'],
+    :session_secret => conf_data['session_secret'],
     :dspace_repo => conf_data['dspace_repo'],
     :dspace_path => conf_data['dspace_path'],
     :remote_login => conf_data['remote_login'],
@@ -44,6 +45,7 @@ class DspaceTools
   DspaceDb::Base.establish_connection(Conf.dspacedb)
 #################################
 
+  set :session_secret, DspaceTools::Conf.session_secret
 end
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "app"))
