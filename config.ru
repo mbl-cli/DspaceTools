@@ -8,6 +8,5 @@ log = File.new("log/sinatra.log", "a+")
 $stdout.reopen(log)
 $stderr.reopen(log)
 use ActiveRecord::ConnectionAdapters::ConnectionManagement
-use ActiveRecord::SessionStore
 
 run DspaceToolsUi 
