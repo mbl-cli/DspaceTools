@@ -13,11 +13,12 @@ class DspaceToolsUi < Sinatra::Base
   register Sinatra::Flash
   helpers Sinatra::RedirectWithFlash
   
-  enable :sessions
 
   use Rack::MethodOverride
   use Rack::Timeout
   Rack::Timeout.timeout = 9_000_000
+
+  enable :sessions
 
   helpers do 
     include Sinatra::RedirectWithFlash

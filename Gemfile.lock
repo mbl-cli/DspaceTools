@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    actionpack (3.2.12)
     activemodel (3.2.12)
       activesupport (= 3.2.12)
       builder (~> 3.0.0)
@@ -12,27 +13,28 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    addressable (2.3.2)
+    addressable (2.3.3)
     arel (3.0.2)
-    backports (2.8.2)
+    backports (3.0.3)
     builder (3.0.4)
     columnize (0.3.6)
     crack (0.3.2)
-    debugger (1.3.1)
+    debugger (1.3.3)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.1.8)
+      debugger-ruby_core_source (~> 1.2.0)
     debugger-linecache (1.1.2)
       debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.1.8)
-    diff-lcs (1.1.3)
+    debugger-ruby_core_source (1.2.0)
+    diff-lcs (1.2.1)
     eventmachine (1.0.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    haml (3.1.7)
+    haml (4.0.0)
+      tilt
     i18n (0.6.1)
     mime-types (1.21)
-    multi_json (1.5.1)
+    multi_json (1.6.1)
     mysql2 (0.3.11)
     nokogiri (1.5.6)
     pg (0.14.1)
@@ -46,20 +48,20 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rr (1.0.4)
-    rspec (2.12.0)
-      rspec-core (~> 2.12.0)
-      rspec-expectations (~> 2.12.0)
-      rspec-mocks (~> 2.12.0)
-    rspec-core (2.12.2)
-    rspec-expectations (2.12.1)
-      diff-lcs (~> 1.1.3)
-    rspec-mocks (2.12.2)
+    rspec (2.13.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
+    rspec-core (2.13.0)
+    rspec-expectations (2.13.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.13.0)
     rubyzip (0.9.9)
-    sinatra (1.3.4)
+    sinatra (1.3.5)
       rack (~> 1.4)
       rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
-    sinatra-activerecord (1.2.1)
+    sinatra-activerecord (1.2.2)
       activerecord (~> 3.0)
       sinatra (~> 1.0)
     sinatra-basic-auth (0.1.0)
@@ -79,14 +81,15 @@ GEM
       sinatra-contrib
     tilt (1.3.3)
     tzinfo (0.3.35)
-    webmock (1.9.0)
+    webmock (1.9.3)
       addressable (>= 2.2.7)
-      crack (>= 0.1.7)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack
   debugger
   factory_girl
   haml
