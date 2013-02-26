@@ -20,6 +20,8 @@ gem "rest-client"
 
 group :development do
   gem "debugger"
+  gem "rerun"
+  gem "rb-fsevent"
 end
 
 group :test do

@@ -19,8 +19,8 @@ class DspaceToolsUi < Sinatra::Base
     use Rack::Timeout
     Rack::Timeout.timeout = 9_000_000
 
-    enable :sessions
-    set :session_secret, DspaceTools::Conf.session_secret
+    # use Rack::Session::Cookie, :secret => DspaceTools::Conf.session_secret
+    use Rack::Session::Pool, :secret => DspaceTools::Conf.session_secret
   end
 
   helpers do 

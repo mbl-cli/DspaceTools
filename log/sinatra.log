@@ -1,0 +1,88 @@
+/Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `initialize': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `new'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `block in create_listeners'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:82:in `each'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:82:in `create_listeners'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:82:in `listen'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:70:in `initialize'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:45:in `initialize'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/server.rb:141:in `start'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/bin/rackup:4:in `<top (required)>'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/rackup:19:in `load'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/rackup:19:in `<main>'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/ruby_noexec_wrapper:14:in `eval'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/ruby_noexec_wrapper:14:in `<main>'
+[2013-02-26 16:47:46] INFO  WEBrick 1.3.1
+[2013-02-26 16:47:46] INFO  ruby 1.9.3 (2013-01-15) [x86_64-darwin11.4.2]
+[2013-02-26 16:47:46] WARN  TCPServer Error: Address already in use - bind(2)
+/Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `initialize': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `new'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `block in create_listeners'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:82:in `each'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:82:in `create_listeners'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:82:in `listen'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:70:in `initialize'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:45:in `initialize'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/server.rb:141:in `start'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/bin/rackup:4:in `<top (required)>'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/rackup:19:in `load'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/rackup:19:in `<main>'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/ruby_noexec_wrapper:14:in `eval'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/ruby_noexec_wrapper:14:in `<main>'
+[2013-02-26 16:48:11] INFO  WEBrick 1.3.1
+[2013-02-26 16:48:11] INFO  ruby 1.9.3 (2013-01-15) [x86_64-darwin11.4.2]
+[2013-02-26 16:48:11] WARN  TCPServer Error: Address already in use - bind(2)
+/Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `initialize': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `new'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:85:in `block in create_listeners'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:82:in `each'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/utils.rb:82:in `create_listeners'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:82:in `listen'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:70:in `initialize'
+	from /Users/dimus/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:45:in `initialize'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/lib/rack/server.rb:141:in `start'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/gems/rack-1.5.2/bin/rackup:4:in `<top (required)>'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/rackup:19:in `load'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/rackup:19:in `<main>'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/ruby_noexec_wrapper:14:in `eval'
+	from /Users/dimus/.rvm/gems/ruby-1.9.3-p374@rainbows_unicorns/bin/ruby_noexec_wrapper:14:in `<main>'
+[2013-02-26 16:48:58] INFO  WEBrick 1.3.1
+[2013-02-26 16:48:58] INFO  ruby 1.9.3 (2013-01-15) [x86_64-darwin11.4.2]
+[2013-02-26 16:48:58] WARN  TCPServer Error: Address already in use - bind(2)
+D, [2013-02-26T17:02:10.585944 #85874] DEBUG -- :   [1m[36mEperson Load (2.2ms)[0m  [1mSELECT "eperson".* FROM "eperson" WHERE "eperson"."email" = 'dmozzherin@mbl.edu' AND "eperson"."password" = '5115aa49afe2c9294ade5ca1ea617bd3' LIMIT 1[0m
+D, [2013-02-26T17:02:16.542780 #85874] DEBUG -- :   [1m[35m (2.4ms)[0m  SELECT COUNT(*) FROM `api_keys` WHERE `api_keys`.`eperson_id` = 34
+D, [2013-02-26T17:02:16.543644 #85874] DEBUG -- :   [1m[36mApiKey Load (0.2ms)[0m  [1mSELECT `api_keys`.* FROM `api_keys` WHERE `api_keys`.`eperson_id` = 34[0m
+D, [2013-02-26T17:02:20.245104 #85874] DEBUG -- :   [1m[35m (27.2ms)[0m  SELECT COUNT(*) FROM `api_keys` WHERE `api_keys`.`public_key` = '6057ef29'
+D, [2013-02-26T17:02:20.246244 #85874] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2013-02-26T17:02:20.248022 #85874] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO `api_keys` (`app_name`, `created_at`, `eperson_id`, `private_key`, `public_key`, `updated_at`) VALUES ('jlkjlkj', '2013-02-26 17:02:20', 34, 'e9d97588319bfc02', '6057ef29', '2013-02-26 17:02:20')
+D, [2013-02-26T17:02:20.248322 #85874] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+D, [2013-02-26T17:02:20.260098 #85874] DEBUG -- :   [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `api_keys` WHERE `api_keys`.`eperson_id` = 34
+D, [2013-02-26T17:02:20.260527 #85874] DEBUG -- :   [1m[36mApiKey Load (0.2ms)[0m  [1mSELECT `api_keys`.* FROM `api_keys` WHERE `api_keys`.`eperson_id` = 34[0m
+[2013-02-26 17:01:33] INFO  WEBrick 1.3.1
+[2013-02-26 17:01:33] INFO  ruby 1.9.3 (2013-01-15) [x86_64-darwin11.4.2]
+[2013-02-26 17:01:33] INFO  WEBrick::HTTPServer#start: pid=85874 port=9292
+127.0.0.1 - - [26/Feb/2013 17:02:00] "GET / HTTP/1.1" 302 - 0.0018
+127.0.0.1 - - [26/Feb/2013 17:02:00] "GET /login HTTP/1.1" 200 635 0.0274
+127.0.0.1 - - [26/Feb/2013 17:02:00] "GET /favicon.ico HTTP/1.1" 302 - 0.0014
+127.0.0.1 - - [26/Feb/2013 17:02:00] "GET /login HTTP/1.1" 200 635 0.0057
+127.0.0.1 - - [26/Feb/2013 17:02:10] "POST /login HTTP/1.1" 303 - 0.0929
+127.0.0.1 - - [26/Feb/2013 17:02:10] "GET / HTTP/1.1" 200 1327 0.0083
+127.0.0.1 - - [26/Feb/2013 17:02:10] "GET /favicon.ico HTTP/1.1" 302 - 0.0019
+127.0.0.1 - - [26/Feb/2013 17:02:10] "GET /login HTTP/1.1" 200 635 0.0062
+127.0.0.1 - - [26/Feb/2013 17:02:16] "GET /api_keys HTTP/1.1" 200 1490 0.0424
+127.0.0.1 - - [26/Feb/2013 17:02:16] "GET /favicon.ico HTTP/1.1" 302 - 0.0021
+127.0.0.1 - - [26/Feb/2013 17:02:16] "GET /login HTTP/1.1" 200 635 0.0074
+127.0.0.1 - - [26/Feb/2013 17:02:20] "POST /api_keys HTTP/1.1" 303 - 0.0339
+127.0.0.1 - - [26/Feb/2013 17:02:20] "GET /api_keys HTTP/1.1" 200 1947 0.0106
+127.0.0.1 - - [26/Feb/2013 17:02:20] "GET /favicon.ico HTTP/1.1" 302 - 0.0014
+127.0.0.1 - - [26/Feb/2013 17:02:20] "GET /login HTTP/1.1" 200 635 0.0057
+[2013-02-26 17:02:26] INFO  going to shutdown ...
