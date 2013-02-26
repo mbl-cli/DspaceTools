@@ -31,7 +31,7 @@ class DspaceTools
     :valid_fields => YAML.load(open(File.join(File.dirname(__FILE__), "config", "valid_fields.yml")).read).map { |f| f.strip },
   )
 
-##### Connect Databases #########  
+  ##### Connect Databases #########  
   ActiveRecord::Base.logger = Logger.new(STDOUT, :debug)
   ActiveRecord::Base.establish_connection(Conf.localdb)
 
@@ -43,13 +43,15 @@ class DspaceTools
 
   DspaceDb::Base.logger = Logger.new(STDOUT, :debug)
   DspaceDb::Base.establish_connection(Conf.dspacedb)
-#################################
-
-  set :session_secret, DspaceTools::Conf.session_secret
+  #################################
 end
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "app"))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib", "dspace_tools"))
-Dir.glob(File.join(File.dirname(__FILE__), "app", "**", "*.rb")) { |app| require File.basename(app, 'base'); require File.basename(app, ".*") }
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'app'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'app', 'models'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'app', 'routes'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib', 'dspace_tools'))
+require 'base'
+Dir.glob(File.join(File.dirname(__FILE__), 'app', '**', '*.rb')) { |app| require File.basename(app, '.*') }
 Dir.glob(File.join(File.dirname(__FILE__), "lib", "**", "*.rb")) { |lib| require File.basename(lib, ".*") }
