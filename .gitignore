@@ -4,3 +4,4 @@ vendor
 *.swp
 config/users.yml
 config/config.yml
+log
