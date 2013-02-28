@@ -1,19 +1,32 @@
-#!/usr/bin/env ruby
 require 'rack/timeout'
+require "zen-grids"
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
-require_relative "./environment"
+require_relative './environment'
+
+class SassEngine < Sinatra::Base
+  
+  set :views,   File.join(File.dirname(__FILE__), 'app', 'css', 'sass')
+  
+  get '/css/:filename.css' do
+    scss params[:filename].to_sym
+  end
+  
+end
 
 class DspaceToolsUi < Sinatra::Base
   include RestApi
   
   configure do
+    use SassEngine
     mime_type :csv, 'application/csv'
     register Sinatra::Flash
     helpers Sinatra::RedirectWithFlash
-    
+    Compass.add_project_configuration(File.join(File.dirname(__FILE__),  
+                                                'config', 
+                                                'compass_config.rb'))    
 
     use Rack::MethodOverride
     use Rack::Timeout
@@ -40,7 +53,7 @@ class DspaceToolsUi < Sinatra::Base
     end
 
     def api_keys
-      @api_keys ||= ApiKey.where(:eperson_id => session[:current_user].eperson_id)
+      @api_keys ||= ApiKey.where(eperson_id: session[:current_user].eperson_id)
     end
 
     private
@@ -57,8 +70,6 @@ class DspaceToolsUi < Sinatra::Base
       res
     end
   end
-
-  run! if app_file == $0
 
 end
 

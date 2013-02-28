@@ -3,14 +3,15 @@
   %head
     %title 
       Dspace Tools 
-    %body
-      = styled_flash
-      %div{ :id => "background" }
-      #wrapper.container.container_12
-        %h1{ :id => "title" }
-          %a{ :href => "/" } Dspace Tools
-        - if session[:current_user]
-          = "Welcome " + session[:current_user].firstname + " " + session[:current_user].lastname
-          %a{ :href => "/logout" } logout
-        = yield
-      %div{ :class => 'clear' } &nbsp;
+    %link{rel: 'stylesheet', href: '/css/app.css', type: 'text/css'}
+  %body
+    = styled_flash
+    %div{ :id => 'background' }
+    #wrapper.container.container_12
+      %h1{ id: 'title' }
+        %a{ href: '/' } Dspace Tools
+      - if session[:current_user]
+        = 'Welcome ' + session[:current_user].firstname + ' ' + session[:current_user].lastname
+        %a{ href: '/logout' } logout
+      = yield
+    %div{ class: 'clear' } &nbsp;

@@ -2,7 +2,8 @@ class DspaceToolsUi < Sinatra::Base
 
   before %r@^(?!/(login|rest|bitstream))@ do
     session[:previous_location] = request.fullpath
-    redirect "/login" unless session[:current_user] and session[:current_user].class.to_s == "Eperson"
+    redirect "/login" unless session[:current_user] and
+                             session[:current_user].class.to_s == "Eperson"
   end
 
   get '/' do
@@ -14,7 +15,8 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   post "/login" do
-    eperson = DspaceTools.password_authorization({ "email" => params[:email], "password" => params[:password] })
+    eperson = DspaceTools.password_authorization({ email: params[:email], 
+                                                 password: params[:password] })
     session[:current_user] = eperson if eperson
     redirect session[:previous_location] || "/" 
   end
@@ -62,7 +64,9 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   post '/submit' do
-    dscsv= DspaceTools.new(session[:path], session[:collection_id], session[:current_user])
+    dscsv= DspaceTools.new(session[:path], 
+                           session[:collection_id], 
+                           session[:current_user])
     @map_file = dscsv.submit
     redirect '/upload_finished?map_file=' + URI.encode(@map_file)
   end
@@ -81,7 +85,10 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   post '/api_keys' do
-    ApiKey.create(:eperson_id => session[:current_user].eperson_id, :app_name => params[:app_name], :public_key => ApiKey.get_public_key, :private_key => ApiKey.get_private_key)
+    ApiKey.create(eperson_id:  session[:current_user].eperson_id,
+                  app_name:    params[:app_name],
+                  public_key:  ApiKey.get_public_key,
+                  private_key: ApiKey.get_private_key)
     redirect "/api_keys"
   end
 

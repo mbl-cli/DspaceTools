@@ -17,6 +17,9 @@ gem "rack-timeout"
 gem "pg"
 gem "mysql2"
 gem "rest-client"
+gem "compass"
+gem "sass"
+gem "zen-grids"
 
 group :development do
   gem "debugger"
