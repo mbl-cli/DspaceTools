@@ -1,39 +1,33 @@
+# require "zen-grids"
 require 'rack/timeout'
-require "zen-grids"
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require_relative './environment'
 
-class SassEngine < Sinatra::Base
-  
-  set :views,   File.join(File.dirname(__FILE__), 'app', 'css', 'sass')
-  
-  get '/css/:filename.css' do
-    scss params[:filename].to_sym
-  end
-  
-end
-
 class DspaceToolsUi < Sinatra::Base
   include RestApi
   
   configure do
-    use SassEngine
     mime_type :csv, 'application/csv'
     register Sinatra::Flash
     helpers Sinatra::RedirectWithFlash
-    Compass.add_project_configuration(File.join(File.dirname(__FILE__),  
-                                                'config', 
-                                                'compass_config.rb'))    
+    # Compass.add_project_configuration(File.join(File.dirname(__FILE__),  
+    #                                             'config', 
 
+    #                                             'compass.config'))    
+
+    # Compass.configuration do |config|
+    #   config.project_path = File.join(File.dirname(__FILE__), 'public')
+    # end
     use Rack::MethodOverride
     use Rack::Timeout
     Rack::Timeout.timeout = 9_000_000
 
     use Rack::Session::Cookie, :secret => DspaceTools::Conf.session_secret
-    # use Rack::Session::Pool, :secret => DspaceTools::Conf.session_secret
+
+    # set :scss, Compass.sass_engine_options
   end
 
   helpers do 

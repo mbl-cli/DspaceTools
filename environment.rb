@@ -1,14 +1,15 @@
-require "sinatra"
-require "fileutils"
-require "bundler/setup"
-require "erb"
-require "haml"
-require "nokogiri"
-require "zip/zip"
-require "csv"
-require "active_record"
-require "rest-client"
-require "logger"
+require 'sinatra'
+require 'fileutils'
+require 'bundler/setup'
+require 'erb'
+require 'haml'
+require 'sass'
+require 'nokogiri'
+require 'zip/zip'
+require 'csv'
+require 'active_record'
+require 'rest-client'
+require 'logger'
 
 
 class DspaceTools

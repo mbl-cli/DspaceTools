@@ -1,9 +1,13 @@
 class DspaceToolsUi < Sinatra::Base
 
-  before %r@^(?!/(login|rest|bitstream))@ do
+  before %r@^(?!/(login|css|rest|bitstream|favicon))@ do
     session[:previous_location] = request.fullpath
-    redirect "/login" unless session[:current_user] and
+    redirect "/login" unless session[:current_user] &&
                              session[:current_user].class.to_s == "Eperson"
+  end
+  
+  get '/css/:filename.css' do
+    scss :"sass/#{params[:filename]}"
   end
 
   get '/' do
