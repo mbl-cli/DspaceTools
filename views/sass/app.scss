@@ -1,0 +1,78 @@
+@import "zen";
+$zen-column-count: 7;
+$zen-gutter-width: 10px;
+
+@mixin brd {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ddd;
+}
+
+html, button, input, select, textarea {                                          
+  font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: 400; /* normal */                                                 
+  color: #555;                                                                   
+  font-smooth:always;                                                            
+  -webkit-font-smoothing: antialiased;                                           
+  font-smoothing: antialiased;                                                   
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+.container {
+  @include zen-grid-container;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #9768D1;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  background-image: url(/images/dspace.png);
+  background-repeat: no-repeat;
+}
+
+#title {
+  display: none;
+}
+
+#login_area {
+  @include zen-grid-item(6, 2);
+  font-size: 0.8em;
+  color: #fff;
+  text-align: right;
+  margin-bottom: 80px;
+  a { 
+    color: #fff; 
+    text-decoration: none;
+  }
+
+}
+
+#sidebar {
+  @include zen-clear;
+  @include zen-grid-item(1,1);
+  min-width: 100px;
+  padding: 10px;
+  list-style-type: none;
+  li {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  a { color: #fff; }
+}
+
+#content {
+  @include zen-grid-item(6, 2);
+  @include brd;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  width: 75%;
+  padding: 1em;
+  background-color: #e6d1ff;
+}
+
+body {
+  background: url(/images/pattern.png);
+}

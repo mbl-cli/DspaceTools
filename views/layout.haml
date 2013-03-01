@@ -1,0 +1,30 @@
+!!! 5
+%html
+  %head
+    %title 
+      Dspace Tools 
+    %link{rel: 'stylesheet', href: '/css/app.css', type: 'text/css'}
+  %body
+    = styled_flash
+    .container
+      %h1{ id: 'title' }
+        %a{ href: '/' } Dspace Tools
+      #login_area
+        - if (usr = session[:current_user])
+          = "Welcome %s %s" % [usr.firstname, usr.lastname]
+          |
+          %a{ href: '/logout' } Logout
+      %ul{id: 'sidebar'}
+        %li
+          %a{href: '/'} Home
+        %li
+          %a{href: '/bulk_upload'} Bulk Upload
+        %li
+          %a{href: '/api_keys'} API Keys
+        %li
+          %a{href: 'https://github.com/mbl-cli/DspaceTools/wiki/API'} API Wiki
+
+        
+      #content
+        = yield
+    %div{ class: 'clear' } &nbsp;

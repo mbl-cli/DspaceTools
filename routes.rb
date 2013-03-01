@@ -30,6 +30,10 @@ class DspaceToolsUi < Sinatra::Base
     redirect "/login"
   end
 
+  get '/bulk_upload' do
+    haml :bulk_upload
+  end
+
   get '/formatting-rules' do
       erb :rules
   end
