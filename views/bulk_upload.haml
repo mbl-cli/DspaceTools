@@ -11,7 +11,7 @@
       %form{ :action => "/upload", :method => "post", :enctype => "multipart/form-data" }
         %p Change collection id if necessary
         -# %input{ :type => "text", :name => "collection_id", :size => "3" }
-        %select{ name: 'collections' }
+        %select{ name: 'collection_id' }
           %option{ value: 0 } Select a collection
           - @collections.each do |c|
             %option{ value: c.id }= shorten(c.name, 40) 
