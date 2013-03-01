@@ -19,6 +19,7 @@ gem "rest-client"
 gem "compass"
 gem "sass"
 gem "zen-grids"
+gem "RedCloth"
 
 group :development do
   gem "debugger"

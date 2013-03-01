@@ -36,7 +36,7 @@ module RestApi
   end
 
   def entity_authorized?(auth)
-    return true if @request_user && @request_user.is_admin?
+    return true if @request_user && @request_user.admin?
     permissions = auth.select do |r|
       return true if  DspaceTools::ACCESS_ACTIONS.include?(r.action_id) && (r.epersongroup_id && r.epersongroup_id == 0)
       if @request_user
@@ -62,7 +62,7 @@ module RestApi
   end
 
   def filter_response(response)
-    return response if @request_user && @request_user.is_admin?
+    return response if @request_user && @request_user.admin?
     @doc = Nokogiri.parse(response.body)
     [['//communities', Community], ['//communityentityid', Community], ['//collections', Collection],
     ['//collectionentityid', Collection], ['//items', Item], ['//itementityid', Item],

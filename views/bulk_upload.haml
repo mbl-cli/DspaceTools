@@ -10,7 +10,11 @@
       Upload
       %form{ :action => "/upload", :method => "post", :enctype => "multipart/form-data" }
         %p Change collection id if necessary
-        %input{ :type => "text", :name => "collection_id", :size => "3" }
+        -# %input{ :type => "text", :name => "collection_id", :size => "3" }
+        %select{ name: 'collections' }
+          %option{ value: 0 } Select a collection
+          - @collections.each do |c|
+            %option{ value: c.id }= shorten(c.name, 40) 
         %p Upload your properly formatted ZIP file.
         %input{ :type => "file", :name => "file" }
         %br

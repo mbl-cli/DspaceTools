@@ -17,6 +17,11 @@ class DspaceTools
     success = api_key && digest == params[:api_digest]
     success ? api_key.eperson : nil
   end
+
+  def self.last_updated
+    last_date = `git log --date=short --pretty=format:"%ad" -1`
+    last_date =~ /fatal/ ? "" : "Code updated on #{last_date}"
+  end
   
 
   def initialize(path, collection_id, user)

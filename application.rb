@@ -54,6 +54,15 @@ class DspaceToolsUi < Sinatra::Base
       @api_keys ||= ApiKey.where(eperson_id: session[:current_user].eperson_id)
     end
 
+    def shorten(a_string, chars_num)
+      a_string.gsub!(/\s+/, ' ')
+      res = a_string[0..chars_num]
+      if res != a_string
+        res.gsub!(/\s[^\s]+$/, '...')
+      end
+      res
+    end
+
     private
 
     def get_dir_content(dir)

@@ -10,6 +10,7 @@ require 'csv'
 require 'active_record'
 require 'rest-client'
 require 'logger'
+require 'redcloth'
 
 
 class DspaceTools

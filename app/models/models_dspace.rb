@@ -47,7 +47,7 @@ class Eperson < DspaceTools::DspaceDb::Base
     self.find_id(:eperson_id => id_num)
   end
 
-  def is_admin?
+  def admin?
     groups.include?(Group.find(1))
   end
 

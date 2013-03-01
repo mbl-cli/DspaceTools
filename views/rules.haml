@@ -1,0 +1,37 @@
+%h3 Rules
+%ul
+  %li The first row of your CSV must be headers.
+  %li The first column's header must be 'Filename'.
+  %li The first column must be populated for each row.
+  %li 
+    To upload more than one bitstream at a time, separate the filename in 
+    the first column with '|' (e.g. photo1.tif|photo2.tif)
+  %li 
+    You can have as many header duplicates as you want so long as 
+    they are valid.
+  %li 
+    You can zip a directory which contains all your files. 
+    It must be one directory and it's name should not start 
+    with '.', '_', or '-'
+  %li
+    The collection ID can be found by logging into
+    = succeed "," do
+      %a{:href => DspaceTools::Conf.dspace_repo} repository
+    selecting the desired collection, and then clicking on "edit collection" 
+    from the Context menu.  The collection ID will appear at the end of 
+    the web address.
+%h3 Notes
+%ul
+  %li
+  %li
+    A CSV template of basic headers:
+    = succeed "." do
+      %a{:href => "template.csv"} template.csv
+    Project specific headers are not included in this spreadsheet.
+  %li 
+    Please refer to the metadata manual and/or the metadata registry in the 
+    repository for further information.
+  %li The headers are simply a DC Element, a space and the DC Qualifier
+  %li
+    The DublinCore spec can be found
+    %a{:href => "http://dublincore.org/documents/dcmi-terms/"} here

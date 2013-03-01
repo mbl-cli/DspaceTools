@@ -1,6 +1,29 @@
 class DspaceToolsUi < Sinatra::Base
+  def user_collections(usr)
+    res = nil
+    if usr.admin?
+      res = Collection.all
+    else
+      atype = DspaceTools::ACTION_TYPE
+      groups = usr.groups.map(&:id).join(",")
+      write_actions = [atype["WRITE"], 
+                       atype["ADD"], 
+                       atype["ADMIN"]].join(",")
+      q = "resource_type_id = %s 
+          and (eperson_id = %s or epersongroup_id in (%s))
+          and action_id in (%s)"
+      q_params = [Collection.resource_number,
+                  usr.id,
+                  groups,
+                  write_actions] 
+      res = Resourcepolicy.select(:resource_id).
+                     where(q % q_params).
+                     map { |r| Collection.find(r.resource_id) }
+    end
+    res.sort_by(&:name)
+  end
 
-  before %r@^(?!/(login|css|rest|bitstream|favicon))@ do
+  before %r@^(?!/(login|logout|css|rest|bitstream|favicon))@ do
     session[:previous_location] = request.fullpath
     redirect "/login" unless session[:current_user] &&
                              session[:current_user].class.to_s == "Eperson"
@@ -19,8 +42,8 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   post "/login" do
-    eperson = DspaceTools.password_authorization({ email: params[:email], 
-                                                 password: params[:password] })
+    eperson = DspaceTools.password_authorization(email: params[:email], 
+                                                 password: params[:password])
     session[:current_user] = eperson if eperson
     redirect session[:previous_location] || "/" 
   end
@@ -31,33 +54,13 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   get '/bulk_upload' do
-    usr = params[:current_user]
-    groups = usr.groups.map(&:id).join("','")
-    write_actions = [ACTION_TYPE["WRITE"], 
-                     ACTION_TYPE["ADD"], 
-                     ACTION_TYPE["ADMIN"]].join("','")
-    q = "resource_type_id = ? 
-        and (eperson_id = ? or epersongroup_id in (?))
-        and action_id in (?)"
-    @collections = Resourcepolicy.where(q,
-                                       Collection.resource_number,
-                                       usr.id,
-                                       groups,
-                                       write_actions) 
-    require 'ruby-debug'; debugger
+    usr = session[:current_user]
+    @collections = user_collections(usr)
     haml :bulk_upload
   end
 
   get '/formatting-rules' do
-      erb :rules
-  end
-
-  get '/stsrepository-instructions' do
-      erb :sts
-  end
-
-  get '/extra-help' do
-      erb :help
+      haml :rules
   end
 
   get 'template.csv' do
