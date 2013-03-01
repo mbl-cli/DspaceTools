@@ -4,5 +4,5 @@ vendor
 *.swp
 config/users.yml
 config/config.yml
-.sass_cache
+.sass-cache
 log
