@@ -87,5 +87,6 @@ html, button, input, select, textarea {
 }
 
 body {
-  background: url(/images/pattern.png);
+  background: url(/images/ru_reverse.png) no-repeat bottom right, url(/images/pattern.png);
+  height: 10000px;
 }
