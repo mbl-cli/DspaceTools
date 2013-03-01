@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'zen-grids'
 require 'rack/timeout'
 require 'sinatra'
@@ -69,3 +71,4 @@ class DspaceToolsUi < Sinatra::Base
 
 end
 
+run DspaceToolsUi.new if DspaceToolsUi.app_file == $0

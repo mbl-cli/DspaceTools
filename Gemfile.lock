@@ -1,7 +1,6 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    actionpack (1.4.0)
     activemodel (3.2.12)
       activesupport (= 3.2.12)
       builder (~> 3.0.0)
@@ -102,7 +101,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack
   compass
   debugger
   factory_girl

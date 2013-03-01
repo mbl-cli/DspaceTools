@@ -11,13 +11,19 @@ $zen-gutter-width: 10px;
 }
 
 @mixin size-params {
+  max-width: 1200px;
   width: 95%;
   margin: 0 auto;
   padding: 10px;
 }
 
 html, button, input, select, textarea {                                          
-  font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-family: "Open sans", 
+               "Helvetica Neue", 
+               "HelveticaNeue", 
+               Helvetica, 
+               Arial, 
+               sans-serif;
   font-weight: 400; /* normal */                                                 
   color: #555;                                                                   
   font-smooth:always;                                                            

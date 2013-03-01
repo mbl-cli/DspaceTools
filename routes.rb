@@ -31,6 +31,20 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   get '/bulk_upload' do
+    usr = params[:current_user]
+    groups = usr.groups.map(&:id).join("','")
+    write_actions = [ACTION_TYPE["WRITE"], 
+                     ACTION_TYPE["ADD"], 
+                     ACTION_TYPE["ADMIN"]].join("','")
+    q = "resource_type_id = ? 
+        and (eperson_id = ? or epersongroup_id in (?))
+        and action_id in (?)"
+    @collections = Resourcepolicy.where(q,
+                                       Collection.resource_number,
+                                       usr.id,
+                                       groups,
+                                       write_actions) 
+    require 'ruby-debug'; debugger
     haml :bulk_upload
   end
 
