@@ -2,10 +2,18 @@
 $zen-column-count: 7;
 $zen-gutter-width: 10px;
 
-@mixin brd {
+@mixin brd($radius){
   border-style: solid;
   border-width: 1px;
   border-color: #ddd;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin size-params {
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 html, button, input, select, textarea {                                          
@@ -20,15 +28,9 @@ html, button, input, select, textarea {
 
 .container {
   @include zen-grid-container;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
-  width: 95%;
-  margin: 0 auto;
-  padding: 10px;
+  @include brd(15px);
+  @include size-params;
   background-color: #9768D1;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ddd;
   background-image: url(/images/dspace.png);
   background-repeat: no-repeat;
 }
@@ -65,12 +67,23 @@ html, button, input, select, textarea {
 
 #content {
   @include zen-grid-item(6, 2);
-  @include brd;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+  @include brd(8px);
   width: 75%;
   padding: 1em;
   background-color: #e6d1ff;
+}
+
+#footer {
+  @include zen-clear;
+  @include brd(8px);
+  @include size-params;
+  background-color: #541C99;
+  color: #e6d1ff;
+  a { 
+    text-decoration: none;
+    color: #e6d1ff;
+  }
+    
 }
 
 body {
