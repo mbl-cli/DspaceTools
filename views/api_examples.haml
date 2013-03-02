@@ -1,0 +1,18 @@
+%h3 API Examples
+
+- if api_keys.empty?
+  %p
+    WARNING: Examples use anonymous access, because you did not 
+    %a{ href: '/api_keys' } generate
+    api keys yet.
+%ul
+  %li
+    - url = api_url('communities', api_keys[0])
+    %a{ href: url } Communities
+  %li
+    - url = api_url('collections', api_keys[0], 'idOnly=true')
+    %a{ href: url} Collections
+  %li
+    - url = api_url('items', api_keys[0], 'idOnly=true') 
+    %a{ href: url} Items
+

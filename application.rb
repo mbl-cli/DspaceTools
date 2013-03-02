@@ -63,6 +63,20 @@ class DspaceToolsUi < Sinatra::Base
       res
     end
 
+    def api_url(resource, api_key, url_params = nil)
+      path = "/rest/%s.xml" % resource
+      params_str = "?"
+      if api_key
+        params_str += "api_key=" 
+        params_str += "%s&api_digest=" % api_key.public_key
+        params_str += api_key.digest(path)
+      end
+      params_str += "&%s" % url_params if url_params
+      res = path
+      res += params_str unless params_str == "?"
+      res.gsub(%r|[/]+|, '/').gsub(/[&]+/, '&').gsub("?&", "?")
+    end
+
     private
 
     def get_dir_content(dir)

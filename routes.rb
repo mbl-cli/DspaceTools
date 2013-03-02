@@ -123,4 +123,8 @@ class DspaceToolsUi < Sinatra::Base
     redirect "/api_keys"
   end
 
+  get '/api_examples' do
+    haml :api_examples
+  end
+
 end

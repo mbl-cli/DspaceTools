@@ -3,7 +3,7 @@
   %head
     %title 
       Dspace Tools 
-    %link{rel: 'stylesheet', href: '/css/app.css', type: 'text/css'}
+    %link{ rel: 'stylesheet', href: '/css/app.css', type: 'text/css' }
   %body
     = styled_flash
     .container
@@ -14,15 +14,17 @@
           = "Welcome %s %s" % [usr.firstname, usr.lastname]
           |
           %a{ href: '/logout' } Logout
-      %ul{id: 'sidebar'}
+      %ul{ id: 'sidebar' }
         %li
-          %a{href: '/'} Home
+          %a{ href: '/' } Home
         %li
-          %a{href: '/bulk_upload'} Bulk Upload
+          %a{ href: '/bulk_upload' } Bulk Upload
         %li
-          %a{href: '/api_keys'} API Keys
+          %a{ href: '/api_keys' } API Keys
         %li
-          %a{href: 'https://github.com/mbl-cli/DspaceTools/wiki/API'} API Wiki
+          %a{ href: '/api_examples' } API Examples
+        %li
+          %a{ href: 'https://github.com/mbl-cli/DspaceTools/wiki/API' } API Wiki
 
         
       #content
