@@ -51,7 +51,7 @@ class DspaceToolsUi < Sinatra::Base
     end
 
     def api_keys
-      @api_keys ||= ApiKey.where(eperson_id: session[:current_user].eperson_id)
+      @api_keys ||= ApiKey.where(eperson_id: session[:current_user_id])
     end
 
     def shorten(a_string, chars_num)

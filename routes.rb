@@ -23,10 +23,15 @@ class DspaceToolsUi < Sinatra::Base
     res.sort_by(&:name)
   end
 
+  def current_user
+    usr_id = session[:current_user_id]
+    @current_user ||= (usr_id ? Eperson.find(usr_id) : nil)
+  end
+
   before %r@^(?!/(login|logout|css|rest|bitstream|favicon))@ do
     session[:previous_location] = request.fullpath
-    redirect "/login" unless session[:current_user] &&
-                             session[:current_user].class.to_s == "Eperson"
+    redirect "/login" unless session[:current_user_id] &&
+                             session[:current_user_id].to_i > 0
   end
   
   get '/css/:filename.css' do
@@ -44,17 +49,17 @@ class DspaceToolsUi < Sinatra::Base
   post "/login" do
     eperson = DspaceTools.password_authorization(email: params[:email], 
                                                  password: params[:password])
-    session[:current_user] = eperson if eperson
+    session[:current_user_id] = eperson.id if eperson
     redirect session[:previous_location] || "/" 
   end
 
   get "/logout" do
-    session[:current_user] = nil
+    session[:current_user_id] = nil
     redirect "/login"
   end
 
   get '/bulk_upload' do
-    usr = session[:current_user]
+    usr = current_user
     @collections = user_collections(usr)
     haml :bulk_upload
   end
@@ -91,7 +96,7 @@ class DspaceToolsUi < Sinatra::Base
   post '/submit' do
     dscsv= DspaceTools.new(session[:path], 
                            session[:collection_id], 
-                           session[:current_user])
+                           current_user)
     @map_file = dscsv.submit
     redirect '/upload_finished?map_file=' + URI.encode(@map_file)
   end
@@ -110,7 +115,7 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   post '/api_keys' do
-    ApiKey.create(eperson_id:  session[:current_user].eperson_id,
+    ApiKey.create(eperson_id:  session[:current_user_id],
                   app_name:    params[:app_name],
                   public_key:  ApiKey.get_public_key,
                   private_key: ApiKey.get_private_key)

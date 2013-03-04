@@ -5,4 +5,5 @@ vendor
 config/users.yml
 config/config.yml
 .sass-cache
+public/.sass-cache
 log

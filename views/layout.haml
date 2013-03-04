@@ -9,7 +9,7 @@
       %h1{ id: 'title' }
         %a{ href: '/' } Dspace Tools
       #login_area
-        - if (usr = session[:current_user])
+        - if (usr = current_user)
           = "Welcome %s %s" % [usr.firstname, usr.lastname]
           |
           %a{ href: '/logout' } Logout
