@@ -29,12 +29,22 @@ Look at content of {.travis.yml}[https://github.com/mbl-cli/DspaceTools/blob/mas
 
 == Install
 
-TODO:
+* add ruby lirbraries needed for the project
 
-== Automatic virtual machine creation
+    gem install bundle 
+    bundle
+    rake db:create:all
+    rake db:migrate #for development
+    rake db:migrate RACK_ENV=production #for production
+    rake db:migrate RACK_ENV=test #for test
 
-TODO: Vagrant wiki link
+* to run it locally
 
+    rackup
+
+* to run in production specify production environment before your server command. For example
+
+   RACK_ENV=production unicorn -c unicorn.conf -D
 
 == API description
 

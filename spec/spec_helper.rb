@@ -34,7 +34,7 @@ unless defined?(SPEC_CONSTANTS)
   UPLOAD_NO_TITLE_FIELD = File.join(FILE_DIR, "no_title_field.zip")
   UPLOAD_NO_RIGHTS_FIELD = File.join(FILE_DIR, "no_rights_field.zip")
   UPLOAD_TWO_FILENAME_FIELDS = File.join(FILE_DIR, "two_filename_fields.zip")
-  PARAMS_1 = {"file" => {:tempfile => open(UPLOAD_1), :filename => "upload.zip"}}
+  PARAMS_1 = { file: { tempfile: open(UPLOAD_1), filename: "upload.zip" }, collection_id: 42 }
   SPEC_CONSTANTS = true
 end
 

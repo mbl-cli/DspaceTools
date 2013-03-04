@@ -13,8 +13,11 @@ class DspaceTools
     end
 
     def initialize(params)
+      error = DspaceTools::UploadError
       @params = params
-      @file = @params["file"] || raise(DspaceTools::UploadError.new("No file to upload")) 
+      err_string = "Collection was not selected"
+      raise(error.new(err_string)) if params[:collection_id].to_i == 0
+      @file = @params[:file] || raise(error.new("No file to upload")) 
       @dir = get_dir
       copy_file
       @zip_file = File.join(@path, @file[:filename])

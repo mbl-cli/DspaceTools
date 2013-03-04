@@ -79,12 +79,12 @@ class DspaceToolsUi < Sinatra::Base
         session[:collection_id] = params["collection_id"]
         redirect '/upload_result', :warning => t.warnings[0]
       else
-        redirect "/", :error => t.errors.join("<br/>")
+        redirect "/bulk_upload", :error => t.errors.join("<br/>")
       end
     rescue DspaceTools::CsvError => e
-      redirect "/", :error => e.message 
+      redirect "/bulk_upload", :error => e.message 
     rescue DspaceTools::UploadError => e
-      redirect "/", :error => e.message 
+      redirect "/bulk_upload", :error => e.message 
     end
   end
 

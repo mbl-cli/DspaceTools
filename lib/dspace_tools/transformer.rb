@@ -52,7 +52,7 @@ class DspaceTools
       ["filename", "title"].each do |field|
         res = @csv_data.headers.select {|f| f.downcase == field}
         if res.empty?
-          @errors << "No %s field" % field.capitalize
+          @errors << "No %s field in CSV file" % field.capitalize
         elsif res.size > 1
           @errors << "More than one %s fields" % field.capitalize
         end

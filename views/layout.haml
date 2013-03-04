@@ -5,7 +5,6 @@
       Dspace Tools 
     %link{ rel: 'stylesheet', href: '/css/app.css', type: 'text/css' }
   %body
-    = styled_flash
     .container
       %h1{ id: 'title' }
         %a{ href: '/' } Dspace Tools
@@ -28,6 +27,7 @@
 
         
       #content
+        = styled_flash
         = yield
     .clear &nbsp;
     #footer
