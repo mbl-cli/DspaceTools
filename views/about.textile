@@ -3,7 +3,7 @@ h3. Home
 DSpace Tools application provide extensions to the Open Source data archive 
 project DSpace. So far the following is implemented:
 
-# Simplified bulk upload, which convets zip file with data files and a metadata 
+# Simplified bulk upload, which converts zip file with data files and a metadata 
 file in csv format into DSpace compatible bulk import format.
 # Restful API extension with authorization. It uses either 'email + password' 
 authorization or 'public key+hashed digest' authorization.

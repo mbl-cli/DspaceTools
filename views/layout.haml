@@ -13,17 +13,19 @@
           = "Welcome %s %s" % [usr.firstname, usr.lastname]
           |
           %a{ href: '/logout' } Logout
-      %ul{ id: 'sidebar' }
-        %li
-          %a{ href: '/' } Home
-        %li
-          %a{ href: '/bulk_upload' } Bulk Upload
-        %li
-          %a{ href: '/api_keys' } API Keys
-        %li
-          %a{ href: '/api_examples' } API Examples
-        %li
-          %a{ href: 'https://github.com/mbl-cli/DspaceTools/wiki/API' } API Wiki
+      #sidebar
+        - if (usr = current_user)
+          %ul
+            %li
+              %a{ href: '/' } Home
+            %li
+              %a{ href: '/bulk_upload' } Bulk Upload
+            %li
+              %a{ href: '/api_keys' } API Keys
+            %li
+              %a{ href: '/api_examples' } API Examples
+            %li
+              %a{ href: 'https://github.com/mbl-cli/DspaceTools/wiki/API' } API Wiki
 
         
       #content
