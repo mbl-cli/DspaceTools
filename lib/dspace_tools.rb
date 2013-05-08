@@ -55,7 +55,8 @@ class DspaceTools
              @collection_id, 
              @remote_path, 
              File.join(DspaceTools::Conf.remote_tmp_dir, @map_file)]
-    @dspace_command = "%s import ItemImport -a -e %s -c %s -s %s -m %s" % @data
+    @dspace_command = "%s import ItemImport -w -a -e %s -c %s -s %s -m %s" % 
+                        @data
     @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 
                                     'public', 
                                     'map_files')
@@ -78,7 +79,7 @@ class DspaceTools
   def cleanup
     login = DspaceTools::Conf.remote_login
     files = File.join(DspaceTools::Conf.remote_tmp_dir, 'csv_dspace_*')
-    `ssh #{login} 'find #{files} -maxdepth 0 -mtime 1 -exec rm -rf {} \;'`
+    `ssh #{login} 'find #{files} -maxdepth 0 -mtime +1 -exec rm -rf {} \;'`
   end
 
 end
