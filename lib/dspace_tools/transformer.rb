@@ -15,15 +15,15 @@ class DspaceTools
       transform if @errors.empty?
     end
 
-    private 
+    private
 
     def check_integrity
       success = has_required_fields && has_rights_field
       if success
-        success = all_files_exist 
+        success = all_files_exist
         find_extra_files
       end
-      success 
+      success
     end
 
     def all_files_exist
@@ -63,7 +63,7 @@ class DspaceTools
     def has_rights_field
       res = @csv_data.headers.select { |f| RIGHTS_ARRAY.map { |f| f.downcase }.include? f.downcase }
       if res.empty?
-        @errors << "One of these fields must me in archive: %s" % RIGHTS_ARRAY.join(", ") 
+        @errors << "One of these fields must me in archive: %s" % RIGHTS_ARRAY.join(", ")
         false
       else
         true
@@ -93,11 +93,11 @@ class DspaceTools
       count = -1
       @csv_data.each do |row|
         count += 1
-        path = File.join(@path, "%04d" % count) 
+        path = File.join(@path, "%04d" % count)
         FileUtils.mkdir_p(path)
         file = open(File.join(path, 'dublin_core.xml'), 'w:utf-8')
         file.puts build_xml_string(row)
-        copy_files(row['Filename'], path)
+        copy_files(row['Filename'], path) if row['Filename']
         file.close
       end
     end
@@ -116,7 +116,7 @@ class DspaceTools
         end
       end.to_xml
     end
-    
+
     def copy_files(filenames, path)
       contents = open(File.join(path, "contents"), "w:utf-8")
       filenames.split("|").each do |f|
