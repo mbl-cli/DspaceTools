@@ -1,6 +1,7 @@
 = DspaceTools
 
-{<img src="https://secure.travis-ci.org/mbl-cli/DspaceTools.png" />}[http://travis-ci.org/mbl-cli/DspaceTools] {<img src="https://gemnasium.com/mbl-cli/DspaceTools.png" alt="Dependency Status" />}[https://gemnasium.com/mbl-cli/DspaceTools]
+{<img src="https://secure.travis-ci.org/mbl-cli/DspaceTools.png" />}[http://travis-ci.org/mbl-cli/DspaceTools] 
+{<img src="https://gemnasium.com/mbl-cli/DspaceTools.png" alt="Dependency Status" />}[https://gemnasium.com/mbl-cli/DspaceTools]
 
 == Description
 
