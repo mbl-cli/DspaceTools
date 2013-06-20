@@ -36,6 +36,13 @@ class DspaceTools
   ActiveRecord::Base.logger = Logger.new(STDOUT, :debug)
   ActiveRecord::Base.establish_connection(Conf.localdb)
 
+  Thread.new { 
+    loop {
+      sleep(60*30);
+      ActiveRecord::Base.verify_active_connections!
+    }
+  }.priority = -10
+
   class DspaceDb
     class Base < ActiveRecord::Base
       self.abstract_class = true
