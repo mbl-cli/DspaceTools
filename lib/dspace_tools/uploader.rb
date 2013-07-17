@@ -1,12 +1,13 @@
 class DspaceTools
   class Uploader
-    attr_reader :params, :file, :dir, :path, :zip_file
+    attr_reader :params, :path, :incoming_path, :dir
 
     def self.clean(days = 1)
       tmp_dir = DspaceTools::Conf.tmp_dir
       threshold = 86400 * days
       now = Time.now.to_i
-      Dir.entries(tmp_dir).select {|e| e.match /^dspace_[\d]{10}/}.each do |dir|
+      dirs = Dir.entries(tmp_dir)
+      dirs.select { |e| e.match /^dspace_[\d]{10}/ }.each do |dir|
         path = File.join(tmp_dir, dir)
         FileUtils.rm_rf(path) if (now - File.ctime(path).to_i) > threshold
       end
@@ -15,12 +16,12 @@ class DspaceTools
     def initialize(params)
       error = DspaceTools::UploadError
       @params = params
-      err_string = "Collection was not selected"
+      err_string = 'Collection is not selected'
       raise(error.new(err_string)) if params[:collection_id].to_i == 0
-      @file = @params[:file] || raise(error.new("No file to upload")) 
+      @incoming_dir = @params[:dir] || 
+        raise(error.new('Directory is not selected')) 
+      @incoming_path = File.join(DspaceTools::Conf.dropbox_dir, @incoming_dir)
       @dir = get_dir
-      copy_file
-      @zip_file = File.join(@path, @file[:filename])
     end
 
     private
@@ -35,9 +36,5 @@ class DspaceTools
       res
     end
 
-    def copy_file
-      FileUtils.mkdir(@path)
-      FileUtils.cp(@file[:tempfile].path, File.join(@path, @file[:filename]))
-    end
   end
 end

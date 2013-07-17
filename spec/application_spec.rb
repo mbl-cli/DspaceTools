@@ -1,7 +1,7 @@
-require "spec_helper"
+require 'spec_helper'
 
 def credentials(username, password)
-  "Basic " + Base64.encode64("#{username}:#{password}")
+  'Basic ' + Base64.encode64("#{username}:#{password}")
 end
 
 describe 'application.rb no login' do
@@ -11,14 +11,14 @@ describe 'application.rb no login' do
   end
 
   it 'should break on unknown user' do
-    get '/', {}, { "HTTP_AUTHORIZATION" => credentials("unknown", "bad_pass") }
+    get '/', {}, { 'HTTP_AUTHORIZATION' => credentials('unknown', 'bad_pass') }
     last_response.redirect?.should be_true
     follow_redirect!
     last_response.successful?.should be_true
-    last_response.body.match("Email").should be_true
+    last_response.body.match('Email').should be_true
   end
   
-  it "should get login page" do
+  it 'should get login page' do
     get('/login')
     last_response.status.should == 200
     last_response.body.match(/Email/).should be_true
@@ -28,7 +28,7 @@ end
 describe 'application.rb with login' do
 
   before(:each) do 
-    post("/login", email: "jdoe@example.com", password: "secret")
+    post('/login', email: 'jdoe@example.com', password: 'secret')
   end
 
   it 'should show the default index page' do
@@ -38,62 +38,93 @@ describe 'application.rb with login' do
   end
 
   it 'should upload file and show generated content' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_1, 'application/gzip'), collection_id: 42 })
+    post('/upload', { file: 
+                      Rack::Test::UploadedFile.new(UPLOAD_1, 
+                                                   'application/gzip'), 
+                      collection_id: 42 })
     follow_redirect!
-    last_response.body.should include('Check the correctness of generated files')
+    files_warning = 'Check the correctness of generated files'
+    last_response.body.should include(files_warning)
   end
   
   it 'should generate error if uploaded file is not a zip file' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_NOT_ZIP, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_NOT_ZIP, 'application/gzip'), 
+      collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
-    last_response.body.should include('Uploaded file is not in a valid zip format')
+    files_warning = 'Check the correctness of generated files'
+    not_zip_warning = 'Uploaded file is not in a valid zip format'
+    last_response.body.should_not include(files_warning)
+    last_response.body.should include(not_zip_warning)
   end
   
   it 'should encode latin1 uploaded file to UTF-8' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_LATIN1, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_LATIN1, 'application/gzip'),
+      collection_id: 42 })
     follow_redirect!
-    last_response.body.should include('Check the correctness of generated files')
+    files_warning = 'Check the correctness of generated files'
+    last_response.body.should include(files_warning)
   end
   
   it 'should generate error if there is no collection id' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip'), collection_id: 0 })
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip'), 
+      collection_id: 0 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
-    last_response.body.should include('Collection was not selected')
+    files_warning = 'Check the correctness of generated files'
+    collection_warning = 'Collection was not selected'
+    last_response.body.should_not include(files_warning)
+    last_response.body.should include(collection_warning)
   end
   
   it 'should generate error if uploaded archive does not contain csv file' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip'), 
+      collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    files_warning = 'Check the correctness of generated files'
+    last_response.body.should_not include(files_warning)
     last_response.body.should include('Cannot find file with .csv extension')
   end
   
-  it 'should generate error if uploaded archive has a directory and does not contain csv file' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_DIR_NO_CSV, 'application/gzip'), collection_id: 42 })
+  it 'should generate error if uploaded archive has a' + 
+     'directory and does not contain csv file' do
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_DIR_NO_CSV, 'application/gzip'), 
+      collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    files_warning = 'Check the correctness of generated files'
+    last_response.body.should_not include(files_warning)
     last_response.body.should include('Cannot find file with .csv extension')
   end
   
   it 'should generate error if uploaded file has many directories' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_MANY_DIRS, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_MANY_DIRS, 'application/gzip'), 
+      collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    files_warning = 'Check the correctness of generated files'
+    last_response.body.should_not include(files_warning)
     last_response.body.should include('Zip archive contains many folders')
   end
   
   
   it 'should generate error if uploaded archive has invalid csv file' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_BAD_CSV, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_BAD_CSV, 'application/gzip'), 
+      collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    files_warning = 'Check the correctness of generated files'
+    last_response.body.should_not include(files_warning)
     last_response.body.should include('Cannot parse CSV file')
   end
   
-  it 'should generate error if uploaded archive is missing the Filename field' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_TYPO_IN_FILENAME_FIELD, 'application/gzip'), collection_id: 42 })
+  it 'should generate error if uploaded archive is missing a Filename field' do
+    post('/upload', { 
+      file: Rack::Test::UploadedFile.new(UPLOAD_TYPO_IN_FILENAME_FIELD,
+                                         'application/gzip'),
+      collection_id: 42 })
     follow_redirect!
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('No Filename field')

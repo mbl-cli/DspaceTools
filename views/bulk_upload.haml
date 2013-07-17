@@ -1,23 +1,36 @@
 %section.grid_8
-  %ol
-    %li
-      Format
-      %p 
-        Format your CSV following these
-        %a{ :href => "formatting-rules" } rules
-        , then create a zip containing the csv file and corresponding archival files.
-    %li 
-      Upload
-      %form{ :action => "/upload", :method => "post", :enctype => "multipart/form-data" }
-        %p Change collection id if necessary
-        -# %input{ :type => "text", :name => "collection_id", :size => "3" }
-        %select{ name: 'collection_id' }
-          %option{ value: 0 } Select a collection
-          - @collections.each do |c|
-            %option{ value: c.id }= shorten(c.name, 40) 
-        %p Upload your properly formatted ZIP file.
-        %input{ :type => "file", :name => "file" }
-        %br
-        %input{ :type => "submit", :value => "Upload" }
+  %form{ action: '/upload', method: 'post' }
+
+    %h5 Format
+    %p 
+      Format your CSV following these
+      %a{ href: 'formatting-rules' } rules,
+      , create a directory with a descriptive name containing the csv file 
+      and corresponding archival files. Move the directory to the Dropbox
+      folder on your computer, which is shared with DSpace server, and wait 
+      until you see this directory appear below this message. This part can
+      be done outside of the application.
+
+    %h5 Select your directory from the list
+    - @dropbox.dirs.each do |dir|
+      %input{ type: 'radio',
+              name: 'dir', 
+              value: dir.name,  
+              style: 'color:blue;' }= dir.name
+      %table
+        - dir.files.each do |file|
+          %tr
+            %td{ style: 'padding-left:2em;' }= file[:name]
+            %td{ style: 'padding-left:2em;' }= file[:size].to_s + 'K'
+
+    %h5 Select collection
+    %select{ name: 'collection_id' }
+      %option{ value: 0 } Select a collection
+      - @collections.each do |c|
+        %option{ value: c.id }= shorten(c.name, 40) 
+    
+    %h5 Upload content to DSpace.
+    %br
+    %input{ type: 'submit', value: 'Upload' }
 .grid_4
 .clear &nbsp;

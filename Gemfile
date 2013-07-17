@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem "rake"
 gem "sinatra"
@@ -25,6 +25,10 @@ group :development do
   gem "debugger"
   gem "rerun"
   gem "rb-fsevent"
+end
+
+group :production do
+  gem "unicorn"
 end
 
 group :test do

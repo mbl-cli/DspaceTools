@@ -5,10 +5,10 @@ class DspaceToolsUi < Sinatra::Base
       res = Collection.all
     else
       atype = DspaceTools::ACTION_TYPE
-      groups = usr.groups.map(&:id).join(",")
-      write_actions = [atype["WRITE"], 
-                       atype["ADD"], 
-                       atype["ADMIN"]].join(",")
+      groups = usr.groups.map(&:id).join(',')
+      write_actions = [atype['WRITE'], 
+                       atype['ADD'], 
+                       atype['ADMIN']].join(',')
       q = "resource_type_id = %s 
           and (eperson_id = %s or epersongroup_id in (%s))
           and action_id in (%s)"
@@ -30,7 +30,7 @@ class DspaceToolsUi < Sinatra::Base
 
   before %r@^(?!/(login|logout|css|rest|bitstream|favicon))@ do
     session[:previous_location] = request.fullpath
-    redirect "/login" unless session[:current_user_id] &&
+    redirect '/login' unless session[:current_user_id] &&
                              session[:current_user_id].to_i > 0
   end
   
@@ -42,25 +42,26 @@ class DspaceToolsUi < Sinatra::Base
     haml :index
   end
 
-  get "/login" do
+  get '/login' do
     haml :login
   end
 
-  post "/login" do
+  post '/login' do
     eperson = DspaceTools.password_authorization(email: params[:email], 
                                                  password: params[:password])
     session[:current_user_id] = eperson.id if eperson
-    redirect session[:previous_location] || "/" 
+    redirect session[:previous_location] || '/' 
   end
 
-  get "/logout" do
+  get '/logout' do
     session[:current_user_id] = nil
-    redirect "/login"
+    redirect '/login'
   end
 
   get '/bulk_upload' do
     usr = current_user
     @collections = user_collections(usr)
+    @dropbox = DspaceTools::Dropbox.new
     haml :bulk_upload
   end
 
@@ -77,28 +78,31 @@ class DspaceToolsUi < Sinatra::Base
     begin
       DspaceTools::Uploader.clean(1)
       u = DspaceTools::Uploader.new(params)
-      e = DspaceTools::Expander.new(u)
-      t = DspaceTools::Transformer.new(e)
+      t = DspaceTools::Transformer.new(u)
       if t.errors.empty?
         session[:path] = t.path
-        session[:collection_id] = params["collection_id"]
-        redirect '/upload_result', :warning => t.warnings[0]
+        session[:collection_id] = params['collection_id']
+        redirect '/upload_result', warning: t.warnings[0]
       else
-        redirect "/bulk_upload", :error => t.errors.join("<br/>")
+        redirect '/bulk_upload', error: t.errors.join('<br/>')
       end
     rescue DspaceTools::CsvError => e
-      redirect "/bulk_upload", :error => e.message 
+      redirect '/bulk_upload', error: e.message 
     rescue DspaceTools::UploadError => e
-      redirect "/bulk_upload", :error => e.message 
+      redirect '/bulk_upload', error: e.message 
     end
   end
 
   post '/submit' do
-    dscsv= DspaceTools.new(session[:path], 
-                           session[:collection_id], 
-                           current_user)
-    @map_file = dscsv.submit
-    redirect '/upload_finished?map_file=' + URI.encode(@map_file)
+    begin
+      bu = DspaceTools::BulkUploader.new(session[:path], 
+                             session[:collection_id], 
+                             current_user)
+      @map_file = bu.submit
+      redirect '/upload_finished?map_file=' + ::URI.encode(@map_file)
+    rescue DspaceTools::ImportError => e
+      redirect '/upload_result', error: e.message
+    end
   end
 
   get '/upload_result' do
@@ -106,7 +110,7 @@ class DspaceToolsUi < Sinatra::Base
   end
 
   get '/upload_finished' do
-    @map_file = params["map_file"]
+    @map_file = params['map_file']
     haml :upload_finished
   end
 
@@ -119,13 +123,13 @@ class DspaceToolsUi < Sinatra::Base
                   app_name:    params[:app_name],
                   public_key:  ApiKey.get_public_key,
                   private_key: ApiKey.get_private_key)
-    redirect "/api_keys"
+    redirect '/api_keys'
   end
 
   delete '/api_keys' do
-    key = ApiKey.where(:public_key => params[:public_key]).first
+    key = ApiKey.where(public_key: params[:public_key]).first
     key.destroy if key
-    redirect "/api_keys"
+    redirect '/api_keys'
   end
 
   get '/api_examples' do

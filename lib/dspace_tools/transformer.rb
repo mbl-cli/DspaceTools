@@ -3,13 +3,13 @@ class DspaceTools
     VALID_HEADERS = DspaceTools::Conf.valid_fields
     RIGHTS_ARRAY = ['Rights', 'Rights Copyright', 'Rights License', 'Rights URI' ]
 
-    attr_reader :expander, :path, :errors, :warnings
+    attr_reader :uploader, :path, :errors, :warnings
 
-    def initialize(expander)
+    def initialize(uploader)
       @errors = []
       @warnings = []
-      @expander = expander
-      @path = File.join(@expander.uploader.path, 'dspace')
+      @uploader = uploader
+      @path = File.join(@uploader.path, 'dspace')
       @csv_data = parse_csv
       check_integrity
       transform if @errors.empty?
@@ -27,7 +27,7 @@ class DspaceTools
     end
 
     def all_files_exist
-      missing_files = files_list.select { |f| !File.exists?(File.join(@expander.path, f)) }
+      missing_files = files_list.select { |f| !File.exists?(File.join(@uploader.incoming_path, f)) }
       if missing_files.empty?
         true
       else
@@ -43,7 +43,7 @@ class DspaceTools
     def find_extra_files
       known_files = files_list
       known_files << @csv_file
-      dir_files = Dir.entries(@expander.path).select { |f| f[0] != '.' }
+      dir_files = Dir.entries(@uploader.incoming_path).select { |f| f[0] != '.' }
       extra_files = dir_files - known_files
       @warnings << "The following files are extra in archive: %s" % extra_files.join(", ") unless extra_files.empty?
     end
@@ -71,7 +71,8 @@ class DspaceTools
     end
 
     def get_csv_file
-      csv_file = Dir.entries(@expander.path).select {|e| e.match(/\.csv$/)}[0]
+      csv_file = Dir.entries(@uploader.incoming_path).
+        select {|e| e.match(/\.csv$/)}[0]
       raise DspaceTools::CsvError.new("Cannot find file with .csv extension") unless csv_file
       csv_file
     end
@@ -79,10 +80,12 @@ class DspaceTools
     def parse_csv
       @csv_file = get_csv_file
       begin
-        csv_string = open(File.join(@expander.path, @csv_file), "r:utf-8").read
-        csv_string.encode!("UTF-8", "ISO8859-1") unless csv_string.valid_encoding?
+        csv_string = open(File.join(@uploader.incoming_path, @csv_file), 
+                          "r:utf-8").read
+        csv_string.encode!("UTF-8", 
+                           "ISO8859-1") unless csv_string.valid_encoding?
         csv_string.gsub!(/\r\n?/, "\n")
-        options = {:col_sep => ",", :row_sep => "\n", :headers => true}
+        options = { :col_sep => ",", :row_sep => "\n", :headers => true }
         CSV.parse(csv_string, options)
       rescue CSV::MalformedCSVError
         raise DspaceTools::CsvError.new("Cannot parse CSV file")
@@ -120,7 +123,7 @@ class DspaceTools
     def copy_files(filenames, path)
       contents = open(File.join(path, "contents"), "w:utf-8")
       filenames.split("|").each do |f|
-        FileUtils.cp(File.join(@expander.path, f), path)
+        FileUtils.cp(File.join(@uploader.incoming_path, f), path)
         contents.write("%s\tbundle:ORIGINAL\n" % f)
       end
       contents.close

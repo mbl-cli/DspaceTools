@@ -1,15 +1,16 @@
 dspace_path: 
 tmp_dir: /tmp
-dropbox_dir: /Dropbox/uploads
-dspace_repo: http://example.com
+remote_tmp_dir: /tmp
+remote_login: root@localhost
+dspace_repo: http://hpsrepository.mbl.edu
 session_secret: changeme123
 dspacedb:
   development:
     adapter: postgresql
     host: dspace
     database: dspace
-    username: dspace
-    password: dspace
+    username: dimus
+    password: dimus!
   test:
     adapter: mysql2
     host: localhost

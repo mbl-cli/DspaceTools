@@ -65,16 +65,16 @@ class DspaceToolsUi < Sinatra::Base
 
     def api_url(resource, api_key, url_params = nil)
       path = "/rest/%s.xml" % resource
-      params_str = "?"
+      params_str = '?'
       if api_key
-        params_str += "api_key=" 
+        params_str += 'api_key=' 
         params_str += "%s&api_digest=" % api_key.public_key
         params_str += api_key.digest(path)
       end
       params_str += "&%s" % url_params if url_params
       res = path
-      res += params_str unless params_str == "?"
-      res.gsub(%r|[/]+|, '/').gsub(/[&]+/, '&').gsub("?&", "?")
+      res += params_str unless params_str == '?'
+      res.gsub(%r|[/]+|, '/').gsub(/[&]+/, '&').gsub('?&', '?')
     end
 
     private
@@ -85,7 +85,7 @@ class DspaceToolsUi < Sinatra::Base
         next if e.match /^[\.]{1,2}$/
         res << [e, '']
         if ['contents', 'dublin_core.xml'].include?(e)
-          res[-1][1] = open(File.join(dir, e), "r:utf-8").read
+          res[-1][1] = open(File.join(dir, e), 'r:utf-8').read
         end
       end
       res
