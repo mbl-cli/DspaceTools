@@ -29,6 +29,7 @@ class DspaceTools
                ]
       @dspace_command = "%s import ItemImport -w -a -e %s -c %s -s %s -m %s" % 
                           @data
+      require 'ruby-debug'; debugger
       @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 
                                       'public', 
                                       'map_files')
@@ -46,7 +47,7 @@ class DspaceTools
     def copy_map_file_to_local
       error = DspaceTools::ImportError
       if File.exists? @map_path
-        `cp #{map_path} #{@local_mapfile_path}`
+        `cp #{@map_path} #{@local_mapfile_path}`
       else
         raise(error.new('Failed to generate map file, upload failed'))
       end
