@@ -11,7 +11,6 @@ class DspaceTools
     def submit
       import_submission
       copy_map_file_to_local
-      cleanup
       @map_file
     end
 
@@ -25,8 +24,7 @@ class DspaceTools
                @user.email, 
                @collection_id, 
                @path, 
-               @map_path,
-               ]
+               @map_path,]
       @dspace_command = "%s import ItemImport -w -a -e %s -c %s -s %s -m %s" % 
                           @data
       @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 
@@ -46,7 +44,7 @@ class DspaceTools
     def copy_map_file_to_local
       error = DspaceTools::ImportError
       if File.exists? @map_path
-        `cp #{@map_path} #{@local_mapfile_path}`
+        FileUtils.cp @map_path, @local_mapfile_path
       else
         raise(error.new('Failed to generate map file, upload failed'))
       end
