@@ -17,9 +17,9 @@ class DspaceTools
     private
     
     def get_instance_vars
-      @map_file = Time.now().to_s[0..18]
+      @map_file = Time.now().to_s[0..18].
+        gsub(/[\-\s]/,'_') + '_mapfile_' + @user.email.gsub(/[\.@]/, '_')
       @map_path = File.join(DspaceTools::Conf.tmp_dir, @map_file)
-        .gsub(/[\-\s]/,'_') + '_mapfile_' + @user.email.gsub(/[\.@]/, '_')
       @data = [DspaceTools::Conf.dspace_path, 
                @user.email, 
                @collection_id, 
