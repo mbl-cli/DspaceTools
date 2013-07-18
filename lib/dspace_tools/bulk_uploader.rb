@@ -37,16 +37,16 @@ class DspaceTools
       begin
         results = `#{@dspace_command}` 
       rescue
-        raise(error.new('Failed at the upload to Dspace'))
+        raise(error.new('Dspace upload failed'))
       end
     end
       
     def copy_map_file_to_local
       error = DspaceTools::ImportError
-      if File.exists? @map_path
-        FileUtils.cp @map_path, @local_mapfile_path
+      if File.exists?(@map_path) && open(@map_path).read.strip != ''
+        FileUtils.mv @map_path, @local_mapfile_path
       else
-        raise(error.new('Failed to generate map file, upload failed'))
+        raise(error.new('Failed to generate map file, DSpace upload failed'))
       end
     end
 
