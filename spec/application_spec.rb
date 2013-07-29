@@ -38,29 +38,16 @@ describe 'application.rb with login' do
   end
 
   it 'should upload file and show generated content' do
-    post('/upload', { file: 
-                      Rack::Test::UploadedFile.new(UPLOAD_1, 
-                                                   'application/gzip'), 
+    post('/upload', { dir: 'upload',
                       collection_id: 42 })
     follow_redirect!
     files_warning = 'Check the correctness of generated files'
     last_response.body.should include(files_warning)
   end
   
-  it 'should generate error if uploaded file is not a zip file' do
-    post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_NOT_ZIP, 'application/gzip'), 
-      collection_id: 42 })
-    follow_redirect!
-    files_warning = 'Check the correctness of generated files'
-    not_zip_warning = 'Uploaded file is not in a valid zip format'
-    last_response.body.should_not include(files_warning)
-    last_response.body.should include(not_zip_warning)
-  end
-  
   it 'should encode latin1 uploaded file to UTF-8' do
     post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_LATIN1, 'application/gzip'),
+      dir: 'upload_latin1',
       collection_id: 42 })
     follow_redirect!
     files_warning = 'Check the correctness of generated files'
@@ -69,50 +56,28 @@ describe 'application.rb with login' do
   
   it 'should generate error if there is no collection id' do
     post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip'), 
+      dir: 'upload', 
       collection_id: 0 })
     follow_redirect!
     files_warning = 'Check the correctness of generated files'
-    collection_warning = 'Collection was not selected'
+    collection_warning = 'Collection is not selected'
     last_response.body.should_not include(files_warning)
     last_response.body.should include(collection_warning)
   end
   
   it 'should generate error if uploaded archive does not contain csv file' do
     post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_NO_CSV, 'application/gzip'), 
+      dir: 'no_csv', 
       collection_id: 42 })
     follow_redirect!
     files_warning = 'Check the correctness of generated files'
     last_response.body.should_not include(files_warning)
     last_response.body.should include('Cannot find file with .csv extension')
   end
-  
-  it 'should generate error if uploaded archive has a' + 
-     'directory and does not contain csv file' do
-    post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_DIR_NO_CSV, 'application/gzip'), 
-      collection_id: 42 })
-    follow_redirect!
-    files_warning = 'Check the correctness of generated files'
-    last_response.body.should_not include(files_warning)
-    last_response.body.should include('Cannot find file with .csv extension')
-  end
-  
-  it 'should generate error if uploaded file has many directories' do
-    post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_MANY_DIRS, 'application/gzip'), 
-      collection_id: 42 })
-    follow_redirect!
-    files_warning = 'Check the correctness of generated files'
-    last_response.body.should_not include(files_warning)
-    last_response.body.should include('Zip archive contains many folders')
-  end
-  
   
   it 'should generate error if uploaded archive has invalid csv file' do
     post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_BAD_CSV, 'application/gzip'), 
+      dir: 'bad_csv',
       collection_id: 42 })
     follow_redirect!
     files_warning = 'Check the correctness of generated files'
@@ -122,44 +87,54 @@ describe 'application.rb with login' do
   
   it 'should generate error if uploaded archive is missing a Filename field' do
     post('/upload', { 
-      file: Rack::Test::UploadedFile.new(UPLOAD_TYPO_IN_FILENAME_FIELD,
-                                         'application/gzip'),
+      dir: 'typo_in_filename_field',
       collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.
+      should_not include('Check the correctness of generated files')
     last_response.body.should include('No Filename field')
   end
 
   it 'should generate error if uploaded archive had more than one Filename field' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_TWO_FILENAME_FIELDS, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      dir: 'two_filename_fields',
+      collection_id: 42 })
     follow_redirect!
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('More than one Filename fields')
   end
 
   it 'should generate error if a file is not found in archive' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_MISSED_FILE, 'application/gzip'), collection_id: 42})
+    post('/upload', { 
+      dir: 'missed_file',
+      collection_id: 42})
     follow_redirect!
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('The following files are missed from archive: missed_file.xhtml')
   end
 
   it 'should generate a warning if there is an extra file in archive' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_EXTRA_FILE, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      dir: 'extra_file',
+      collection_id: 42 })
     follow_redirect!
     last_response.body.should include('Check the correctness of generated files')
     last_response.body.should include('The following files are extra in archive: extra_file.xhtml')
   end
   
   it 'should generate an error if there is no title field' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_NO_TITLE_FIELD, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      dir: 'no_title_field',
+      collection_id: 42 })
     follow_redirect!
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('No Title field')
   end
   
   it 'should generate an error if there is no rights field' do
-    post('/upload', { file: Rack::Test::UploadedFile.new(UPLOAD_NO_RIGHTS_FIELD, 'application/gzip'), collection_id: 42 })
+    post('/upload', { 
+      dir: 'no_rights_field',
+      collection_id: 42 })
     follow_redirect!
     last_response.body.should_not include('Check the correctness of generated files')
     last_response.body.should include('One of these fields must me in archive: Rights, Rights Copyright, Rights License, Rights URI')
