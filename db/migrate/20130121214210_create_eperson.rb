@@ -13,7 +13,7 @@ class CreateEperson < ActiveRecord::Migration
       `require_certificate` tinyint default 0,
       `self_registered` tinyint default 1,
       `last_active` datetime,
-      `sub_frequency` int(11) NOT NULL,
+      `sub_frequency` int(11),
       `phone`      varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
       `language`      varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
       PRIMARY KEY (`eperson_id`),

@@ -1,5 +1,5 @@
 class CreateApiKeys < ActiveRecord::Migration
-  set :database, "mysql2://root:@localhost/dspace_api"
+  Sinatra::Base.set :database, "mysql2://root:@localhost/dspace_api"
   def up
     create_table :api_keys do |t|
       t.integer :eperson_id

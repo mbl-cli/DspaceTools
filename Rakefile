@@ -45,12 +45,13 @@ namespace :db do
   require 'active_record'
   conf = YAML.load(open(File.join(File.expand_path(File.dirname(__FILE__)), 'config/config.yml')).read)["localdb"]
 
-  desc "Migrate the database"
-  task(:migrate => :environment) do
-    ActiveRecord::Base.logger = Logger.new(STDOUT)
-    ActiveRecord::Migration.verbose = true
-    ActiveRecord::Migrator.migrate("db/migrate")
-  end
+  # desc "Migrate the database"
+  # task(:mgrate => :environment) do
+  #   require 'ruby-debug'; debugger
+  #   ActiveRecord::Base.logger = Logger.new(STDOUT)
+  #   ActiveRecord::Migration.verbose = true
+  #   ActiveRecord::Migrator.migrate("db/migrate")
+  # end
 
   namespace :drop do
     task(:all) do

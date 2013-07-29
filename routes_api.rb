@@ -55,9 +55,11 @@ class DspaceToolsUi < Sinatra::Base
     end
   end
 
-  #takes handles in the following format /handle.xml?handle=http://hdl.handle.net/123/123
+  # takes handles in the following format 
+  # /handle.xml?handle=http://hdl.handle.net/123/123
   get '/rest/handle.:format' do
-    handle = params[:handle] ? Handle.where(:handle => params["handle"].gsub("http://hdl.handle.net/", '')).first : nil
+    handle = params[:handle] ?  Handle.where(:handle => params["handle"].
+                   gsub("http://hdl.handle.net/", '')).first : nil
     path = handle ? handle.path : nil
     if path
       redirect(handle.fullpath(request.fullpath, request.path_info), 303)
