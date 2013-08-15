@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130225174903) do
+ActiveRecord::Schema.define(version: 20130815214628) do
 
   create_table "api_keys", force: true do |t|
     t.integer  "eperson_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20130225174903) do
   add_index "api_keys", ["public_key"], name: "idx_api_keys_2", unique: true, using: :btree
 
   create_table "bitstream", primary_key: "bitstream_id", force: true do |t|
-    t.integer "bistream_format_id",                    null: false
+    t.integer "bitstream_format_id",                   null: false
     t.string  "name",                                  null: false
     t.integer "size_bytes",                            null: false
     t.string  "checksum",                              null: false
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20130225174903) do
     t.string  "deleted",                 default: "f", null: false
     t.integer "store_number",                          null: false
     t.integer "sequence_id",                           null: false
+  end
+
+  create_table "bitstreamformatregistry", primary_key: "bitstream_format_id", force: true do |t|
+    t.string  "mimetype",                                  null: false
+    t.string  "short_description", limit: 128
+    t.text    "description"
+    t.integer "support_level",                 default: 1
+    t.string  "internal"
   end
 
   create_table "collection", primary_key: "collection_id", force: true do |t|

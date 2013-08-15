@@ -11,8 +11,8 @@ module RSpecMixin
   def app() DspaceToolsUi end
 end
 
-RSpec.configure do |c| 
-  c.include RSpecMixin 
+RSpec.configure do |c|
+  c.include RSpecMixin
   c.mock_with :rr
 end
 

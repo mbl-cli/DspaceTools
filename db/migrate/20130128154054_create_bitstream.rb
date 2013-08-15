@@ -4,7 +4,7 @@ class CreateBitstream < ActiveRecord::Migration
   def up
      execute("CREATE TABLE `bitstream` (
       `bitstream_id` int(11) NOT NULL,
-      `bistream_format_id` int(11) NOT NULL,
+      `bitstream_format_id` int(11) NOT NULL,
       `name` varchar(255) NOT NULL,
       `size_bytes` int(11) NOT NULL,
       `checksum` varchar(255) NOT NULL,
@@ -19,7 +19,7 @@ class CreateBitstream < ActiveRecord::Migration
       PRIMARY KEY (`bitstream_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci")
   end
-  
+
   def down
     drop_table :bitstream
   end

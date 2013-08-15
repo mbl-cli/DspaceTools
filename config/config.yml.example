@@ -1,4 +1,5 @@
-dspace_path: 
+dspace_path:
+bitstream_path: /tmp
 tmp_dir: /tmp
 dropbox_dir: /Dropbox/uploads
 dspace_repo: http://example.com
@@ -15,7 +16,7 @@ dspacedb:
     host: localhost
     database: dspace_api_test
     username: root
-    password: 
+    password:
   production:
     adapter: postgresql
     host: dspace

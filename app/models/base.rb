@@ -4,7 +4,9 @@ class DspaceTools::DspaceDb::Base
   end
 
   def self.find_id(hsh = {})
-    return nil unless hsh.values[0].is_a?(Fixnum)
+    id = hsh.values[0].to_i
+    return nil unless id.is_a?(Fixnum) || id.to_s == hsh.values[0]
+    hsh.values[0] = id
     self.where(hsh).first
   end
 

@@ -28,18 +28,18 @@ FG.define do
     admin 1
   end
 
-  factory :item do 
+  factory :item do
     item_id nil
     submitter_id 1
     in_archive 't'
     withdrawn 'f'
     last_modified Time.now
-    owning_collection 31  
+    owning_collection 31
   end
 
   factory :bitstream do
     bitstream_id nil
-    bistream_format_id 1
+    bitstream_format_id 1
     sequence(:name) {|n| "bitstream%s" % n}
     size_bytes 1
     checksum 123
@@ -53,13 +53,22 @@ FG.define do
     sequence_id 1
   end
 
+  factory :bitstreamformat do
+    bitstream_format_id nil
+    mimetype 'application/octet-stream'
+    short_description 'unknown'
+    description 'unknown mimetype'
+    support_level 1
+    internal 'f'
+  end
+
   factory :resourcepolicy do
     sequence(:policy_id)
     resource_type_id 2
     resource_id nil
     action_id 0
     eperson_id nil
-    epersongroup_id nil 
+    epersongroup_id nil
     start_date nil
     end_date nil
   end
