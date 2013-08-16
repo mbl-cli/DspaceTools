@@ -62,7 +62,7 @@ module RestApi
     headers(
     'Content-Type'        => bts.mime || 'application/octet-stream',
     'Content-length'      => bts.size_bytes.to_s || '0',
-    'Content-Disposition' => "attachment; filename=#{URI.escape(bts.name)}")
+    'Content-Disposition' => "attachment; filename=\"#{bts.name}\"")
     open(bts.path)
   end
 
