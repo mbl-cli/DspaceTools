@@ -61,8 +61,8 @@ module RestApi
     bts = Bitstream.find(params['id'])
     headers(
     'Content-Type'        => bts.mime || 'application/octet-stream',
-    'Content-length'      => bts.size_bytes || 0,
-    'Content-Disposition' => "attachment; filename=#{bts.name}")
+    'Content-length'      => bts.size_bytes.to_s || '0',
+    'Content-Disposition' => "attachment; filename=#{URI.escape(bts.name)}")
     open(bts.path)
   end
 
