@@ -26,7 +26,12 @@ module RestApi
   end
 
   def handle_bulk_request
-    perform_request
+    return bitstream_file if is_bitstream_file?
+    if request.fullpath.match(/updates/)
+      perform_updates_request
+    else
+      perform_request
+    end
   end
 
   def can_access_the_entity?
@@ -66,8 +71,11 @@ module RestApi
     open(bts.path)
   end
 
+  def perform_update_request
+    Item.updates(@request_user, params, use_format: true)
+  end
+
   def perform_request
-    return bitstream_file if is_bitstream_file?
     begin
       response = RestClient.get(DspaceTools::Conf.dspace_repo +
                                 request.fullpath)

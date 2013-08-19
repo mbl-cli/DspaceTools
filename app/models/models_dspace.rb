@@ -63,6 +63,12 @@ class Community < DspaceTools::DspaceDb::Base
   end
 end
 
+class CommunityItem < DspaceTools::DspaceDb::Base
+  self.table_params(table_name: 'communities2item')
+  has_many :items, class_name: 'Item'
+  has_many :communities, class_name: 'Community'
+end
+
 class Eperson < DspaceTools::DspaceDb::Base
   self.table_params(table_name: 'eperson', primary_key: 'eperson_id')
   has_many :eperson_groups, class_name: 'EpersonGroup'
@@ -155,4 +161,6 @@ class Resourcepolicy < DspaceTools::DspaceDb::Base
   end
 
 end
+
+
 

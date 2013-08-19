@@ -270,5 +270,13 @@ describe 'api' do
     lr = last_response
     lr.status.should == 200
   end
+
+  it 'should return updates for items' do
+    timestamps = Item.connection.execute("select last_modified from item
+                             order by last_modified desc limit 5").
+                             to_a.flatten.map {|i| i.gsub(' UTC','.123-00')
+    timestamps.size.should == timestamp.uniq.size
+    ts = timestamps.last
+  end
 end
 

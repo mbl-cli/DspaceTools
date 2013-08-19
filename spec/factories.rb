@@ -33,7 +33,7 @@ FG.define do
     submitter_id 1
     in_archive 't'
     withdrawn 'f'
-    last_modified Time.now
+    last_modified Time.now - 100000000
     owning_collection 31
   end
 

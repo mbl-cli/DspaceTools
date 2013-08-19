@@ -1,3 +1,5 @@
+exit if settings.environment != :test
+
 class CreateBitstreamFormat < ActiveRecord::Migration
   def up
     execute("CREATE TABLE `bitstreamformatregistry` (

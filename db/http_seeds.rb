@@ -72,6 +72,27 @@ class HttpSeeder
               :resource_id => 4832, :eperson_id => 1)
   end
 
+  def change_items_last_modified
+    Item.all[-5..-1].reverse.each_with_index do |item, i|
+      item.last_modified = Time.now - (i * 1000)
+      item.save!
+    end
+  end
+
+  def make_community_item
+    Item.all[-4..-2].each do |item|
+      c = Community.find(4)
+      require 'ruby-debug'; debugger
+      CommunityItem.create(item_id: item.item_id,
+                           community_id: c.community_id)
+    end
+    Item.all[-2..-1].each do |item|
+      c = Community.find(6)
+      CommunityItem.create(item_id: item.item_id,
+                           community_id: c.community_id)
+    end
+  end
+
   private
 
   def collect_data(an_xpath, a_hash)
@@ -92,4 +113,5 @@ end
 hs = HttpSeeder.new
 hs.walk_xml
 hs.make_fake_policies
-
+hs.change_items_last_modified
+hs.make_community_item

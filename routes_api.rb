@@ -48,6 +48,10 @@ class DspaceToolsUi < Sinatra::Base
     rest_request(params)
   end
 
+  get '/rest/items/updates.:format' do
+    rest_request(params)
+  end
+
   get '/rest/handle/:num1/:num2.:format' do
     params["handle"] = "%s/%s" % [params["num1"], params["num2"]]
     handle = Handle.where(:handle => params["handle"]).first

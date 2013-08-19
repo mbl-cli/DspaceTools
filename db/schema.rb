@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130815214628) do
+ActiveRecord::Schema.define(version: 20130816205228) do
 
   create_table "api_keys", force: true do |t|
     t.integer  "eperson_id"
@@ -62,6 +62,11 @@ ActiveRecord::Schema.define(version: 20130815214628) do
     t.string  "workflow_step_2"
     t.integer "submitter"
     t.integer "admin"
+  end
+
+  create_table "communities2item", force: true do |t|
+    t.integer "community_id", null: false
+    t.integer "item_id",      null: false
   end
 
   create_table "community", primary_key: "community_id", force: true do |t|
