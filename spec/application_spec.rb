@@ -95,12 +95,14 @@ describe 'application.rb with login' do
     last_response.body.should include('No Filename field')
   end
 
-  it 'should generate error if uploaded archive had more than one Filename field' do
+  it 'should generate error if uploaded archive had more ' + 
+     'than one Filename field' do
     post('/upload', { 
       dir: 'two_filename_fields',
       collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.should_not 
+       include('Check the correctness of generated files')
     last_response.body.should include('More than one Filename fields')
   end
 
@@ -109,8 +111,10 @@ describe 'application.rb with login' do
       dir: 'missed_file',
       collection_id: 42})
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
-    last_response.body.should include('The following files are missed from archive: missed_file.xhtml')
+    last_response.body.should_not 
+      include('Check the correctness of generated files')
+    last_response.body.should 
+      include('The following files are missed from archive: missed_file.xhtml')
   end
 
   it 'should generate a warning if there is an extra file in archive' do
@@ -118,8 +122,10 @@ describe 'application.rb with login' do
       dir: 'extra_file',
       collection_id: 42 })
     follow_redirect!
-    last_response.body.should include('Check the correctness of generated files')
-    last_response.body.should include('The following files are extra in archive: extra_file.xhtml')
+    last_response.body.should 
+      include('Check the correctness of generated files')
+    last_response.body.should 
+      include('The following files are extra in archive: extra_file.xhtml')
   end
   
   it 'should generate an error if there is no title field' do
@@ -127,7 +133,8 @@ describe 'application.rb with login' do
       dir: 'no_title_field',
       collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
+    last_response.body.should_not 
+      include('Check the correctness of generated files')
     last_response.body.should include('No Title field')
   end
   
@@ -136,8 +143,10 @@ describe 'application.rb with login' do
       dir: 'no_rights_field',
       collection_id: 42 })
     follow_redirect!
-    last_response.body.should_not include('Check the correctness of generated files')
-    last_response.body.should include('One of these fields must me in archive: Rights, Rights Copyright, Rights License, Rights URI')
+    last_response.body.should_not 
+      include('Check the correctness of generated files')
+    last_response.body.should 
+      include('One of these fields must me in archive: Rights, ')
   end
 
   it 'should show api key page' do

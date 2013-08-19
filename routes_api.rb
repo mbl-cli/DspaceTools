@@ -48,7 +48,7 @@ class DspaceToolsUi < Sinatra::Base
     rest_request(params)
   end
 
-  get '/rest/items/updates.:format' do
+  get '/rest/updates/items.:format' do
     rest_request(params)
   end
 

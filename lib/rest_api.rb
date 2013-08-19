@@ -26,8 +26,7 @@ module RestApi
   end
 
   def handle_bulk_request
-    return bitstream_file if is_bitstream_file?
-    if request.fullpath.match(/updates/)
+    if request.fullpath.match(%r|updates/items|)
       perform_updates_request
     else
       perform_request
@@ -71,11 +70,36 @@ module RestApi
     open(bts.path)
   end
 
-  def perform_update_request
-    Item.updates(@request_user, params, use_format: true)
+  def perform_updates_request
+    if @request_user.admin?
+      community = params[:community]
+      timestamp = params[:timestamp]
+      items = Item.updates(timestamp, community).rows
+      content_type 'text/xml', charset: 'utf-8'
+      items_to_xml(items)
+    else
+      bad_authentication
+    end
+  end
+
+  def items_to_xml(items)
+    builder = Nokogiri::XML::Builder.new do |xml|
+      xml.items_collection {
+        items.each do |row| 
+          xml.items {
+            xml.id_ row[0]
+            xml.entityReference "/items/%s" % row[0]
+            xml.last_modified row[1]
+            xml.entityId row[0]
+          }
+        end
+      }
+    end
+    builder.to_xml
   end
 
   def perform_request
+    return bitstream_file if is_bitstream_file?
     begin
       response = RestClient.get(DspaceTools::Conf.dspace_repo +
                                 request.fullpath)

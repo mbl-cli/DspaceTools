@@ -273,10 +273,25 @@ describe 'api' do
 
   it 'should return updates for items' do
     timestamps = Item.connection.execute("select last_modified from item
-                             order by last_modified desc limit 5").
-                             to_a.flatten.map { |i| i.to_s.gsub(' UTC','.123-00') }
+                         order by last_modified desc limit 5").
+                         to_a.flatten.map { |i| i.to_s.gsub(' UTC','.123-00') }
     timestamps.size.should == timestamps.uniq.size
     ts = timestamps.last
+    # stub_request(:get, %r|updates.xml|).
+    #   to_return(rest_request(params))
+    path = "/rest/updates/items.xml"
+    params = "community=4&timestamp=#{URI.escape(ts)}" 
+    url = "%s?%s%s%s" % [path, params, @admin_api_string, 
+                          ApiKey.digest(path, 'abcdef')
+                          ] 
+    get(url)
+    res = Nokogiri.parse(last_response.body)
+    res.xpath('//items').size.should == 3
+    url.gsub!('community=4', 'community=6')
+    get(url)
+    res = Nokogiri.parse(last_response.body)
+    res.xpath('//items').size.should == 2
+
   end
 end
 

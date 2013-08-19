@@ -142,6 +142,24 @@ class Item < DspaceTools::DspaceDb::Base
   def self.find(id_num)
     self.find_id(:item_id => id_num)
   end
+
+  def self.updates(timestamp, community=nil)
+    if community && community.to_i > 0
+      Item.connection.select_all("
+        select distinct i.item_id, i.last_modified
+          from item as i
+          join communities2item ci
+            on i.item_id = ci.item_id
+          where ci.community_id = %s
+          and i.last_modified > %s order by i.last_modified" %
+          [community.to_i, 
+           Item.connection.quote(timestamp)])
+    else
+      Item.select(:item_id).
+        where("last_modified > ?", timestamp)
+    end
+  end
+
 end
 
 class Resourcepolicy < DspaceTools::DspaceDb::Base
