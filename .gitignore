@@ -1,5 +1,6 @@
 vendor
 .bundle
+bin
 .DS_Store
 *.swp
 config/users.yml

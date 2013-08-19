@@ -82,7 +82,6 @@ class HttpSeeder
   def make_community_item
     Item.all[-4..-2].each do |item|
       c = Community.find(4)
-      require 'ruby-debug'; debugger
       CommunityItem.create(item_id: item.item_id,
                            community_id: c.community_id)
     end
