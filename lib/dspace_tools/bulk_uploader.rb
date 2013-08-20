@@ -14,6 +14,11 @@ class DspaceTools
       @map_file
     end
 
+    def dspace_command
+      @dspace_command || 
+        raise(DspaceTools::ImportError("dspace command not defined"))
+    end
+   
     private
     
     def get_instance_vars
@@ -25,24 +30,23 @@ class DspaceTools
                @collection_id, 
                @path, 
                @map_path,]
-      @dspace_command = "%s import ItemImport -w -a -e %s -c %s -s %s -m %s" % 
+      @dspace_command = 
+        "%s import ItemImport -w -a -e %s -c %s -s %s -m %s 2>&1" % 
                           @data
       @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 
                                       'public', 
                                       'map_files')
     end
 
-    def dspace_command
-      @dspace_command || 
-        raise(DspaceTools::ImportError("dspace command not defined"))
-    end
-   
     def import_submission
       error = DspaceTools::ImportError
       begin
         results = `#{dspace_command}` 
       rescue
         raise(error.new('Dspace upload failed'))
+      end
+      if results.size > 50
+        raise(error.new("Dspace upload failed: \n%s" % results))
       end
     end
       

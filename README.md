@@ -39,7 +39,7 @@ It is used by continuous integration server to create tests environment.
 Install
 -------
 
-add ruby lirbraries needed for the project
+add ruby libraries needed for the project
 
     gem install bundle 
     bundle
@@ -55,7 +55,7 @@ to run it locally
 to run in production specify production environment before your server
 command. For example
 
-   RACK_ENV=production unicorn -c unicorn.conf -D
+    RACK_ENV=production unicorn -c unicorn.conf -D
 
 API description
 ---------------
