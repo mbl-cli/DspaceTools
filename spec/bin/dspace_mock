@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+if ARGV[0] != ''
+  f = open(ARGV[0], 'w')
+  if ARGV[1].match 'success'
+    f.write("1 2\n")
+  end
+  f.close
+end
+
