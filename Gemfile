@@ -32,9 +32,9 @@ group :production do
 end
 
 group :test do
-  gem 'coveralls', require: false
   gem 'rspec', '~> 2.14'
   gem 'rr', '~> 1.1'
   gem 'webmock', '~> 1.13'
   gem 'factory_girl', '~> 4.2'
+  gem 'coveralls', require: false
 end

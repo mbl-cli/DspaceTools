@@ -10,9 +10,11 @@ Description
 
 DspaceTools app serves following purposes:
 
-* It simplifies bulk upload to Dspace converting comma-separated lists of terms into xml import files compatible with dspace. 
+* It simplifies bulk upload to Dspace converting comma-separated lists of 
+terms into xml import files compatible with dspace. 
 
-* It adds authentication and authorization to Dspace restful API, hiding restricted data from users who are not supposed to see it.
+* It adds authentication and authorization to Dspace restful API, hiding 
+restricted data from users who are not supposed to see it.
 
 * It adds api_key/api_digest authentication mechanism to restful API
 
@@ -31,12 +33,13 @@ Requirements
 Running tests
 -------------
 
-Look at content of {.travis.yml}[https://github.com/mbl-cli/DspaceTools/blob/master/.travis.yml] in the project directory. It is used by continuous integration server to create tests environment.
+Look at the content of [.travis.yml][7] in the project directory. 
+It is used by continuous integration server to create tests environment.
 
 Install
 -------
 
-* add ruby lirbraries needed for the project
+add ruby lirbraries needed for the project
 
     gem install bundle 
     bundle
@@ -45,17 +48,18 @@ Install
     rake db:migrate RACK_ENV=production #for production
     rake db:migrate RACK_ENV=test #for test
 
-* to run it locally
+to run it locally
 
     rackup
 
-* to run in production specify production environment before your server command. For example
+to run in production specify production environment before your server
+command. For example
 
    RACK_ENV=production unicorn -c unicorn.conf -D
 
 API description
 ---------------
-[API][7]
+[API][8]
 
 
 [1]: https://secure.travis-ci.org/mbl-cli/DspaceTools.png
@@ -64,4 +68,5 @@ API description
 [4]: https://gemnasium.com/mbl-cli/DspaceTools
 [5]: https://coveralls.io/repos/mbl-cli/DspaceTools/badge.png
 [6]: https://coveralls.io/r/mbl-cli/DspaceTools
-[7]: https://github.com/mbl-cli/DspaceTools/wiki/API
+[7]: https://github.com/mbl-cli/DspaceTools/blob/master/.travis.yml
+[8]: https://github.com/mbl-cli/DspaceTools/wiki/API
