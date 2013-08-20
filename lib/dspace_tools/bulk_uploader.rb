@@ -31,11 +31,16 @@ class DspaceTools
                                       'public', 
                                       'map_files')
     end
+
+    def dspace_command
+      @dspace_command || 
+        raise(DspaceTools::ImportError("dspace command not defined"))
+    end
    
     def import_submission
       error = DspaceTools::ImportError
       begin
-        results = `#{@dspace_command}` 
+        results = `#{dspace_command}` 
       rescue
         raise(error.new('Dspace upload failed'))
       end
