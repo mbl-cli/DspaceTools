@@ -1,9 +1,12 @@
-= DspaceTools
+DspaceTools
+===========
 
-{<img src="https://secure.travis-ci.org/mbl-cli/DspaceTools.png" />}[http://travis-ci.org/mbl-cli/DspaceTools] 
-{<img src="https://gemnasium.com/mbl-cli/DspaceTools.png" alt="Dependency Status" />}[https://gemnasium.com/mbl-cli/DspaceTools]
+[![Continuous Integration Status][1]][2]
+[![Dependency Status][3]][4]
+[![Coverage Status][5]][6]
 
-== Description
+Description
+-----------
 
 DspaceTools app serves following purposes:
 
@@ -14,7 +17,8 @@ DspaceTools app serves following purposes:
 * It adds api_key/api_digest authentication mechanism to restful API
 
 
-== Requirements 
+Requirements 
+------------
 
 * Ruby v1.9.3 or higher
 
@@ -24,11 +28,13 @@ DspaceTools app serves following purposes:
 
 * MySQL database
 
-== Running tests
+Running tests
+-------------
 
 Look at content of {.travis.yml}[https://github.com/mbl-cli/DspaceTools/blob/master/.travis.yml] in the project directory. It is used by continuous integration server to create tests environment.
 
-== Install
+Install
+-------
 
 * add ruby lirbraries needed for the project
 
@@ -47,8 +53,15 @@ Look at content of {.travis.yml}[https://github.com/mbl-cli/DspaceTools/blob/mas
 
    RACK_ENV=production unicorn -c unicorn.conf -D
 
-== API description
+API description
+---------------
+[API][7]
 
-{API}[https://github.com/mbl-cli/DspaceTools/wiki/API]
 
-
+[1]: https://secure.travis-ci.org/mbl-cli/DspaceTools.png
+[2]: http://travis-ci.org/mbl-cli/DspaceTools
+[3]: https://gemnasium.com/mbl-cli/DspaceTools.png
+[4]: https://gemnasium.com/mbl-cli/DspaceTools
+[5]: https://coveralls.io/repos/mbl-cli/DspaceTools/badge.png
+[6]: https://coveralls.io/r/mbl-cli/DspaceTools
+[7]: https://github.com/mbl-cli/DspaceTools/wiki/API
