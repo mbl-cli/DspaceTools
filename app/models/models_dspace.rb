@@ -144,7 +144,8 @@ class Item < DspaceTools::DspaceDb::Base
   end
 
   def self.updates(timestamp, community=nil)
-    if community && community.to_i > 0
+    timestamp ||= '1900-01-01'
+    if community 
       Item.find_by_sql("
         select distinct i.item_id, i.last_modified
           from item as i
@@ -156,7 +157,8 @@ class Item < DspaceTools::DspaceDb::Base
            Item.connection.quote(timestamp)])
     else
       Item.select(:item_id, :last_modified).
-        where("last_modified > ?", timestamp)
+        where("last_modified > ?", timestamp).
+        order(:last_modified)
     end
   end
 

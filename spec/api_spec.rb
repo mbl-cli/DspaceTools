@@ -277,9 +277,7 @@ describe 'api' do
                          to_a.flatten.map { |i| i.to_s.gsub(' UTC','.123-00') }
     timestamps.size.should == timestamps.uniq.size
     ts = timestamps.last
-    # stub_request(:get, %r|updates.xml|).
-    #   to_return(rest_request(params))
-    path = "/rest/updates/items.xml"
+    path = '/rest/updates/items.xml'
     params = "community=4&timestamp=#{URI.escape(ts)}" 
     url = "%s?%s%s%s" % [path, params, @admin_api_string, 
                           ApiKey.digest(path, 'abcdef')
@@ -293,5 +291,68 @@ describe 'api' do
     res.xpath('//items').size.should == 2
 
   end
+
+  it 'should return an error if updates have no authentication' do
+    path = '/rest/updates/items.xml'
+    params = "community=4&timestamp=2010-10-10" 
+    url = "%s?%s" % [path, params ] 
+    get(url)
+    last_response.status.should == 401
+    last_response.body.match('Not authorized').should be_true
+  end
+
+  it 'updates items should return all updates if ts is missing' do
+    path = '/rest/updates/items.xml'
+    url = "%s?%s%s" % [path, @admin_api_string, 
+                          ApiKey.digest(path, 'abcdef')
+                          ] 
+    get(url)
+    res = Nokogiri.parse(last_response.body)
+    res.xpath('//items').size.should > 1000
+  end
+
+  it 'should return updates from all communities if no community given' do
+    timestamps = Item.connection.execute("select last_modified from item
+                         order by last_modified desc limit 5").
+                         to_a.flatten.map { |i| i.to_s.gsub(' UTC','.123-00') }
+    timestamps.size.should == timestamps.uniq.size
+    ts = timestamps.last
+    path = '/rest/updates/items.xml'
+    params = "timestamp=#{URI.escape(ts)}" 
+    url = "%s?%s%s%s" % [path, params, @admin_api_string, 
+                          ApiKey.digest(path, 'abcdef')
+                          ] 
+    get(url)
+    res = Nokogiri.parse(last_response.body)
+    res.xpath('//items').size.should == 4
+  end
+
+  it 'should handle badly formed timestamps' do
+    ts = 'bad timestamp'
+    path = '/rest/updates/items.xml'
+    params = "timestamp=#{URI.escape(ts)}" 
+    url = "%s?%s%s%s" % [path, params, @admin_api_string, 
+                          ApiKey.digest(path, 'abcdef')
+                          ] 
+    get(url)
+    res = Nokogiri.parse(last_response.body)
+    res.xpath('//items').size.should == 0
+  end
+
+  it 'should handle badly formed communities' do
+    timestamps = Item.connection.execute("select last_modified from item
+                         order by last_modified desc limit 5").
+                         to_a.flatten.map { |i| i.to_s.gsub(' UTC','.123-00') }
+    ts = timestamps.last
+    path = '/rest/updates/items.xml'
+    params = "community=bad_community&timestamp=#{URI.escape(ts)}" 
+    url = "%s?%s%s%s" % [path, params, @admin_api_string, 
+                          ApiKey.digest(path, 'abcdef')
+                          ] 
+    get(url)
+    res = Nokogiri.parse(last_response.body)
+    res.xpath('//items').size.should == 0
+  end
+
 end
 

@@ -71,7 +71,7 @@ module RestApi
   end
 
   def perform_updates_request
-    if @request_user.admin?
+    if @request_user && @request_user.admin?
       community = params[:community]
       timestamp = params[:timestamp]
       items = Item.updates(timestamp, community)
