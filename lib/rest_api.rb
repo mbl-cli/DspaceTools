@@ -85,6 +85,7 @@ module RestApi
   def items_to_xml(items)
     builder = Nokogiri::XML::Builder.new do |xml|
       xml.items_collection {
+        xml.count items.size
         items.each do |item| 
           xml.items {
             xml.id_ item.item_id 
