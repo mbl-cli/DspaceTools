@@ -149,6 +149,24 @@ describe 'application.rb with login' do
       include('One of these fields must me in archive: Rights, ')
   end
 
+  it 'should finish upload to dspace' do
+    u = DspaceTools::Uploader.new(PARAMS_1)
+    t = DspaceTools::Transformer.new(u)
+    session = {
+      current_user_id: 3,
+      collection_id: 42,
+      path: t.path,
+    }
+    stub.proxy(DspaceTools::BulkUploader).new do |obj|
+      stub.proxy(obj).dspace_command do |r|
+        mapfile = r.match(/-m ([^\\s]*)/)[1].strip
+        "%s %s" % [DSPACE_MOCK, mapfile]
+      end
+    end
+    post '/submit', {}, 'rack.session' => session
+    follow_redirect!
+  end
+
   it 'should show api key page' do
     get('/api_keys')
     last_response.status.should == 200

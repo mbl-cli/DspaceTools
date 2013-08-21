@@ -145,7 +145,7 @@ class Item < DspaceTools::DspaceDb::Base
 
   def self.updates(timestamp, community=nil)
     if community && community.to_i > 0
-      Item.connection.select_all("
+      Item.find_by_sql("
         select distinct i.item_id, i.last_modified
           from item as i
           join communities2item ci

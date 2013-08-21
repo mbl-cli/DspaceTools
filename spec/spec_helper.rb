@@ -25,6 +25,7 @@ unless defined?(SPEC_CONSTANTS)
   HTTP_DIR = File.join(File.dirname(__FILE__), "http")
   PARAMS_1 = { dir: 'upload', collection_id: 42 }
   SPEC_CONSTANTS = true
+  DSPACE_MOCK = File.join(File.dirname(__FILE__), '..', 'bin', 'dspace_mock')
 end
 
 #FG.find_definitions

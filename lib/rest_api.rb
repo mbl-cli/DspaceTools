@@ -74,7 +74,7 @@ module RestApi
     if @request_user.admin?
       community = params[:community]
       timestamp = params[:timestamp]
-      items = Item.updates(timestamp, community).rows
+      items = Item.updates(timestamp, community)
       content_type 'text/xml', charset: 'utf-8'
       items_to_xml(items)
     else
@@ -85,12 +85,12 @@ module RestApi
   def items_to_xml(items)
     builder = Nokogiri::XML::Builder.new do |xml|
       xml.items_collection {
-        items.each do |row| 
+        items.each do |item| 
           xml.items {
-            xml.id_ row[0]
-            xml.entityReference "/items/%s" % row[0]
-            xml.last_modified row[1]
-            xml.entityId row[0]
+            xml.id_ item.item_id 
+            xml.entityReference "/items/%s" % item.item_id
+            xml.last_modified item.last_modified
+            xml.entityId item.item_id
           }
         end
       }

@@ -15,8 +15,7 @@ class DspaceTools
     end
 
     def dspace_command
-      @dspace_command || 
-        raise(DspaceTools::ImportError("dspace command not defined"))
+      @dspace_command 
     end
    
     private
