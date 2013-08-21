@@ -155,7 +155,7 @@ class Item < DspaceTools::DspaceDb::Base
           [community.to_i, 
            Item.connection.quote(timestamp)])
     else
-      Item.select(:item_id).
+      Item.select(:item_id, :last_modified).
         where("last_modified > ?", timestamp)
     end
   end
