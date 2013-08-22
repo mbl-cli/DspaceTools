@@ -35,26 +35,22 @@ class DspaceTools
       @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 
                                       'public', 
                                       'map_files')
+      @error = DspaceTools::ImportError
     end
 
     def import_submission
-      error = DspaceTools::ImportError
       begin
-        results = `#{dspace_command}` 
-      rescue
-        raise(error.new('Dspace upload failed'))
-      end
-      if results.size > 50
-        raise(error.new("Dspace upload failed: \n%s" % results))
+        @dspace_output = `#{dspace_command}` 
+      rescue RuntimeError => e
+        raise(@error.new("DSpace upload failed: \n%s" % e))
       end
     end
       
     def copy_map_file_to_local
-      error = DspaceTools::ImportError
       if File.exists?(@map_path) && open(@map_path).read.strip != ''
         FileUtils.mv @map_path, @local_mapfile_path
       else
-        raise(error.new('Failed to generate map file, DSpace upload failed'))
+        raise(@error.new("DSpace upload failed: \n%s" % @dspace_output))
       end
     end
 

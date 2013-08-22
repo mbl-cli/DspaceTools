@@ -160,11 +160,51 @@ describe 'application.rb with login' do
     stub.proxy(DspaceTools::BulkUploader).new do |obj|
       stub.proxy(obj).dspace_command do |r|
         mapfile = r.match(/-m ([^\\s]*)/)[1].strip
+        "%s %s %s" % [DSPACE_MOCK, mapfile, 'success']
+      end
+    end
+    post '/submit', {}, 'rack.session' => session
+    follow_redirect!
+    last_response.body.should include('Upload was successful')
+  end
+  
+  it 'should not finish upload if mapfile is empty' do
+    u = DspaceTools::Uploader.new(PARAMS_1)
+    t = DspaceTools::Transformer.new(u)
+    session = {
+      current_user_id: 3,
+      collection_id: 42,
+      path: t.path,
+    }
+    stub.proxy(DspaceTools::BulkUploader).new do |obj|
+      stub.proxy(obj).dspace_command do |r|
+        mapfile = r.match(/-m ([^\\s]*)/)[1].strip
         "%s %s" % [DSPACE_MOCK, mapfile]
       end
     end
     post '/submit', {}, 'rack.session' => session
     follow_redirect!
+    last_response.body.should_not include('Upload was successful')
+    last_response.body.should include('upload failed with empty mapfile')
+  end
+  
+  it 'should not finish upload if dspace ci crashes' do
+    u = DspaceTools::Uploader.new(PARAMS_1)
+    t = DspaceTools::Transformer.new(u)
+    session = {
+      current_user_id: 3,
+      collection_id: 42,
+      path: t.path,
+    }
+    stub.proxy(DspaceTools::BulkUploader).new do |obj|
+      stub.proxy(obj).dspace_command do |r|
+        raise('CRASH!!')
+      end
+    end
+    post '/submit', {}, 'rack.session' => session
+    follow_redirect!
+    last_response.body.should_not include('Upload was successful')
+    last_response.body.should include('CRASH!!')
   end
 
   it 'should show api key page' do

@@ -2,8 +2,11 @@
 
 if ARGV[0] != ''
   f = open(ARGV[0], 'w')
-  if ARGV[1].match 'success'
+  if ARGV[1] && ARGV[1].match('success')
     f.write("1 2\n")
+    puts 'all worked fine'
+  else
+    puts 'upload failed with empty mapfile'
   end
   f.close
 end

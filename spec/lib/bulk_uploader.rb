@@ -1,7 +1,5 @@
 require "spec_helper"
 
-DSPACE_MOCK = File.join(File.dirname(__FILE__), '..', 'bin', 'dspace_mock')
-
 describe DspaceTools::BulkUploader do
   before(:all) do
     u = DspaceTools::Uploader.new(PARAMS_1)
@@ -33,9 +31,15 @@ describe DspaceTools::BulkUploader do
   it 'should give error if mapfile is empty' do
     stub.proxy(@bu).dspace_command do |r| 
         mapfile = r.match(/-m ([^\s]*)/)[1].strip
-        "%s %s empty_mapfile" % [DSPACE_MOCK, mapfile]
+        "%s %s" % [DSPACE_MOCK, mapfile]
     end
     lambda { @bu.submit }.should raise_error
+    begin
+      @bu.submit
+    rescue DspaceTools::ImportError => e
+      e.message.match('DSpace upload failed:').should be_true
+      e.message.match('empty mapfile').should be_true
+    end
   end
 
   it 'should give show problem from ci failure' do
@@ -46,7 +50,7 @@ describe DspaceTools::BulkUploader do
     begin
       @bu.submit
     rescue RuntimeError => e
-      e.message.match('Dspace upload failed:').should be_true
+      e.message.match('DSpace upload failed:').should be_true
       e.message.match('(TypeError)').should be_true
     end
   end
