@@ -42,7 +42,8 @@ class DspaceTools
       begin
         @dspace_output = `#{dspace_command}` 
       rescue RuntimeError => e
-        raise(@error.new("DSpace upload failed: \n%s" % e))
+        err = CGI.escapeHTML(e.message)
+        raise(@error.new("DSpace upload failed: <tt>%s</tt>" % err))
       end
     end
       
@@ -50,7 +51,8 @@ class DspaceTools
       if File.exists?(@map_path) && open(@map_path).read.strip != ''
         FileUtils.mv @map_path, @local_mapfile_path
       else
-        raise(@error.new("DSpace upload failed: \n%s" % @dspace_output))
+        err = CGI.escapeHTML(@dspace_output)
+        raise(@error.new("DSpace upload failed: <tt>%s</tt>" % err))
       end
     end
 
