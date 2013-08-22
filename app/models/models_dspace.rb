@@ -57,6 +57,9 @@ end
 
 class Community < DspaceTools::DspaceDb::Base
   self.table_params(table_name: 'community', primary_key: 'community_id')
+  has_many :community_items,
+           class_name: 'CommunityItem', foreign_key: 'community_id'
+  has_many :items, through: :community_items
 
   def self.find(id_num)
     self.find_id(community_id: id_num)
@@ -65,8 +68,8 @@ end
 
 class CommunityItem < DspaceTools::DspaceDb::Base
   self.table_params(table_name: 'communities2item')
-  has_many :items, class_name: 'Item'
-  has_many :communities, class_name: 'Community'
+  belongs_to :item, class_name: 'Item', foreign_key: 'item_id'
+  belongs_to :communities, class_name: 'Community', foreign_key: 'community_id'
 end
 
 class Eperson < DspaceTools::DspaceDb::Base
@@ -80,7 +83,7 @@ class Eperson < DspaceTools::DspaceDb::Base
   end
 
   def admin?
-    groups.include?(Group.find(1))
+    !!groups.include?(Group.find(1))
   end
 
   private
@@ -137,7 +140,10 @@ class Item < DspaceTools::DspaceDb::Base
   self.table_params(table_name: 'item', primary_key: 'item_id')
   has_many :collection_items,
            class_name: 'CollectionItem', foreign_key: 'item_id'
+  has_many :community_items,
+           class_name: 'CommunityItem', foreign_key: 'item_id'
   has_many :collections, through: :collection_items
+  has_many :communities, through: :community_items
 
   def self.find(id_num)
     self.find_id(:item_id => id_num)

@@ -47,7 +47,7 @@ FG.define do
     description 'desc'
     user_format_description 'user format desc'
     source 'source'
-    internal_id 123
+    internal_id [1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9].shuffle.join('')[0..8]
     deleted 'f'
     store_number 1
     sequence_id 1
