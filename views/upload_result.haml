@@ -1,9 +1,14 @@
-- if (params[:dspace_error_id])
-  #dspace_error= h DspaceError.find(params[:dspace_error_id]).error
-
 %section.grid_8
-  %p 
-    Check the correctness of generated files before sending them to DSpace
+  - if (params[:dspace_error_id])
+    %p
+      Upload failed because there is a problem with imported files --
+      most likely with dublin core. The following message is returned by 
+      dspace:
+    .dspace_error
+      %pre= h DspaceError.find(params[:dspace_error_id]).error
+  - else
+    %p 
+      Check the correctness of generated files before sending them to DSpace
   %p 
     If you see problems, press 'Cancel', fix them on your computer, 
     and make a new upload.
