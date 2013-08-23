@@ -101,7 +101,9 @@ class DspaceToolsUi < Sinatra::Base
       @map_file = bu.submit
       redirect '/upload_finished?map_file=' + ::URI.encode(@map_file)
     rescue DspaceTools::ImportError => e
-      redirect '/upload_result', error: e.message
+      url = '/upload_result'
+      url += "?dspace_error_id=%s" % bu.dspace_error.id if bu.dspace_error
+      redirect url, error: e.message
     end
   end
 

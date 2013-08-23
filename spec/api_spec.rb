@@ -342,7 +342,8 @@ describe 'api' do
   it 'should handle badly formed communities' do
     timestamps = Item.connection.execute("select last_modified from item
                          order by last_modified desc limit 5").
-                         to_a.flatten.map { |i| i.to_s.gsub(' UTC','.123-00') }
+                         to_a.flatten.
+                         map { |i| i.to_s.gsub(' UTC','.123-00') }
     ts = timestamps.last
     path = '/rest/updates/items.xml'
     params = "community=bad_community&timestamp=#{URI.escape(ts)}" 

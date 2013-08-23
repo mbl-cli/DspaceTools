@@ -1,4 +1,5 @@
 class CreateSessions < ActiveRecord::Migration
+  Sinatra::Base.set :database, "mysql2://root:@localhost/dspace_api"
   def up
     create_table :sessions do |t|
       t.text :session_id

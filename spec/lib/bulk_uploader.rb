@@ -37,8 +37,8 @@ describe DspaceTools::BulkUploader do
     begin
       @bu.submit
     rescue DspaceTools::ImportError => e
-      e.message.match('DSpace upload failed:').should be_true
-      e.message.match('empty mapfile').should be_true
+      e.message.match('DSpace upload failed: empty mapfile').should be_true
+      @bu.dspace_error.error.should == "upload failed with empty mapfile\n"
     end
   end
 
@@ -50,8 +50,8 @@ describe DspaceTools::BulkUploader do
     begin
       @bu.submit
     rescue RuntimeError => e
-      e.message.match('DSpace upload failed:').should be_true
-      e.message.match('(TypeError)').should be_true
+      e.message.match('DSpace upload failed: empty mapfile').should be_true
+      @bu.dspace_error.error.match('(TypeError)').should be_true
     end
   end
 

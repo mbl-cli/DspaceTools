@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130816205228) do
+ActiveRecord::Schema.define(version: 20130822202741) do
 
   create_table "api_keys", force: true do |t|
     t.integer  "eperson_id"
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 20130816205228) do
     t.string  "copyright_text"
     t.string  "side_bar_text"
     t.integer "admin"
+  end
+
+  create_table "dspace_errors", force: true do |t|
+    t.integer  "eperson_id"
+    t.integer  "collection_id"
+    t.text     "error"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "eperson", primary_key: "eperson_id", force: true do |t|

@@ -1,7 +1,9 @@
 class DspaceTools
   class BulkUploader
+    attr :dspace_error
 
     def initialize(path, collection_id, user)
+      @dspace_error = nil
       @path = path
       @collection_id = collection_id
       @user = user
@@ -35,15 +37,14 @@ class DspaceTools
       @local_mapfile_path = File.join(DspaceTools::Conf.root_path, 
                                       'public', 
                                       'map_files')
-      @error = DspaceTools::ImportError
     end
 
     def import_submission
       begin
         @dspace_output = `#{dspace_command}` 
       rescue RuntimeError => e
-        err = CGI.escapeHTML(e.message)
-        raise(@error.new("DSpace upload failed: <tt>%s</tt>" % err))
+        raise(DspaceTools::ImportError.new("DSpace upload failed: %s" % 
+                                           e.message))
       end
     end
       
@@ -51,8 +52,11 @@ class DspaceTools
       if File.exists?(@map_path) && open(@map_path).read.strip != ''
         FileUtils.mv @map_path, @local_mapfile_path
       else
-        err = CGI.escapeHTML(@dspace_output)
-        raise(@error.new("DSpace upload failed: <tt>%s</tt>" % err))
+        @dspace_error = DspaceError.create!(eperson_id: @user.id, 
+                                     collection_id: @collection_id,
+                                     error: @dspace_output)
+        raise(DspaceTools::ImportError.new(
+          'DSpace upload failed: empty mapfile'))
       end
     end
 

@@ -77,6 +77,7 @@ class Eperson < DspaceTools::DspaceDb::Base
   has_many :eperson_groups, class_name: 'EpersonGroup'
   has_many :groups, through: :eperson_groups
   has_many :api_keys
+  has_many :dspace_errors
 
   def self.find(id_num)
     self.find_id(:eperson_id => id_num)

@@ -71,7 +71,7 @@ html, button, input, select, textarea {
   a { color: #fff; }
 }
 
-#flash {
+#flash #dspace_error {
   @include brd(5px);
   @include size-params;
   color: #800;

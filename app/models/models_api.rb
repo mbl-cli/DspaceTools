@@ -29,3 +29,7 @@ class ApiKey < ActiveRecord::Base
     digest(path) == a_digest
   end
 end
+
+class DspaceError < ActiveRecord::Base
+  belongs_to :eperson
+end
