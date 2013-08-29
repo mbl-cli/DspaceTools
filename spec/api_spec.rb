@@ -128,6 +128,29 @@ describe 'api' do
     end.should_not be_empty
   end
 
+  it 'should not abort if authentication not submitted' do
+    stub_request(:get, /.*items\/1702.*/).
+      to_return(open(File.join(HTTP_DIR, '/item1702.xml')))
+    url = '/rest/items/1702.xml'
+    get(url)
+    last_response.status.should == 200
+    last_response.body.match('Not authorized').should be_false
+  end
+
+  it 'should abort if authentication is attempted and failed' do
+    stub_request(:get, /.*items\/1702.*/).
+      to_return(open(File.join(HTTP_DIR, '/item1702.xml')))
+    url = '/rest/items/1702.xml'
+    ['email=abc&password=abc', 'email=abc', 'password=abc', 
+     'api_key=abc&api_digest=abc', 'api_key=abc', 'api_digest=abc',
+      'email=abc&api_key=abc', 'something=abc&password=abc'
+    ].each do |p|
+      get("%s?%s" % [url, p])
+      last_response.status.should == 401
+      last_response.body.match('Not authorized').should be_true
+    end
+  end
+
   it 'should filter restricted information from bulk queries' do
     stub_request(:get, /communities/).
       to_return(open(File.join(HTTP_DIR, '/communities.xml')))

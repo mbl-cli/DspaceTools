@@ -4,6 +4,7 @@ module RestApi
     get_content_type(params)
     @request_user = DspaceTools.api_key_authorization(params, request.path) ||
       DspaceTools.password_authorization(params)
+    return bad_authentication if auth_requested?(params) && !@request_user 
     if request.path.match 'authentication_test'
       authentication_worked(params['format']) || bad_authentication
     else
@@ -12,6 +13,11 @@ module RestApi
   end
 
   private
+
+  def auth_requested?(params)
+    params[:api_key] || params[:api_digest] ||
+      params[:email] || params[:password]
+  end
 
   def handle_request
     if params[:id] && params[:id].to_i.is_a?(Fixnum)
