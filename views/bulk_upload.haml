@@ -21,7 +21,7 @@
         - dir.files.each do |file|
           %tr
             %td{ style: 'padding-left:2em;' }= file[:name]
-            %td{ style: 'padding-left:2em;' }= file[:size].to_s + 'K'
+            %td{ style: 'padding-left:2em;' }= file[:size].to_human
 
     %h5 Select collection
     %select{ name: 'collection_id' }
